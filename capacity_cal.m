@@ -15,40 +15,42 @@
     
   
     
-% function out=distance_cal(Node,Gateways,C_th,CI_th)
+ function out=distance_cal(Node,Gateways,C_th,CI_th)
 
-clear all
-close all
-% Temp data
-x=1:500:500*7;
-y=1:500:500*7;
-[mm,m]=size(x);
-[nn,n]=size(y);
-
-for i=1:m
-    for j=1:n
-        Node((i-1)*n+j,1)=x(i);
-        Node((i-1)*n+j,2)=y(j);
-    end
-end
-
-capacity=0;
-
-
-Gateways=[1501,1001];
-   % 1501,1501;
-   % 2501,3501
-   % ];
-
-
-C_th=550;
-CI_th=1000;
+% clear all
+% close all
+% % Temp data
+% x=1:500:500*7;
+% y=1:500:500*7;
+% [mm,m]=size(x);
+% [nn,n]=size(y);
+% 
+% for i=1:m
+%     for j=1:n
+%         Node((i-1)*n+j,1)=x(i);
+%         Node((i-1)*n+j,2)=y(j);
+%     end
+% end
+% 
+% 
+% 
+% 
+% Gateways=[1501,1001
+%    % 1501,1501;
+%     %;2501,3001
+%     ];
+% 
+% 
+% C_th=550;
+% CI_th=1000;
 
 [m_n,n_n]=size(Node);
 [m_g,n_g]=size(Gateways);
 
 m=1;
+place_cap=0;
 while(m<=m_g)
+    capacity=0;
     pm=0;
     cm=0;
     for i=1:m_n
@@ -109,13 +111,13 @@ while(m<=m_g)
     
     % Output contention for a link is correct now
     out_cont_pn=ct_link_contention+tempm-1;
-    
+    capacity=capacity+1/out_cont_pn;
     end
-    capacity=capacity+1/out_cont_pn
+    place_cap=place_cap+capacity;
     m=m+1;
 end
 
-
+out=place_cap;
 
 
 

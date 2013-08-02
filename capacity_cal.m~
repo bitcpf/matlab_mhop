@@ -15,7 +15,7 @@
     
   
     
-% function out=distance_cal(Node,Gateways,C_th,CI_th)
+ function out=distance_cal(Node,Gateways,C_th,CI_th)
 
 clear all
 close all
@@ -35,10 +35,10 @@ end
 
 
 
-Gateways=[1501,1001];
+Gateways=[1501,1001
    % 1501,1501;
-   % 2501,3501
-   % ];
+    %;2501,3001
+    ];
 
 
 C_th=550;
@@ -48,7 +48,9 @@ CI_th=1000;
 [m_g,n_g]=size(Gateways);
 
 m=1;
+place_cap=0;
 while(m<=m_g)
+    capacity=0;
     pm=0;
     cm=0;
     for i=1:m_n
@@ -81,20 +83,21 @@ while(m<=m_g)
         
         % Find the node in potential node contention area
         if(dis_p<=CI_th && dis_p>0)
-        Node(k,:)
+   
     % Take off all double count nodes
     ct_c=0;
         for kk=1:cm
+
             dis_gc_nc=abs(cont_g_node(kk,1)-Node(k,1))+abs(cont_g_node(kk,2)-Node(k,2));
                 
-            if(dis_gc_nc==0 || sum(abs(Node(k,:)-Gateways(m,:))>0) || sum(abs(Node(k,:)-pent_node(ip,:))>0))
+            if(dis_gc_nc==0 || sum(abs(Node(k,:)-Gateways(m,:)))==0 || sum(abs(Node(k,:)-pent_node(ip,:)))==0)
 
                 ct_c=ct_c+1;
             end
         end
         
         if(ct_c==0)
-            ct_link_contention=ct_link_contention+1
+            ct_link_contention=ct_link_contention+1;
             
         end
         
@@ -103,14 +106,18 @@ while(m<=m_g)
     end
     % Output gateway node to mesh link contention number
     [tempm,tempn]=size(cont_g_node);
-    pent_node(ip,:)
-    out_cont_pn=ct_link_contention+tempm
+    % Debug for out put pent_node(ip,:)
+    % -1 delete the potential node itself
     
+    % Output contention for a link is correct now
+    out_cont_pn=ct_link_contention+tempm-1;
+    capacity=capacity+1/out_cont_pn;
     end
+    place_cap=place_cap+capacity;
     m=m+1;
 end
 
-
+out=place_cap
 
 
 
