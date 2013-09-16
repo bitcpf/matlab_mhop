@@ -1,0 +1,21 @@
+
+figure 
+hold on
+
+x = [5,10,15,20,25,30,35,40,45,50]
+line(x,webemulationdata(1,:),'marker','d',')
+line(x,webemulationdata(2,:),'marker','s')
+line(x,webemulationdata(3,:),'marker','^')
+line(x,webemulationdata(4,:),'marker','v')
+
+
+set(gca, 'FontSize', 14)
+set(gca,'xtick',[5 10 15 20 25 30 35 40 45 50])
+axis([0 55 0 1500])
+legend('1st Hop','2nd Hop','3rd Hop', '4th Hop','Location','Northwest')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Users')
+ylabel('Download Throughput (kbps)')
+colormap(copper)
+
+print -depsc webemulation

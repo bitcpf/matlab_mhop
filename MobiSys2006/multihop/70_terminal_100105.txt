@@ -1,0 +1,433 @@
+Last login: Sat Oct  1 11:23:29 on ttyp6
+Welcome to Darwin!
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Sat Oct  1 11:31:15 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:13505  Invalid misc:168873   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.93.105.236 1.188.212.31 2 255
+1.70.18.140 1.188.212.31 2 255
+1.248.64.31@meshbox:~# watch reporter
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:13632  Invalid misc:168903   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:13733  Invalid misc:168944   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 116 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# sigspy
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:13758  Invalid misc:168960   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 112 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:13758  Invalid misc:168960   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 112 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# watch reporter
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14019  Invalid misc:169218   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14049  Invalid misc:169233   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# watch reporter
+1.248.64.31@meshbox:~# ping 1.241.56.218
+PING 1.241.56.218 (1.241.56.218): 56 data bytes
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 5800 5155   0 0000  40  01 66a0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 5800 5255   0 0000  40  01 65a0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5355   0 0000  40  01 4ca0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5455   0 0000  40  01 4ba0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5555   0 0000  40  01 4aa0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5655   0 0000  40  01 49a0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5755   0 0000  40  01 48a0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 7000 5855   0 0000  40  01 47a0 1.248.64.31  1.248.64.31 
+64 bytes from 1.248.64.31: Destination Host Unreachable
+Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst Data
+ 4  5  c0 5800 5955   0 0000  40  01 5ea0 1.248.64.31  1.248.64.31 
+--- 1.241.56.218 ping statistics ---
+11 packets transmitted, 0 packets received, 100% packet loss
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14138  Invalid misc:169273   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 112 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14138  Invalid misc:169273   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14166  Invalid misc:169297   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 116 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14166  Invalid misc:169297   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 116 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14166  Invalid misc:169297   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 116 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14197  Invalid misc:169336   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 115 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr=65534 B   
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:14197  Invalid misc:169336   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 113 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.93.105.236 1.188.212.31 2 255
+1.248.64.31@meshbox:~# Killed by signal 15.
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Sat Oct  1 14:00:38 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:485  Invalid misc:4958   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.93.105.236 1.93.105.236 1 102 (0% @ 30)
+1.241.56.218 1.241.56.218 1 114 (100% @ 0)
+1.188.212.31 1.188.212.31 1 117 (100% @ 0)
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# blocknode 1.93.105.236
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:510  Invalid misc:5016   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.241.56.218 1.241.56.218 1 114 (100% @ 0)
+1.188.212.31 1.188.212.31 1 117 (100% @ 0)
+1.93.105.236 1.188.212.31 2 255
+1.70.18.140 1.188.212.31 3 255
+1.248.64.31@meshbox:~# ssh 1.70.18.140
+root@1.70.18.140's password: 
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.70.18.140@meshbox:~# cd finalTest/initTCP_rtsOff.sh 
+bash: cd: finalTest/initTCP_rtsOff.sh: Not a directory
+1.70.18.140@meshbox:~# cd finalTest/
+1.70.18.140@meshbox:~/finalTest# ./initTCP_rtsOff.sh 
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+                                                                               
+Broadcast Message from root@meshbox                                            
+        (somewhere) at 14:11 ...                                               
+                                                                               
+Attempting to connect gateway 1.241.56.218                                     
+
+                                                                               
+                                                                               
+Broadcast Message from root@meshbox                                            
+        (somewhere) at 14:11 ...                                               
+                                                                               
+New gateway found at 172.16.245.1                                              
+
+                                                                               
+[  6] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32793
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   911 KBytes   373 Kbits/sec
+[  6]  0.0-20.7 sec   944 KBytes   373 Kbits/sec
+[  6] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32797
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   706 KBytes   289 Kbits/sec
+[  6]  0.0-20.6 sec   736 KBytes   292 Kbits/sec
+[  6] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32801
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   758 KBytes   310 Kbits/sec
+[  6]  0.0-20.5 sec   784 KBytes   313 Kbits/sec
+[  6] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32805
+[  7] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32810
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0-20.0 sec   551 KBytes   226 Kbits/sec
+[  7]  0.0-20.8 sec   576 KBytes   227 Kbits/sec
+[  7] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32814
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0-20.0 sec   613 KBytes   251 Kbits/sec
+[  7]  0.0-20.6 sec   632 KBytes   252 Kbits/sec
+[  7] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32818
+[  8] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32822
+[ ID] Interval       Transfer     Bandwidth
+[  8]  0.0-20.0 sec   639 KBytes   262 Kbits/sec
+[  8]  0.0-20.5 sec   656 KBytes   262 Kbits/sec
+[  8] local 1.70.18.140 port 5001 connected with 1.241.56.218 port 32826
+[ ID] Interval       Transfer     Bandwidth
+[  8]  0.0-20.0 sec   635 KBytes   260 Kbits/sec
+[  8]  0.0-21.7 sec   680 KBytes   257 Kbits/sec
+[  7]  0.0-20.0 sec  24.0 Bytes  9.60 bits/sec
+[  7] 20.0-40.0 sec  0.00 Bytes  0.00 bits/sec
+[SUM]  0.0-40.0 sec  2.38 MBytes   499 Kbits/sec
+[  7] 40.0-60.0 sec  0.00 Bytes  0.00 bits/sec
+[  7] 60.0-80.0 sec  0.00 Bytes  0.00 bits/sec
+[  7] 80.0-100.0 sec  0.00 Bytes  0.00 bits/sec
+[  7] 100.0-120.0 sec  2.52 KBytes  1.03 Kbits/sec
+[  7]  0.0-120.2 sec  16.0 KBytes  1.09 Kbits/sec
+
+247.25

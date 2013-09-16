@@ -1,0 +1,66 @@
+===== UPLOAD 1.93.105.236 UNIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32797 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.8 sec   600 KBytes   236 Kbits/sec
+===== UPLOAD 1.93.105.236 BIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32806 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-28.7 sec   104 KBytes  29.7 Kbits/sec
+===== UPLOAD 1.93.105.236 UNIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32818 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-21.4 sec   400 KBytes   153 Kbits/sec
+===== UPLOAD 1.93.105.236 UNIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32826 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.9 sec   768 KBytes   302 Kbits/sec
+===== UPLOAD 1.93.105.236 BIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32839 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-21.1 sec   328 KBytes   127 Kbits/sec
+===== UPLOAD 1.93.105.236 BIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.93.105.236, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32843 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-22.0 sec   288 KBytes   107 Kbits/sec

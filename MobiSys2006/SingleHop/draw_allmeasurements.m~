@@ -1,0 +1,252 @@
+%DRAW_ALLMEASUREMENTS.M
+%This script just draws all of our measurement locations with lines going
+%from the stationary node locations to the mobile node locations. 
+
+clear all
+
+map = imread('pecan_park_map_light.tif'); 
+
+figure
+hold on
+image(map)
+
+set(gca, 'FontSize', 16)
+
+%%%%%%%%%%%%%%%%%%%%%
+% 3-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_3_21_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 3-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 3-25 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_3_25_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 3-25 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 3-28 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_3_28_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 3-28 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+%%%%%%%%%%%%%%%%%%%%
+% 4-7 Measurements %
+%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_4_7_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%
+% End 4-7 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 4-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_4_21_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 4-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 5-10 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_5_10_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'bo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','b','markerfacecolor','b')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 5-10 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 5-12 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_5_12_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'mo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','m','markerfacecolor','m')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 5-12 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 5-17 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_5_17_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ko','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','k','markerfacecolor','k')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 5-17 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7-18 Measurements NOTE: just signal meas. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, N, W, Nstat, Wstat] = measurement_results_7_18_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'mo','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','m','markerfacecolor','m')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 7-18 Measurements (signal only)      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7-19 Measurements NOTE: just signal meas. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, N, W, Nstat, Wstat] = measurement_results_7_19_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ko','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','k','markerfacecolor','k')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 7-19 Measurements (signal only)      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7-26 Measurements NOTE: just signal meas. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, N, W, Nstat, Wstat] = measurement_results_7_26_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ro','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','r','markerfacecolor','r')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 7-26 Measurements (signal only)      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7-28 Measurements NOTE: just signal meas. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, N, W, Nstat, Wstat] = measurement_results_7_28_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ro','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y],'LineWidth',2.75,'color','r','markerfacecolor','r')
+scatter(xstat,ystat,'ko','filled')
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 7-28 Measurements (signal only)      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+set(gca, 'FontSize', 16)
+set(gca,'xtick',[800:200:1800])
+axis([0 70 0 6500])
+legend('1st Link','2nd Link','3rd Link', '4th Link','Clique','Location','Northwest')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Users Per Hop')
+ylabel('Aggregate Download Traffic (kbps)')
+colormap(copper)
+
+print -depsc aggregate_web

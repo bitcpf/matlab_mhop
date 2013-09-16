@@ -1,0 +1,156 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1073 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-22.4 sec   112 KBytes  41.0 Kbits/sec
+
+==========================
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1079 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-78.5 sec  16.0 KBytes  1.67 Kbits/sec
+
+==========================
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+BASE-ADDRESS.MC *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1083 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.2 sec  1.33 MBytes   550 Kbits/sec
+
+==========================
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+BASE-ADDRESS.MC *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1084 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.6 sec  1.33 MBytes   541 Kbits/sec
+
+==========================
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1093 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-47.6 sec  16.0 KBytes  2.75 Kbits/sec
+
+==========================
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+172.16.245.1    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+192.168.245.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.245.1    0.0.0.0         UG    0      0        0 tun0
+=========== DOWNLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.70.18.140 port 1095 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-36.5 sec   976 KBytes   219 Kbits/sec
+
+==========================
+
+

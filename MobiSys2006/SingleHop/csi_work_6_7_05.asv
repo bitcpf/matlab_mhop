@@ -1,0 +1,24 @@
+%CSI_work_6_7_05
+
+% syms h y sigma
+
+% absfun = abs(h - (2*h*y/(1-y)) + (h*(y^2)/((1-y)^2)));
+% fracfun = 1/sqrt(2*pi*sigma);
+% expfun = exp(-((h*y/(1-y))^2)/(2*sigma));
+% fun = y * absfun * fracfun * expfun;
+
+% intout = int(fun,y,-inf,inf);
+
+% pretty(intout)
+
+syms t h ht
+
+fun = (1/(t-1))^2;
+den = (1/pi) * (h/ht)/(t^2 + (h/ht)^2); %cauchy
+den2 = (1/sqrt(2*pi*ht^2)) * exp(-(t^2)/(2*ht^2))
+
+expr = fun * den;
+
+intout = int(expr,t,-inf,inf);
+
+pretty(intout)

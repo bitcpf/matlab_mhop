@@ -1,0 +1,110 @@
+%Plot WithAmp (different power levels) vs. WithoutAmp
+
+%bridgedata = [mean(pl_tcprtsoffdata(9:12,:)')', mean(pl_tcprtsoffdata(13:16,:)')', mean(pl_tcprtsondata(9:12,:)')', mean(pl_tcprtsondata(13:16,:)')']
+%min_bidirectionaldata = [min(linkdata(:,5:7)')', min(singleflowdata(:,5:7)')', min(TCPrtsoffdata(:,5:7)')']
+%max_bidirectionaldata = [max(linkdata(:,5:7)')', max(singleflowdata(:,5:7)')', max(TCPrtsoffdata(:,5:7)')']
+
+figure 
+hold on
+
+woutampcolumns(:,1)=[woutampdata(:,1);woutampdata(:,1)]
+woutampcolumns(:,2) = [woutampdata(:,2);woutampdata(:,3)]
+plot(woutampcolumns(:,1),woutampcolumns(:,2),'bx')
+
+wamp200columns(:,1)=[wampdata(:,1);wampdata(:,1);wampdata(:,1)]
+wamp200columns(:,2)=[wampdata(:,2);wampdata(:,3);wampdata(:,4)]
+plot(wamp200columns(:,1),wamp200columns(:,2),'r+')
+
+wamp100columns(:,1) = wamp200columns(:,1)
+wamp100columns(:,2)=[wampdata(:,5);wampdata(:,6);wampdata(:,7)]
+plot(wamp100columns(:,1),wamp100columns(:,2),'kd')
+
+wamp50columns(:,1) = wamp200columns(:,1)
+wamp50columns(:,2)=[wampdata(:,8);wampdata(:,9);wampdata(:,10)]
+plot(wamp50columns(:,1),wamp50columns(:,2),'g*')
+
+lolim = 0;
+hilim = 260;
+linevec = lolim:5:hilim;
+
+[sortdist,object]=sort(woutampcolumns(:,1),1)
+sortthru=woutampcolumns(object,2)
+
+p1 = polyfit(sortdist,sortthru,1)
+p2 = polyfit(sortdist,sortthru,2)
+p3 = polyfit(sortdist,sortthru,3)
+p4 = polyfit(sortdist,sortthru,4)
+
+poly1 = polyval(p1,sortdist);
+poly2 = polyval(p2,sortdist);
+poly3 = polyval(p3,sortdist);
+poly4 = polyval(p4,sortdist);
+
+%plot(sortdist,poly1,'b')
+%plot(sortdist,poly2,'b')
+%plot(sortdist,poly3,'b')
+plot(sortdist,poly4,'b')
+
+[sortdist,object]=sort(wamp200columns(:,1),1)
+sortthru=wamp200columns(object,2)
+
+p1 = polyfit(sortdist,sortthru,1)
+p2 = polyfit(sortdist,sortthru,2)
+p3 = polyfit(sortdist,sortthru,3)
+p4 = polyfit(sortdist,sortthru,4)
+
+poly1 = polyval(p1,sortdist);
+poly2 = polyval(p2,sortdist);
+poly3 = polyval(p3,sortdist);
+poly4 = polyval(p4,sortdist);
+
+%plot(sortdist,poly1,'r')
+%plot(sortdist,poly2,'r')
+%plot(sortdist,poly3,'r')
+plot(sortdist,poly4,'r--')
+
+[sortdist,object]=sort(wamp100columns(:,1),1)
+sortthru=wamp100columns(object,2)
+
+p1 = polyfit(sortdist,sortthru,1)
+p2 = polyfit(sortdist,sortthru,2)
+p3 = polyfit(sortdist,sortthru,3)
+p4 = polyfit(sortdist,sortthru,4)
+
+poly1 = polyval(p1,sortdist);
+poly2 = polyval(p2,sortdist);
+poly3 = polyval(p3,sortdist);
+poly4 = polyval(p4,sortdist);
+
+%plot(sortdist,poly1,'k')
+%plot(sortdist,poly2,'k')
+plot(sortdist,poly3,'k-.')
+%plot(sortdist,poly4,'k')
+
+[sortdist,object]=sort(wamp50columns(:,1),1)
+sortthru=wamp50columns(object,2)
+
+p1 = polyfit(sortdist,sortthru,1)
+p2 = polyfit(sortdist,sortthru,2)
+p3 = polyfit(sortdist,sortthru,3)
+p4 = polyfit(sortdist,sortthru,4)
+
+poly1 = polyval(p1,sortdist);
+poly2 = polyval(p2,sortdist);
+poly3 = polyval(p3,sortdist);
+poly4 = polyval(p4,sortdist);
+
+%plot(sortdist,poly1,'g:')
+%plot(sortdist,poly2,'g:')
+%plot(sortdist,poly3,'g:')
+plot(sortdist,poly4,'g:','LineWidth',4)
+
+%set(gca, 'FontSize', 14)
+%set(gca,'xtick',[1 2 3 4])
+axis([0 300 0 9500])
+legend('Without Amp', 'With Amp, Card Tx 200mW', 'With Amp, Card Tx 100mW', 'With Amp, Card Tx 50mW','Without Amp', 'With Amp, Card Tx 200mW', 'With Amp, Card Tx 100mW', 'With Amp, Card Tx 50mW','Location','Best')
+xlabel('Distance (meters)')
+ylabel('Throughput (kbps)')
+%colormap(copper)
+
+print -depsc amp_analysis

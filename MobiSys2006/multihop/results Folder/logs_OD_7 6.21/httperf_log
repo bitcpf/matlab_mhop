@@ -1,0 +1,89 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.70.18.140     1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+172.16.233.1    *               255.255.255.255 UH    0      0        0 tun0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+10.125.208.226  1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+192.168.233.0   *               255.255.255.0   U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+====== 10 USERS ==========
+httperf --client=0/1 --server=www.google.com --port=80 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=30 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 30 requests 30 replies 30 test-duration 6.703 s
+
+Connection rate: 4.5 conn/s (223.4 ms/conn, <=1 concurrent connections)
+Connection time [ms]: min 93.8 avg 223.4 max 3119.1 median 111.5 stddev 547.6
+Connection time [ms]: connect 51.1
+Connection length [replies/conn]: 1.000
+
+Request rate: 4.5 req/s (223.4 ms/req)
+Request size [B]: 65.0
+
+Reply rate [replies/s]: min 3.4 avg 3.4 max 3.4 stddev 0.0 (1 samples)
+Reply time [ms]: response 69.4 transfer 103.0
+Reply size [B]: header 302.0 content 1991.0 footer 2.0 (total 2295.0)
+Reply status: 1xx=0 2xx=30 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 1.57 system 5.06 (user 23.4% system 75.5% total 98.9%)
+Net I/O: 10.3 KB/s (0.1*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+====== 20 USERS ==========
+httperf --client=0/1 --server=www.google.com --port=80 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=60 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 60 requests 60 replies 60 test-duration 22.204 s
+
+Connection rate: 2.7 conn/s (370.1 ms/conn, <=1 concurrent connections)
+Connection time [ms]: min 90.9 avg 370.1 max 10300.6 median 110.5 stddev 1340.6
+Connection time [ms]: connect 49.6
+Connection length [replies/conn]: 1.000
+
+Request rate: 2.7 req/s (370.1 ms/req)
+Request size [B]: 65.0
+
+Reply rate [replies/s]: min 0.0 avg 2.6 max 5.6 stddev 2.9 (4 samples)
+Reply time [ms]: response 109.3 transfer 211.2
+Reply size [B]: header 302.0 content 1991.0 footer 2.0 (total 2295.0)
+Reply status: 1xx=0 2xx=60 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 4.86 system 17.17 (user 21.9% system 77.3% total 99.2%)
+Net I/O: 6.2 KB/s (0.1*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+====== 30 USERS ==========
+httperf --client=0/1 --server=www.google.com --port=80 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=90 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 47 requests 47 replies 46 test-duration 635.634 s
+
+Connection rate: 0.1 conn/s (13524.1 ms/conn, <=1 concurrent connections)
+Connection time [ms]: min 98.2 avg 1641.0 max 12276.9 median 154.5 stddev 2977.8
+Connection time [ms]: connect 55.9
+Connection length [replies/conn]: 1.000
+
+Request rate: 0.1 req/s (13524.1 ms/req)
+Request size [B]: 65.0
+
+Reply rate [replies/s]: min 0.0 avg 0.1 max 1.8 stddev 0.3 (127 samples)
+Reply time [ms]: response 1176.2 transfer 384.5
+Reply size [B]: header 302.0 content 1991.0 footer 2.0 (total 2295.0)
+Reply status: 1xx=0 2xx=46 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 144.91 system 485.24 (user 22.8% system 76.3% total 99.1%)
+Net I/O: 0.2 KB/s (0.0*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0

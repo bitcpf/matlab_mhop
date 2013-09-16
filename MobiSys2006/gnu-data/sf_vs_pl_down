@@ -1,0 +1,15 @@
+set terminal postscript eps monochrome
+set output "bargraph.eps" 
+
+set xrange[0:3]
+set yrange[0:5000]
+
+set ylabel "Accumulations"
+set boxwidth 0.3
+
+set xtics ( "Hop" 1, "Hop" 2, "Hop" 3, "Hop" 4)
+set mytics
+
+set grid
+
+plot "single_flow_down.dat" u 1:2 title "Single Active Flow" w boxes, "parking_lot_down.dat" u 1:2 title "All Active Flows" w boxes

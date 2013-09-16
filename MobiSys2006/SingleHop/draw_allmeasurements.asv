@@ -1,0 +1,50 @@
+%DRAW_ALLMEASUREMENTS.M
+%This script just draws all of our measurement locations with lines going
+%from the stationary node locations to the mobile node locations. 
+
+clear all
+
+map = imread('pecan_park_map.tif'); 
+
+figure
+hold on
+image(map)
+
+%%%%%%%%%%%%%%%%%%%%%
+% 3-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_3_21_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ko','filled')
+scatter(xstat,ystat,'ro','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y])
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 3-21 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% 3-25 Measurements %
+%%%%%%%%%%%%%%%%%%%%%
+[sig, sigvar, tcp, tcpvar, N, W, Nstat, Wstat] = measurement_results_3_25_05(0);
+L = length(N); %number of measurements
+for n = 1:L
+    [x(n),y(n)] = gps_2_xy(N(n),W(n));
+end
+[xstat,ystat] = gps_2_xy(Nstat,Wstat);
+%Add to map
+scatter(x,y,'ko','filled')
+scatter(xstat,ystat,'ro','filled')
+line([xstat*ones(1,L);x],[ystat*ones(1,L);y])
+axis ij
+clear sig sigvar tcp tcpvar N W Nstat Wstat L x y xstat ystat
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% End 3-25 Measurements %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+    

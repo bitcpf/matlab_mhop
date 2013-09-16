@@ -1,0 +1,70 @@
+From httperf-owner@napali.hpl.hp.com  Wed Oct 11 23:49:48 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id XAA01607
+	for httperf-outgoing; Wed, 11 Oct 2000 23:49:48 -0700
+Date: Wed, 11 Oct 2000 23:49:48 -0700
+Message-Id: <200010120649.XAA01602@napali.hpl.hp.com>
+X-Authentication-Warning: napali.hpl.hp.com: davidm set sender to davidm@hpl.hp.com using -f
+From: David Mosberger <davidm@hpl.hp.com>
+To: httperf@napali.hpl.hp.com
+Subject: [httperf] test
+X-URL: http://www.hpl.hp.com/personal/David_Mosberger/
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+hello
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Tue Oct 31 16:11:10 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id QAA11411
+	for httperf-outgoing; Tue, 31 Oct 2000 16:11:10 -0800
+Date: Tue, 31 Oct 2000 16:05:47 -0800
+Message-Id: <200011010005.QAA11310@napali.hpl.hp.com>
+X-Authentication-Warning: napali.hpl.hp.com: davidm set sender to davidm@hpl.hp.com using -f
+From: David Mosberger <davidm@hpl.hp.com>
+To: httperf@napali.hpl.hp.com
+Subject: [httperf] httperf v0.8 released
+X-URL: http://www.hpl.hp.com/personal/David_Mosberger/
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+You are receiving this mail because in the past you have contacted us
+regarding httperf.  This is the first and last mail sent in this
+fashion.  To participate in future discussions related to httperf,
+please consider joining the httperf mailing list.  To do so, send a
+mail with a body of "subscribe httperf" to:
+
+	majordomo@linux.hpl.hp.com
+
+There are two major changes with this release:
+
+	- Martin Arlitt contributed support for testing web servers
+	  via SSL (Secure Socket Layer).  Please see the README
+	  included as part of the httperf distribution for details.
+
+	- To encourage and faciliate the sharing of enhancements to
+          httperf, the license has been changed to the GNU General
+          Public License.
+
+Apart from these changes, various bug fixes and improvements have been
+applied.  In particular, httperf now uses the GNU "autoconf" scheme to
+automatically configure httperf for the system it is being built on.
+This should make it easier to port httperf to other UNIX-like
+platforms.  At present, httperf is known to work on Linux and HP-UX.
+
+The source code is available from:
+
+	ftp://ftp.hpl.hp.com/pub/httperf/
+
+Enjoy,
+
+	--david
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+

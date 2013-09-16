@@ -1,0 +1,20 @@
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.248.64.31 port 1050 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0- 6.0 sec  3.04 MBytes  4.25 Mbits/sec
+[  5]  6.0-12.0 sec  3.22 MBytes  4.50 Mbits/sec
+[  5] 12.0-18.0 sec  3.20 MBytes  4.47 Mbits/sec
+[  5] 18.0-24.0 sec  3.18 MBytes  4.45 Mbits/sec
+[  5] 24.0-30.0 sec  3.15 MBytes  4.40 Mbits/sec
+[  5]  0.0-30.2 sec  15.8 MBytes  4.39 Mbits/sec
+
+wlan0     Statistics collected:
+    00:04:E2:81:A5:F0 : Quality:238/92  Signal level:-24 dBm  Noise level:-30 dBm
+    00:04:E2:81:A5:E2 : Quality:9/92  Signal level:-13 dBm  Noise level:-30 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+=========================
+

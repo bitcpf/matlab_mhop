@@ -1,0 +1,19 @@
+%REGULAR_SQUARES.M
+%This is a first order approximation of where to put meshboxes based on
+%initial data and the premise that acceptable throughput can always be
+%achieved over a certain minimum distance. This script proposes the
+%coordinates for regularly spaced meshboxes to cover the entire Pecan Park
+%neighborhood.
+
+pixelrad = 100; %we assume that acceptable throughput can be achieved over a distance
+%of approximately 170 meters or 100 pixels on the map.
+
+startx = 1540; %coordinates of TFA antenna
+starty = 910;
+
+maxx = 2000; %maximum coordinates at which nodes could be placed
+maxy = 1600;
+
+[xvec,yvec] = tesselate_squares(maxx,maxy,startx,starty,pixelrad);
+
+validvec = pecan_park_boundary(xvec,yvec);

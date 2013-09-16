@@ -1,0 +1,11 @@
+%GPS2DIST.M
+%This function takes in two GPS coordinates in the form that is output from
+%Dr. Knightly's handheld GPS receiver, and it outputs the distance between
+%the two points in meters. NOTE: this function can accept vectors of points
+
+function dist = gps2dist(N1,W1,N2,W2)
+
+Ndiff = N1 - N2;
+Wdiff = W1 - W2;
+
+gpsdist = sqrt(Ndiff.^2 + Wdiff.^2);

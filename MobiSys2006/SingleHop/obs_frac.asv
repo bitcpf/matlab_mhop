@@ -1,0 +1,44 @@
+%OBS_FRAC.M
+%This function takes in values for xy coordinates of two points (a
+%measurement location and the corresponding fixed installation) and it
+%outputs the fraction of the path between the points that is obstructed by
+%buildings, etc. as determined from a map of Pecan Park. Hopefully, the
+%fraction of obstruction will correlate with pathloss exponent in some
+%meaningful way.
+
+function frac = obs_frac(x,y,xstat,ystat,m)
+
+map = imread('pecan_park_map.tif');
+
+rmat = map(:,:,1); %peel apart the color layers
+gmat = map(:,:,2);
+bmat = map(:,:,3);
+
+intmap = rgb_2_num(rmat,gmat,bmat); %convert colors to integers
+
+%obstruction is numbers 1,2,3,4,5 or 7
+
+los_indices = find((intmap == 0)|(intmap == 6)); %either green space or unclassified
+
+binmap = ones(size(map)); %preallocate a binary map
+binmap(los_indices) = 0; %place zeros where there is no obstruction present
+
+[colvec, rowvec] = find_line(x,y,xstat,ystat); %indices of intervening entries
+
+numpix = length(colvec);
+pathvec = zeros(numpix,1);
+for n = 1:numpix
+    pathvec(n) = binmap(colvec(n),rowvec(n)); %pull out the entries that lie along the path between the points
+end
+
+% size(pathvec)
+
+L = length(pathvec); %number of pixels traversed in path
+
+% size(L)
+
+S = sum(pathvec); %add up the number of obstructed pixels
+
+% size(S)
+
+frac = S/L; %fraction of total path consisting of obstructed pixels

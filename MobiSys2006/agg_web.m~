@@ -1,0 +1,22 @@
+figure 
+hold on
+
+x = [5:5:45;50:5:70]
+line(x,(webemulationdata2(4,:)+webemulationdata2(3,:)+webemulationdata2(2,:)+webemulationdata2(1,:))/2,'marker','d','markerfacecolor','k','color','k','LineWidth',1.75)
+line(x,(webemulationdata2(4,:)+webemulationdata2(3,:)+webemulationdata2(2,:))/2,'marker','s','markerfacecolor','b','color','b','LineWidth',1.75)
+line(x,(webemulationdata2(4,:)+webemulationdata2(3,:))/2,'marker','^','markerfacecolor','g','color','g','LineWidth',1.75)
+line(x,webemulationdata2(4,:)/2,'marker','v','markerfacecolor','r','color','r','LineWidth',1.75)
+
+line(x,(3*webemulationdata2(4,:)+3*webemulationdata2(3,:)+2*webemulationdata2(2,:)+webemulationdata2(1,:))/2,'marker','+','markerfacecolor','m','color','m','LineWidth',1.75)
+
+
+set(gca, 'FontSize', 16)
+set(gca,'xtick',[10:10:70])
+axis([0 70 0 6500])
+legend('1st Link','2nd Link','3rd Link', '4th Link','Clique','Location','Northwest')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Users Per Hop')
+ylabel('Aggregate Download Traffic (kbps)')
+colormap(copper)
+
+print -depsc aggregate_web

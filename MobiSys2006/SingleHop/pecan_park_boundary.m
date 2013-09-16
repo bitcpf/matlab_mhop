@@ -1,0 +1,107 @@
+%PECAN_PARK_BOUNDARY.M
+%This function takes in a point and returns a boolean indicating whether or
+%not that point is within the boundaries of the Pecan Park neighborhood as
+%defined by pecan_park_map.tif. The input coordinates should be in pixels.
+
+function out = pecan_park_boundary(x,y,tol)
+
+%the boundary of the neighborhood is roughly a pentagon, we will label the
+%vertices of the pentagon as a,b,c,d,e going clockwise from the westernmost
+%vertex
+
+ax = 150;
+ay = 850;
+
+bx = 900;
+by = 300;
+
+cx = 1250;
+cy = 300;
+
+dx = 2050;
+dy = 800;
+
+ex = 1100;
+ey = 1500;
+
+slopeab = (by - ay)/(bx - ax); %all edges go west to east
+xab = ax;%coordinates of edge origination point
+yab = ay;
+slopeae = (ey - ay)/(ex - ax);
+xae = ax;
+yae = ay;
+slopebc = (cy - by)/(cx - bx);
+xbc = bx;
+ybc = by;
+slopeed = (dy - ey)/(dx - ex);
+xed = ex;
+yed = ey;
+slopecd = (dy - cy)/(dx - cx);
+xcd = cx;
+ycd = cy;
+
+abcheck = zeros(length(y),1); %preallocate variables to indicate compliance with each individual boundary
+aecheck = zeros(length(y),1);
+bccheck = zeros(length(y),1);
+edcheck = zeros(length(y),1);
+cdcheck = zeros(length(y),1);
+
+%Edge AB test
+%The point must be above edge AB to be within the boundary
+threshab = slopeab*(x-xab)+yab;
+% if y>=threshab
+%     abcheck = 1;
+% end
+
+abcheck = (y>=threshab+tol);
+
+%Edge AE test
+%The point must be below edge AE to be within the boundary
+threshae = slopeae*(x-xae)+yae;
+% if y<=threshae
+%     aecheck = 1;
+% end
+aecheck = (y<=threshae-tol);
+
+%Edge BC test
+%The point must be above edge AE to be within the boundary
+threshbc = slopebc*(x-xbc)+ybc;
+% if y>=threshbc
+%     bccheck = 1;
+% end
+bccheck = (y>=threshbc+tol);
+
+%Edge ED test
+%The point must be below edge ED to be within the boundary
+threshed = slopeed*(x-xed)+yed;
+% if y<=threshed
+%     edcheck = 1;
+% end
+edcheck = (y<=threshed-tol);
+
+%Edge CD test
+%The point must be above edge CD to be within the boundary
+threshcd = slopecd*(x-xcd)+ycd;
+% if y>=threshcd
+%     cdcheck = 1;
+% end
+cdcheck = (y>=threshcd+tol);
+
+threshbroadway = 1600;
+broadwaycheck = x <= threshbroadway;
+
+% abcheck
+% aecheck
+% bccheck
+% edcheck
+% cdcheck
+
+% out = abcheck & aecheck & bccheck & edcheck & cdcheck;
+out = abcheck & aecheck & bccheck & edcheck & cdcheck & broadwaycheck;
+
+% map = imread('pecan_park_map.tif');
+% image(map)
+% figure
+% hold on
+% line([ax bx cx dx ex ax],[ay by cy dy ey ay])
+% scatter(x,y,'go','filled')

@@ -1,0 +1,24 @@
+%Single Active Comparison
+
+singleflowupdata = [mean(linkdata(1:4,:)')', mean(singleudpoffdata(1:4,:)')', mean(singletcpdata(1:4,:)')']
+%min_bidirectionaldata = [min(linkdata(:,5:7)')', min(singleflowdata(:,5:7)')', min(TCPrtsoffdata(:,5:7)')']
+%max_bidirectionaldata = [max(linkdata(:,5:7)')', max(singleflowdata(:,5:7)')', max(TCPrtsoffdata(:,5:7)')']
+
+figure 
+hold on
+
+normalizedupdata = [singleflowupdata(:,2)/singleflowupdata(1,2), singleflowupdata(:,3)/singleflowupdata(1,3)]
+
+%bar(max_bidirectionaldata)
+bar(singleflowupdata)
+%bar(min_bidirectionaldata)
+
+set(gca, 'FontSize', 14)
+set(gca,'xtick',[1 2 3 4])
+axis([.5 4.5 0 1])
+legend('UDP RTS/CTS Off',  'TCP RTS/CTS Off')
+xlabel('Number of Hops')
+ylabel('Bandwidth (Kbps)')
+colormap(hot)
+
+print -depsc singleflow_up

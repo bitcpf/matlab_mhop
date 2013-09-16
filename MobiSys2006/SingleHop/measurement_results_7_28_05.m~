@@ -1,0 +1,66 @@
+%MEASUREMENT_RESULTS_7_28_05.M
+%On 7-28 we used a baseball bat at Library at 40' and on the mobile unit at 30' 
+%No traffic was generated across the link, only signal strength
+%measurements were taken
+
+function [sig, sigvar, N, W, Nstat, Wstat] = measurement_results_7_28_05(dummy)
+
+sig = [-16
+       -13
+       -23.5
+       -23
+       -26.5
+       -15.5
+       -9.5
+       -14
+       -21
+       -24
+       -27
+       -14
+       -14
+       -14.5
+       -24.5
+       -23.5];
+
+
+sigvar = [1
+         0
+         0.5
+         1
+         0.5
+         1.5
+         0.5
+         1
+         2
+         2
+         0
+         1
+         1
+         1.5
+         1.5
+         1.5];
+
+N = [];
+
+
+W = [17.162
+     17.180
+     17.205
+     17.260
+     17.244
+     17.315
+     17.354
+     17.328
+     17.314
+     17.435
+     17.439
+     17.465
+     17.532
+     17.493
+     17.435];
+
+
+Nstat = 42.379;
+
+
+Wstat = 17.363;

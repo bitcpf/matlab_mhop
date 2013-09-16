@@ -1,0 +1,102 @@
+Last login: Sat Oct  1 13:39:34 on ttyp8
+Welcome to Darwin!
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Sat Oct  1 14:09:19 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# ssh 1.93.105.236
+[1]+  Interrupt               ( /bin/sleep 5; /bin/rm -f /tmp/gztmp$$ "/tmp/$prog" ) 2>/dev/null
+
+1.248.64.31@meshbox:~# ssh 1.118.212.31
+ssh: connect to host 1.118.212.31 port 22: No route to host
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:665  Invalid misc:5739   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.93.105.236 1.93.105.236 1 102 (0% @ 40)
+1.241.56.218 1.241.56.218 1 115 (100% @ 0)
+1.188.212.31 1.188.212.31 1 116 (100% @ 0)
+1.248.64.31@meshbox:~# blocknode 1.93.105
+1.248.64.31@meshbox:~# blocknode 1.93.105.236
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:699  Invalid misc:5941   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.241.56.218 1.241.56.218 1 115 (100% @ 0)
+1.188.212.31 1.188.212.31 1 117 (100% @ 0)
+1.248.64.31@meshbox:~# ssh 1.188.212.31
+root@1.188.212.31's password: 
+cd finalT       Connection to 1.188.212.31 closed.
+1.248.64.31@meshbox:~# ssh 1.188.212.31
+root@1.188.212.31's password: 
+Last login: Sat Oct  1 14:02:42 2005 from 1.248.64.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.188.212.31@meshbox:~# cd finalTest/
+1.188.212.31@meshbox:~/finalTest# ./initTCP_rtsOff.sh 
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32791
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec  1.27 MBytes   533 Kbits/sec
+[  6]  0.0-20.8 sec  1.33 MBytes   535 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32799
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec  1.58 MBytes   664 Kbits/sec
+[  6]  0.0-20.5 sec  1.62 MBytes   663 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32803
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-19.8 sec  1.43 MBytes   607 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32806
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec  3.69 MBytes  1.55 Mbits/sec
+[  6]  0.0-20.2 sec  3.72 MBytes  1.55 Mbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32812
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   794 KBytes   325 Kbits/sec
+[  6]  0.0-20.9 sec   816 KBytes   319 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32816
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   540 KBytes   221 Kbits/sec
+[  6]  0.0-21.0 sec   560 KBytes   218 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32824
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   791 KBytes   324 Kbits/sec
+[  6]  0.0-34.9 sec   888 KBytes   208 Kbits/sec
+[  6] local 1.188.212.31 port 5001 connected with 1.241.56.218 port 32828
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   658 KBytes   269 Kbits/sec
+[  6]  0.0-20.3 sec   688 KBytes   278 Kbits/sec
+
+561.625

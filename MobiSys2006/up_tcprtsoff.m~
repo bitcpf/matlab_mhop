@@ -1,0 +1,13 @@
+%Upload (link, single flow, tcprtsoff)
+
+uploaddata = [median(linkdata(:,5:7), 2), median(singleflowdata(:,5:7), 2), median(TCPrtsoffdata(:,5:7), 2)]
+bar(uploaddata)
+set(gca, 'FontSize', 14)
+axis([.5 4.5 0 4700])
+legend('Link Capacity', 'Single Active Flows', 'Concurrent Active Flows')
+xlabel('Number of Hops')
+ylabel('Upload Bandwidth (Kbps)')
+
+
+
+print -depsc pl_upload

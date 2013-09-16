@@ -1,0 +1,78 @@
+%Plot WithAmp (different power levels) vs. WithoutAmp
+
+%bridgedata = [mean(pl_tcprtsoffdata(9:12,:)')', mean(pl_tcprtsoffdata(13:16,:)')', mean(pl_tcprtsondata(9:12,:)')', mean(pl_tcprtsondata(13:16,:)')']
+%min_bidirectionaldata = [min(linkdata(:,5:7)')', min(singleflowdata(:,5:7)')', min(TCPrtsoffdata(:,5:7)')']
+%max_bidirectionaldata = [max(linkdata(:,5:7)')', max(singleflowdata(:,5:7)')', max(TCPrtsoffdata(:,5:7)')']
+
+figure 
+hold on
+
+woutampcolumns(:,1)=[woutampdata(:,1);woutampdata(:,1)]
+woutampcolumns(:,2) = [woutampdata(:,2);woutampdata(:,3)]
+plot(woutampcolumns(:,1),woutampcolumns(:,2),'bx')
+
+wamp200columns(:,1)=[wampdata(:,1);wampdata(:,1);wampdata(:,1)]
+wamp200columns(:,2)=[wampdata(:,2);wampdata(:,3);wampdata(:,4)]
+plot(wamp200columns(:,1),wamp200columns(:,2),'r+')
+
+wamp100columns(:,1) = wamp200columns(:,1)
+wamp100columns(:,2)=[wampdata(:,5);wampdata(:,6);wampdata(:,7)]
+plot(wamp100columns(:,1),wamp100columns(:,2),'kd')
+
+lolim = 0;
+hilim = 260;
+linevec = lolim:5:hilim;
+
+sortdist=sort(woutampcolumns,1,'descend')
+p1 = polyfit(sortdist(:,1),sortdist(:,2),1)
+p2 = polyfit(sortdist(:,1),sortdist(:,2),2)
+p3 = polyfit(sortdist(:,1),sortdist(:,2),3)
+
+poly1 = polyval(p1,sortdist(:,1));
+poly2 = polyval(p2,sortdist(:,1));
+poly3 = polyval(p3,sortdist(:,1));
+
+plot(sortdist(:,1),poly1,'b')
+plot(sortdist(:,1),poly2,'b')
+plot(sortdist(:,1),poly3,'b')
+
+sortdist=sort(wamp200columns,1,'descend')
+p1 = polyfit(sortdist(:,1),sortdist(:,2),1)
+p2 = polyfit(sortdist(:,1),sortdist(:,2),2)
+p3 = polyfit(sortdist(:,1),sortdist(:,2),3)
+
+poly1 = polyval(p1,sortdist(:,1));
+poly2 = polyval(p2,sortdist(:,1));
+poly3 = polyval(p3,sortdist(:,1));
+
+plot(sortdist(:,1),poly1,'r')
+plot(sortdist(:,1),poly2,'r')
+plot(sortdist(:,1),poly3,'r')
+
+
+sortdist=sort(wamp100columns,1,'descend')
+p1 = polyfit(sortdist(:,1),sortdist(:,2),1)
+p2 = polyfit(sortdist(:,1),sortdist(:,2),2)
+p3 = polyfit(sortdist(:,1),sortdist(:,2),3)
+
+poly1 = polyval(p1,sortdist(:,1));
+poly2 = polyval(p2,sortdist(:,1));
+poly3 = polyval(p3,sortdist(:,1));
+
+plot(sortdist(:,1),poly1,'k')
+plot(sortdist(:,1),poly2,'k')
+plot(sortdist(:,1),poly3,'k')
+
+%bar(max_bidirectionaldata)
+%bar(bidirectionaldata)
+%bar(min_bidirectionaldata)
+
+set(gca, 'FontSize', 14)
+%set(gca,'xtick',[1 2 3 4])
+axis([0 300 0 8000])
+legend('Without Amp', 'With Amp, Card Tx 200mW', 'With Amp, Card Tx 100mW')
+xlabel('Distance (meters)')
+ylabel('Throughput (kbps)')
+%colormap(copper)
+
+%print -depsc bidirectional_tcp

@@ -1,0 +1,26 @@
+%ELLIPSE.M
+%This function takes in 2 foci and a "radius" as well as maximum x and y
+%coordinates, then it produces a filled ellipse of the given dimensions
+
+function ellipsemat = ellipse(maxx,maxy,f1x,f1y,f2x,f2y,r)
+
+ellipsemat = zeros(maxy,maxx); %preallocate a matrix to hold the circles
+
+% L = length(centerx); %this is the number of circles to plot
+
+for n = 1:maxx
+    for m = 1:maxy
+        
+        x1dist = n - f1x;
+        x2dist = n - f2x;
+        y1dist = m - f1y;
+        y2dist = m - f2y;
+        
+        dist1 = sqrt(x1dist.^2 + y1dist.^2);
+        dist2 = sqrt(x2dist.^2 + y2dist.^2);
+        
+        dist = dist1 + dist2;
+        
+        if (dist <= r)
+        ellipsemat(m,n) = 1
+         

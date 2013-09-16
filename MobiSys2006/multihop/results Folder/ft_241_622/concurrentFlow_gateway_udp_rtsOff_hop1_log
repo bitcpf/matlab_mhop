@@ -1,0 +1,70 @@
+===== UPLOAD 1.248.64.31 UNIDIRECTIONAL FLOW========
+
+------------------------------------------------------------
+Client connecting to 1.248.64.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+===========================================
+[  5] local 1.241.56.218 port 32770 connected with 1.248.64.31 port 1024
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+172.16.245.2    *               255.255.255.255 UH    0      0        0 tun3
+172.16.2.1      *               255.255.255.255 UH    0      0        0 eth0
+172.16.233.2    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+172.16.232.2    *               255.255.255.255 UH    0      0        0 tun2
+172.16.197.2    *               255.255.255.255 UH    0      0        0 tun1
+10.209.150.17   1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.241.56.218    255.255.255.255 UGH   0      0        0 br0
+172.16.2.0      *               255.255.255.0   U     0      0        0 eth0
+192.168.169.0   *               255.255.255.0   U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.2.1      0.0.0.0         UG    0      0        0 eth0
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  8.57 MBytes  3.59 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 6114 datagrams
+===== UPLOAD 1.248.64.31 BIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.248.64.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32776 connected with 1.248.64.31 port 1024
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+172.16.245.2    *               255.255.255.255 UH    0      0        0 tun3
+172.16.2.1      *               255.255.255.255 UH    0      0        0 eth0
+172.16.233.2    *               255.255.255.255 UH    0      0        0 tun0
+1.70.18.140     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+172.16.232.2    *               255.255.255.255 UH    0      0        0 tun2
+172.16.197.2    *               255.255.255.255 UH    0      0        0 tun1
+10.209.150.17   1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.241.56.218    1.241.56.218    255.255.255.255 UGH   0      0        0 br0
+172.16.2.0      *               255.255.255.0   U     0      0        0 eth0
+192.168.169.0   *               255.255.255.0   U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.2.1      0.0.0.0         UG    0      0        0 eth0
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  14.2 MBytes  5.95 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 10137 datagrams

@@ -1,0 +1,122 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+172.16.197.1    *               255.255.255.255 UH    0      0        0 tun0
+1.241.56.218    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+192.168.197.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.197.1    0.0.0.0         UG    0      0        0 tun0
+=========== UPLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1024 connected with 1.70.18.140 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  10.2 MBytes  4.28 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 7287 datagrams
+
+
+============ DOWNLOAD ============
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1024 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  4.84 MBytes  2.03 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 3453 datagrams
+==========================
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+172.16.197.1    *               255.255.255.255 UH    0      0        0 tun0
+1.241.56.218    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+192.168.197.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.197.1    0.0.0.0         UG    0      0        0 tun0
+=========== UPLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1086 connected with 1.70.18.140 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0- 8.7 sec  4.54 MBytes  4.39 Mbits/sec
+
+
+============ DOWNLOAD ============
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1086 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0- 2.8 sec  1.07 MBytes  3.18 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 766 datagrams
+==========================
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.70.18.140     1.70.18.140     255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.93.105.236    255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+172.16.197.1    *               255.255.255.255 UH    0      0        0 tun0
+1.241.56.218    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+192.168.197.0   *               255.255.255.0   U     0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.197.1    0.0.0.0         UG    0      0        0 tun0
+=========== UPLOAD ==============
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1086 connected with 1.70.18.140 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  10.2 MBytes  4.28 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 7294 datagrams
+
+
+============ DOWNLOAD ============
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1086 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  7.08 MBytes  2.97 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 5049 datagrams
+==========================
+

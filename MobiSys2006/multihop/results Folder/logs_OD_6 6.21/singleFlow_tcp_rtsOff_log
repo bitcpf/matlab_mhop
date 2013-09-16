@@ -1,0 +1,18 @@
+
+wlan0     Statistics collected:
+    00:04:E2:81:A5:EF : Quality:9/92  Signal level:-14 dBm  Noise level:-31 dBm (updated)
+    00:04:E2:80:6A:2E : Quality:237/92  Signal level:-25 dBm  Noise level:-31 dBm (updated)
+    00:04:E2:81:A5:E2 : Quality:249/92  Signal level:-20 dBm  Noise level:-31 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+==========================
+
+
+wlan0     Statistics collected:
+    00:04:E2:81:A5:EF : Quality:9/92  Signal level:-14 dBm  Noise level:-31 dBm (updated)
+    00:04:E2:80:6A:2E : Quality:238/92  Signal level:-24 dBm  Noise level:-31 dBm (updated)
+    00:04:E2:81:A5:E2 : Quality:249/92  Signal level:-20 dBm  Noise level:-31 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+==========================
+

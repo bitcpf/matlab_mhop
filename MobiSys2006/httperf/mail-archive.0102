@@ -1,0 +1,218 @@
+From httperf-owner@napali.hpl.hp.com  Thu Feb  1 08:09:07 2001
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id IAA27512
+	for httperf-outgoing; Thu, 1 Feb 2001 08:09:07 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+X-Originating-IP: [62.253.230.129]
+From: "Kay McGinn" <kaymcginn@hotmail.com>
+To: httperf@napali.hpl.hp.com
+Subject: [httperf] General questions
+Date: Thu, 01 Feb 2001 16:07:40 -0000
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+Message-ID: <F140pzhad2VqKwRPQIW000021d7@hotmail.com>
+X-OriginalArrivalTime: 01 Feb 2001 16:07:41.0272 (UTC) FILETIME=[1AA30580:01C08C69]
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+Very new to httperf - I have a number of very basic questions:
+
+1.  Is httperf available for Windows platform?
+
+2.  Need to test various combinations of httperf simulating browsers sending 
+requests to a secure web site (SSLv3).  Is it possible to simulate 
+individual SSL connections?  Similarly, simultaneous connections.
+
+3.  Can httperf be used to simulate x number of sessions/connections, so 
+that memory leaks can be identified.
+
+4.  Measure the number of pages that can be sent/received in a reasonable 
+time.
+
+Is there a httperf newsgroup that I can look at to see what other people 
+have asked?
+
+Many thanks
+
+Kay McGinn
+_________________________________________________________________________
+Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com.
+
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Thu Feb  1 16:28:04 2001
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id QAA31952
+	for httperf-outgoing; Thu, 1 Feb 2001 16:28:04 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Message-ID: <3A7A0B10.A1F0EB12@hpl.hp.com>
+Date: Fri, 02 Feb 2001 01:19:13 +0000
+From: "Martin F. Arlitt" <arlitt@hpl.hp.com>
+Organization: Hewlett-Packard Laboratories
+X-Mailer: Mozilla 4.51 [en] (X11; U; Linux 2.0.35 i686)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] General questions
+References: <F140pzhad2VqKwRPQIW000021d7@hotmail.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+Kay
+
+I can answer some of your questions.
+
+Kay McGinn wrote:
+
+> Very new to httperf - I have a number of very basic questions:
+>
+> 1.  Is httperf available for Windows platform?
+
+httperf does not run on Windows.  It does run
+on Linux, which will run on the same hardware
+as Windows...
+
+> 2.  Need to test various combinations of httperf simulating browsers sending
+> requests to a secure web site (SSLv3).  Is it possible to simulate
+> individual SSL connections?  Similarly, simultaneous connections.
+
+it is possible to do both.
+
+> 3.  Can httperf be used to simulate x number of sessions/connections, so
+> that memory leaks can be identified.
+
+it can be used to simulate either.
+
+> 4.  Measure the number of pages that can be sent/received in a reasonable
+> time.
+
+it does collect a variety of statistics on connections established,
+requests issued, responses received,  sessions generated, etc.  These
+should provide the information you need.
+
+> Is there a httperf newsgroup that I can look at to see what other people
+> have asked?
+
+I don't know the answer to this one.
+
+> Many thanks
+>
+> Kay McGinn
+> _________________________________________________________________________
+
+Martin
+
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Thu Feb  1 17:48:06 2001
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id RAA32050
+	for httperf-outgoing; Thu, 1 Feb 2001 17:48:06 -0800
+X-Authentication-Warning: napali.hpl.hp.com: davidm set sender to davidm@hpl.hp.com using -f
+From: David Mosberger <davidm@hpl.hp.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14970.4565.817213.616319@napali.hpl.hp.com>
+Date: Thu, 1 Feb 2001 17:48:05 -0800
+To: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] General questions
+In-Reply-To: <F140pzhad2VqKwRPQIW000021d7@hotmail.com>
+References: <F140pzhad2VqKwRPQIW000021d7@hotmail.com>
+X-Mailer: VM 6.76 under Emacs 20.4.1
+X-URL: http://www.hpl.hp.com/personal/David_Mosberger/
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+Kay,
+
+Martin answered most of your questions already, so I'll handle the
+remaining one:
+
+>>>>> On Thu, 01 Feb 2001 16:07:40 -0000, "Kay McGinn" <kaymcginn@hotmail.com> said:
+
+  Kay> Is there a httperf newsgroup that I can look at to see what
+  Kay> other people have asked?
+
+No, this mailing list is it for now.  I do have an archive of all
+previous mails to the list.  If there is interest, I should be able to
+make them available via ftp fairly easily.  I realize that a web
+interface probably would be better, but I'm afraid that the corporate
+rules for putting up web pages would make this a less-than-trivial
+project, so ftp would be the most expedient solution.
+
+	--david
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Fri Feb  2 08:12:37 2001
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id IAA02961
+	for httperf-outgoing; Fri, 2 Feb 2001 08:12:37 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Message-ID: <3A7ADA1D.6C1FDF05@acceleratetv.com>
+Date: Fri, 02 Feb 2001 08:02:38 -0800
+From: Jason Lee <english@acceleratetv.com>
+Organization: AccelerateTV
+X-Mailer: Mozilla 4.75 (Macintosh; U; PPC)
+X-Accept-Language: en,pdf
+MIME-Version: 1.0
+To: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] General questions
+References: <F140pzhad2VqKwRPQIW000021d7@hotmail.com> <14970.4565.817213.616319@napali.hpl.hp.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+Hi David,
+
+I for one would love to have a copy of the archive. I am starting to use httperf extensively and could use all the help I can get!. Also, does anyone have a statically linked Solaris 2.7/2.8 binary -
+I'll be damned if I can get it to compile, but see that others have managed it.
+
+
+Thanks
+
+
+Jason Lee
+
+
+
+David Mosberger wrote:
+> 
+> Kay,
+> 
+> Martin answered most of your questions already, so I'll handle the
+> remaining one:
+> 
+> >>>>> On Thu, 01 Feb 2001 16:07:40 -0000, "Kay McGinn" <kaymcginn@hotmail.com> said:
+> 
+>   Kay> Is there a httperf newsgroup that I can look at to see what
+>   Kay> other people have asked?
+> 
+> No, this mailing list is it for now.  I do have an archive of all
+> previous mails to the list.  If there is interest, I should be able to
+> make them available via ftp fairly easily.  I realize that a web
+> interface probably would be better, but I'm afraid that the corporate
+> rules for putting up web pages would make this a less-than-trivial
+> project, so ftp would be the most expedient solution.
+> 
+>         --david
+> 
+> --
+> To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+

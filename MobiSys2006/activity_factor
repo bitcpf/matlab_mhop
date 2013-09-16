@@ -1,0 +1,18 @@
+figure 
+hold on
+
+x = [5, 10, 14,	18,	23,	27,	31,	34,	37,	40,	43,	47,	49,	52,	54,	58,	59,	62,	65,	69,	71,	74,	77,	80]
+y=.029*5*4*x/7
+line(x,y,'marker','d','markerfacecolor','k','color','k','LineWidth',1.75)
+
+
+set(gca, 'FontSize', 16)
+set(gca,'xtick',[10:10:80])
+axis([0 80])
+%legend('1st Hop Node','2nd Hop Node','3rd Hop Node', '4th Hop Node','Location','Northwest')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Users Per Hop')
+ylabel('Activity Factor')
+colormap(copper)
+
+print -depsc activity_factor

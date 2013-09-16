@@ -1,0 +1,24 @@
+%PATHLOSS_CURVE.M
+%This function takes in a distance vector, a pathloss exponent, and a system
+%loss parameter (due to cables, etc.)
+
+function Pr = pathloss_curve(dvec, alpha, L)
+
+Pt = 200; %200 mW transmitted power
+Gtdb = 15; %15 dBi antenna
+Gt = 10^(Gtdb/10); %linear antenna gain
+Grdb = 15;
+Gr = 10^(Grdb/10);
+f = 2.4e6; %2.4 GHz carrier frequency
+c = 3e8; %speed of light in m/s
+lambda = c/f; %wavelength
+
+% dvec = mindist:maxdist; %vector of distances to consider
+Pr = zeros(length(dvec),1); %preallocate vector hold received power values
+
+num = Pt * Gt * Gr * (lambda^2);
+
+denom = (dvec.^alpha) * L * ((4*pi)^2);
+
+Pr = num./denom;
+

@@ -1,0 +1,26 @@
+===== UPLOAD 1.70.18.140 UNIDIRECTIONAL FLOW========
+
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32774 connected with 1.70.18.140 port 1024
+===========================================
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.1 sec  8.38 MBytes  3.49 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 5981 datagrams
+===== UPLOAD 1.70.18.140 BIDIRECTIONAL FLOW========
+
+===========================================
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32780 connected with 1.70.18.140 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  13.3 MBytes  5.55 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 9453 datagrams

@@ -1,0 +1,68 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.70.18.140     1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+172.16.232.1    *               255.255.255.255 UH    0      0        0 tun0
+10.209.150.17   10.209.150.17   255.255.255.255 UGH   0      0        0 br1
+1.241.56.218    1.241.56.218    255.255.255.255 UGH   0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+192.168.199.0   *               255.255.255.0   U     0      0        0 br1
+192.168.232.0   *               255.255.255.0   U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br1
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br1
+loopback        *               255.0.0.0       U     0      0        0 lo
+base-address.mc *               240.0.0.0       U     0      0        0 br0
+default         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+============= DOWNLOAD ============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, UDP port 1037
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.248.64.31 port 1025 connected with 1.241.56.218 port 1037
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  8.85 MBytes  3.71 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 6313 datagrams
+
+==========================
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.248.64.31     1.248.64.31     255.255.255.255 UGH   0      0        0 br0
+1.70.18.140     1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+1.93.105.236    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+1.188.212.31    1.188.212.31    255.255.255.255 UGH   0      0        0 br0
+172.16.232.1    *               255.255.255.255 UH    0      0        0 tun0
+10.209.150.17   10.209.150.17   255.255.255.255 UGH   0      0        0 br1
+1.241.56.218    1.241.56.218    255.255.255.255 UGH   0      0        0 br0
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+192.168.199.0   *               255.255.255.0   U     0      0        0 br1
+192.168.232.0   *               255.255.255.0   U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+1.0.0.0         *               255.0.0.0       U     0      0        0 br1
+1.0.0.0         *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br0
+10.0.0.0        *               255.0.0.0       U     0      0        0 br1
+loopback        *               255.0.0.0       U     0      0        0 lo
+BASE-ADDRESS.MC *               240.0.0.0       U     0      0        0 br0
+default         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+============= DOWNLOAD ============
+------------------------------------------------------------
+Client connecting to 1.241.56.218, UDP port 1037
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.248.64.31 port 1030 connected with 1.241.56.218 port 1037
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  9.30 MBytes  3.90 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 6637 datagrams
+
+==========================
+

@@ -1,0 +1,66 @@
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+
+
+===========================================
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32800 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.5 sec   664 KBytes   265 Kbits/sec
+===== UPLOAD 1.188.212.31 BIDIRECTIONAL FLOW========
+===========================================
+
+
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32809 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-22.5 sec   416 KBytes   151 Kbits/sec
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32821 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.4 sec   600 KBytes   241 Kbits/sec
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32829 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.2 sec   880 KBytes   357 Kbits/sec
+===== UPLOAD 1.188.212.31 BIDIRECTIONAL FLOW========
+
+
+===========================================
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32847 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-22.3 sec   256 KBytes  94.0 Kbits/sec
+===== UPLOAD 1.188.212.31 BIDIRECTIONAL FLOW========
+
+===========================================
+
+------------------------------------------------------------
+Client connecting to 1.188.212.31, TCP port 5001
+TCP window size: 16.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32852 connected with 1.188.212.31 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-21.1 sec   352 KBytes   137 Kbits/sec

@@ -1,0 +1,73 @@
+------------------------------------------------------------
+Client connecting to 1.93.105.236, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.188.212.31 port 1037 connected with 1.93.105.236 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5] -0.0- 6.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  6.0-12.0 sec   531 KBytes   725 Kbits/sec
+[  5] 12.0-18.0 sec   662 KBytes   904 Kbits/sec
+[  5] 18.0-24.0 sec   746 KBytes  1.02 Mbits/sec
+[  5] 24.0-30.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  0.0-30.0 sec  3.40 MBytes   949 Kbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2422 datagrams
+
+wlan0     Statistics collected:
+    00:04:E2:80:6A:2E : Quality:13/92  Signal level:-12 dBm  Noise level:-31 dBm (updated)
+    00:04:E2:81:A5:EF : Quality:232/92  Signal level:-26 dBm  Noise level:-30 dBm
+    00:04:E2:81:A5:F0 : Quality:249/92  Signal level:-19 dBm  Noise level:-30 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+=========================
+
+------------------------------------------------------------
+Client connecting to 1.241.56.218, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.188.212.31 port 1024 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5] -0.0- 6.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  6.0-12.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 12.0-18.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 18.0-24.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 24.0-30.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  0.0-30.0 sec  3.75 MBytes  1.05 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2676 datagrams
+
+wlan0     Statistics collected:
+    00:04:E2:81:69:48 : Quality:21/92  Signal level:-8 dBm  Noise level:-30 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+=========================
+
+------------------------------------------------------------
+Server listening on UDP port 5001
+Receiving 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+------------------------------------------------------------
+Client connecting to 1.241.56.218, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  6] local 1.188.212.31 port 1024 connected with 1.241.56.218 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  6] -0.0- 6.0 sec   768 KBytes  1.05 Mbits/sec
+[  6]  6.0-12.0 sec   768 KBytes  1.05 Mbits/sec
+[  6] 12.0-18.0 sec   768 KBytes  1.05 Mbits/sec
+[  6] 18.0-24.0 sec   768 KBytes  1.05 Mbits/sec
+[  6] 24.0-30.0 sec   768 KBytes  1.05 Mbits/sec
+[  6]  0.0-30.0 sec  3.75 MBytes  1.05 Mbits/sec
+[  6] WARNING: did not receive ack of last datagram after 10 tries.
+[  6] Sent 2676 datagrams
+
+wlan0     Statistics collected:
+    00:04:E2:81:69:48 : Quality:20/92  Signal level:-8 dBm  Noise level:-30 dBm (updated)
+    typical/average   : Quality:0  Signal level:0  Noise level:0
+
+=========================
+

@@ -1,0 +1,21 @@
+
+figure 
+hold on
+
+x = [5,10,15,20,25,30,35,40,45,50]
+line(x,packetlossdata(1,'marker','d','markerfacecolor','k','color','k','LineWidth',1.75)
+line(x,1-(webemulationdata(2,:)*7)/(5*x*30*8),'marker','s','markerfacecolor','b','color','b','LineWidth',1.75)
+line(x,1-(webemulationdata(3,:)*7)/(5*x*30*8),'marker','^','markerfacecolor','g','color','g','LineWidth',1.75)
+line(x,1-(webemulationdata(4,:)*7)/(5*x*30*8),'marker','v','markerfacecolor','r','color','r','LineWidth',1.75)
+
+
+set(gca, 'FontSize', 16)
+set(gca,'xtick',[5 10 15 20 25 30 35 40 45 50])
+axis([0 55 0 1])
+legend('1st Hop Node','2nd Hop Node','3rd Hop Node', '4th Hop Node','Location','Northeast')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Users Per Hop')
+ylabel('Packet Loss (Percent)')
+colormap(copper)
+
+print -depsc web_packetloss

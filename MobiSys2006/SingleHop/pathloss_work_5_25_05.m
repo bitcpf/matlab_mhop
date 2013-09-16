@@ -1,0 +1,49 @@
+%pathloss_work_5_25_05.m
+
+L = 0.3751;
+% L = 118.62;
+
+Gtdb = 15;
+Grdb = 15;
+
+c = 3e8; %speed of light
+f = 2.4e9; %carrier frequency
+lambda = c/f; %wavelength
+
+Ptdb = 10*log10(200);
+
+[sig1,sigvar1,udp1,udpvar1,dist1] = measurement_results_5_10_05(0);
+[sig2,sigvar2,udp2,udpvar2,dist2] = measurement_results_5_17_05(0);
+
+sigmat1 = [(sig1(:) - sigvar1(:)), sig1(:), (sig1(:) + sigvar1(:))];
+sigmat2 = [(sig2(:) - sigvar2(:)), sig2(:), (sig2(:) + sigvar2(:))];
+
+distmat1 = [dist1(:), dist1(:), dist1(:)];
+distmat2 = [dist2(:), dist2(:), dist2(:)];
+
+s = [sigmat1(:); sigmat2(:)] - 40;
+d = [distmat1(:); distmat2(:)];
+
+slin = 10.^(s/10); %linear signal power
+
+Prdb = s;
+
+alpha = plexp(d,L,Gtdb,Grdb,Ptdb,Prdb,lambda);
+
+thalpha = 3.2;
+thslin = (Pt*Gt*Gr*(lambda^2))./(((4*pi)^2)*(d.^thalpha)*L); %theoretical linear signal power
+
+figure
+hold on
+stem(d,slin,'b')
+stem(d,thslin,'r')
+xlabel('Distance')
+ylabel('Signal Power')
+title('Theoretical and Actual Signal Power vs. Distance')
+legend('Actual','Theoretical')
+
+figure
+hist(alpha)
+xlabel('Pathloss Exponents')
+ylabel('Number of Instances')
+title('Pathloss Exponent Distribution')

@@ -1,0 +1,18 @@
+------------------------------------------------------------
+Client connecting to 1.70.18.140, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.93.105.236 port 1024 connected with 1.70.18.140 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5] -0.0- 6.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  6.0-12.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 12.0-18.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 18.0-24.0 sec   768 KBytes  1.05 Mbits/sec
+[  5] 24.0-30.0 sec   768 KBytes  1.05 Mbits/sec
+[  5]  0.0-30.0 sec  3.75 MBytes  1.05 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2676 datagrams
+
+=========================
+

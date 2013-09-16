@@ -1,0 +1,29 @@
+% sortsig = sortsig + 100;
+lolim = -88.7;
+hilim = -71.3;
+linevec = lolim:0.1:hilim;
+
+p1 = polyfit(sortsig,sortudp,1); %polynomial coefficients
+p2 = polyfit(sortsig,sortudp,2);
+p3 = polyfit(sortsig,sortudp,3);
+% xvec = min(sigvec):max(sigvec);
+% poly1 = polyval(p1,sortsig); %evaluate the fitting polynomial
+poly1 = polyval(p1,linevec);
+poly2 = polyval(p2,sortsig);
+poly3 = polyval(p3,sortsig);
+%diff1 = sortudp - poly1; %deviation from first order fit
+%diff2 = sortudp - poly2;    
+%diff3 = sortudp - poly3;
+figure
+hold on
+scatter(sortsig,sortudp,'b')
+plot(linevec,poly1,'k')
+% plot(sortsig,poly2,'r')
+% plot(sortsig,poly3,'g')
+% title('5-10 and 5-17 UDP Measurements')
+xlabel('Received Signal Strength (dBm)')
+ylabel('UDP Throughput (kb/s)')
+xlim([-100 -50])
+ylim([0 7000])
+line([-100, hilim; lolim, -50],[0, 6000; 0, 6000]) 
+end

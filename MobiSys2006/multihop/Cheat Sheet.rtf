@@ -1,0 +1,44 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf110
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Notes for Multihop Tests\
+\
+1. Upload TCP RTS off\
+	start TCP server on gateway: ./initTCP_rtsOff.sh\
+	from each node: ./concurrentFlow_tcp_rtsOff_upload.sh\
+\
+2. Upload TCP RTS on\
+	kill TCP server on gateway: CTRL-C\
+	start TCP server on gateway: ./initTCP_rtsOn.sh\
+	from each node: ./concurrentFlow_tcp_rtsOn_upload.sh\
+\
+3. Download TCP RTS off\
+	start TCP servers on each of the mesh nodes: ./initTCP_rtsOff.sh\
+	from gateway: ./concurrentFlow_gateway_tcp_rtsOff.sh\
+\
+4. Download TCP RTS on\
+	kill TCP servers on each of the mesh nodes: CTRL-C\
+	start TCP servers on each of the mesh nodes: ./initTCP_rtsOn.sh\
+	from gateway: ./concurrentFlow_gateway_tcp_rtsOn.sh\
+\
+5. Bidirectional TCP RTS on\
+	start TCP server on gateway: ./initTCP_rtsOn.sh\
+	from gateway: ./concurrentFlow_gateway_tcp_rtsOn_bidir.sh\
+	from each mesh: ./concurrentFlow_tcp_rtsOn_upload.sh\
+\
+6. Bidirectional TCP RTS off\
+	kill TCP server on gateway and on mesh nodes: CTRL-C\
+	start TCP server on gateway and mesh nodes: ./initTCP_rtsOff.sh\
+	from gateway: ./concurrentFlow_gateway_tcp_rtsOff_bidir.sh\
+	from each node: ./concurrentFlow_tcp_rtsOff_upload.sh\
+\
+7. Web Emulation - 60 seconds\
+  3, 6, 9, 12, 15, 18, 21, 24, 27, 30 users\
+  cd /mnt/hd2\
+  ./webemulator <seconds> <users>\
+  example: ./webemulator 60 3 \
+	60 seconds, 3 users\
+  record total bytes and duration}

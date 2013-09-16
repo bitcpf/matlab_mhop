@@ -1,0 +1,42 @@
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32784 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.1 sec  3.92 MBytes  1.64 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2797 datagrams
+
+===========================================
+
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32786 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  3.47 MBytes  1.45 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2477 datagrams
+
+===========================================
+
+===== UPLOAD 1.188.212.31 UNIDIRECTIONAL FLOW========
+------------------------------------------------------------
+Client connecting to 1.188.212.31, UDP port 1024
+Sending 1470 byte datagrams
+UDP buffer size: 64.0 KByte (default)
+------------------------------------------------------------
+[  5] local 1.241.56.218 port 32788 connected with 1.188.212.31 port 1024
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-20.0 sec  4.07 MBytes  1.71 Mbits/sec
+[  5] WARNING: did not receive ack of last datagram after 10 tries.
+[  5] Sent 2904 datagrams
+
+===========================================
+

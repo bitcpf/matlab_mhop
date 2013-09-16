@@ -1,0 +1,40 @@
+singleactiveudpdata = [mean(singleudpoffdata(1:4,:)')', mean(singleudpoffdata(5:8,:)')']
+%mean(singletcpdata(1:4,:)')', 
+%min_uploaddata = [min(linkdata(:,5:7)')', min(singleflowdata(:,5:7)')', min(TCPrtsoffdata(:,5:7)')']
+%max_uploaddata = [max(linkdata(:,5:7)')', max(singleflowdata(:,5:7)')', max(TCPrtsoffdata(:,5:7)')']
+
+figure 
+hold on
+
+%bar(max_uploaddata)
+bar(singleactiveudpdata)
+%bar(min_uploaddata)
+
+set(gca, 'FontSize', 14)
+set(gca,'xtick',[1 2 3 4])
+axis([.5 4.5 0 4500])
+legend('UDP Upload','UDP Download')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Hops')
+ylabel('Throughput (kbps)')
+colormap(copper)
+
+print -depsc singleactive_udp
+
+singleactivetcpdata = [mean(singletcpdata(1:4,:)')', mean(singletcpdata(5:8,:)')']
+
+figure 
+hold on
+
+bar(singleactivetcpdata)
+
+set(gca, 'FontSize', 16)
+set(gca,'xtick',[1 2 3 4])
+axis([.5 4.5 0 4500])
+legend('TCP Upload','TCP Download')
+%'Single Flow, RTS/CTS Off', 
+xlabel('Number of Hops from Gateway Node')
+ylabel('Upload Throughput (kbps)')
+colormap(copper)
+
+print -depsc singleactive_tcp

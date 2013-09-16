@@ -1,0 +1,72 @@
+%LIN_FIT_PATHLOSS.M
+%This function takes in a vector of received power data and a corresponding
+%vector of distance data. It outputs the alpha and L parameters of the best
+%fitting pathloss line in log domain, then it converts the line back to linear scale so it's logarithmic.
+
+function [bestP,bestalpha,bestL] = lin_fit_pathloss(distvec, sigvec)
+
+% logsigvec = 10*log10(sigvec);
+
+% pwrvec
+
+[sortdist,sortindex] = sort(distvec); %sort distances and record indices to sort pwrvec similarly
+
+sortsigvec = sigvec(sortindex);
+logsigvec = 10*log10(sortsigvec);
+
+alphamin = -10;
+alphamax = 10;
+alphastep = 1;
+
+Lmin = min(logsigvec);
+Lmax = max(logsigvec);
+Lstep = 1;
+
+bestalpha = 0;
+bestL = 0;
+bestP = zeros(size(distvec));
+besterror = inf;
+
+% pwrvec
+
+% sigvec = 10:1
+
+for alpha = alphamin:alphastep:alphamax
+    
+    for L = Lmin:Lstep:Lmax
+        
+        
+%         P = make_line(sortdist, L, alpha);
+        P = make_line(distvec,L,alpha);
+        
+        sqrerror = sum((P(:) - 10*log10(sigvec(:))).^2);
+
+%         sqrerror = sum((P(:) - logsigvec(:)).^2); %sum of the squared error between actual and predicted values
+%         abserror = sum(abs(P(:) - logsigvec(:))); %sum of the magnitudes of the errors
+        
+        
+        if sqrerror < besterror
+%         if abserror < besterror
+            bestP = P;
+            besterror = sqrerror;
+            bestalpha = alpha;
+            bestL = L;
+        end
+    end
+end
+
+% sortP = bestP(sortindex);
+% bestP = 10.^(bestP/10); %convert back to linear power
+
+
+figure
+hold on
+scatter(sortdist,logsigvec)
+% plot(sortdist,sortP)
+alldist = min(distvec):max(distvec);
+allP = make_line(alldist,bestL,bestalpha);
+% allP = pathloss_curve(alldist,bestalpha,bestL);
+plot(alldist,allP);
+% semilogy(alldist,allP);
+title([num2str(Lmin) ' -> ' num2str(Lmax)])
+

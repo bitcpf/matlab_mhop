@@ -1,0 +1,89 @@
+%TESSELATE_HEXAGONS.M
+%Given a matrix dimension and a leg length as well as a starting position, 
+%this function will return the coordinates of the vertices of a regular 
+%tesselation of polygons into the matrix. 
+
+function [xvec,yvec] = tesselate_hexagons(xmax,ymax,startx,starty,r)
+
+outmat = zeros(ymax,xmax); %preallocate the matrix with vertices
+
+xstep = round(r/2);% 
+xlo = 1 + mod(startx,xstep); %this is the minimum x that will have a vertex
+xhi = 1 + xmax - mod(xmax-startx,xstep); %maximum x that will have a vertex
+xvec = xlo:xstep:xhi; %vector of possible x coordinates
+xlen = length(xvec);
+
+[mindist,minindex] = min(abs(xvec - startx));
+
+xmod6 = mod(minindex,6); %we need to know where startx falls in the sequence
+if xmod6 == 2 %this would prevent us from placing a node at startx, that's bad
+    xvec = xvec(2:xlen); %cut off the lowest allowable location
+    xmod6 = 1; %this reduces xmod6 from 2 to 1
+end
+    
+if (xmod6 == 0)|(xmod6==4)
+    xeven = 1;
+else
+    xeven = 0;
+end
+%in half of the rows, we place nodes at indices with mod6 of 0 and 4, we
+%call these even
+%in the other half, we place nodes at indices with mod6 of 1 and 3
+%we call these odd
+
+ystep = round(sqrt(3/4)*r); %I'm not sure this number is right!!!!
+ylo = 1 + mod(starty,ystep);
+yhi = 1 + ymax - mod(ymax-starty,ystep);
+yvec = ylo:ystep:yhi;
+ylen = length(yvec);
+
+[mindist,minindex] = min(abs(yvec - starty));
+if mod(minindex,2)==1 %odd index of starting point
+    yeven = 0;
+else
+    yeven = 1;
+end
+
+for n = 6:6:xlen
+    
+    x0 = xvec(n); %multiple of 6
+    x5 = xvec(n-1); 
+    x4 = xvec(n-2); 
+    x3 = xvec(n-3);
+    x2 = xvec(n-2);
+    x1 = xvec(n-1);
+    
+    for m = 1:ylen
+        
+        cury = yvec(m);
+        
+        if (yeven&xeven) %even y's should match up with x's
+            if mod(m,2) == 1
+                curx1 = x0;
+                curx2 = x4;
+            else
+                curx1 = x1;
+                curx2 = x3;
+            end
+        else %crossed up x's and y's
+            if mod(m,2) == 1
+                curx1 = x1;
+                curx2 = x3;
+            else
+                curx1 = x0;
+                curx2 = x4;
+            end
+        end
+        
+        outmat(cury,curx1) = 1; %place ones at each vertex
+        outmat(cury,curx2) = 1;
+        
+    end
+    
+end
+
+[yvec,xvec] = find(outmat); %return vertices in vector form as well
+
+% figure
+imagesc(outmat)
+

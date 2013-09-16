@@ -1,0 +1,77 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fnil\fcharset77 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh9000\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs22 \cf0 run "ifconfig | grep tun* -A 7" initially on each node\
+run "reporter"\
+Dump routing tables ("route") before each test\
+\
+1. 6 trials of TCP, RTS/CTS off parking lot download ( X )  - done\
+\
+Tests to perform Saturday, June 25th\
+2. 6 trials of TCP, RTS/CTS on parking lot download ( X )\
+3. 3 trials of TCP, RTS/CTS on parking lot upload ( X ) \
+4. 3 trials of TCP, RTS/CTS off parking lot upload ( X )\
+5. 6 trials of TCP, RTS/CTS off parking lot bidirectional ( X )\
+6. 6 trials of TCP, RTS/CTS on parking lot bidirectional ( X )\
+\
+7*. httperf - 10 users - 3 trials (  )\
+		    20 users - 3 trials (  )\
+		    30 users - 3 trials (  )\
+		    40 users - 3 trials (  )\
+		    50 users - 3 trials (  )\
+		    60 users - 3 trials (  )\
+		    70 users - 3 trials (  )\
+		    80 users - 3 trials (  )\
+\
+8. 3 trials of UDP, RTS/CTS off single flow download (  )\
+9. 3 trials of UDP, RTS/CTS on single flow upload (  )\
+10*. 6 trials of UDP, RTS/CTS off parking lot download (  )\
+11*. 6 trials of UDP, RTS/CTS off parking lot upload (  )\
+12*. 6 trials of UDP, RTS/CTS on parking lot download (  )\
+13*. 6 trials of UDP, RTS/CTS on parking lot upload (  )\
+\
+14. 6 trials of TCP, RTS/CTS off single flow download ( X )\
+	-copy singleFlow_tcp_rtsOff.sh to each node\
+15. 6 trials of TCP, RTS/CTS off single flow upload ( X )\
+\
+16. 6 trials of Link Capacities\
+\
+\
+All UDP tests with a buffer size of 10m  (-b 10m)\
+\
+1. Link Capacities\
+	UDP Traffic - RTS/CTS off (port 1024)\
+2. Multi-hop Single Active Flows\
+	UDP Traffic - RTS/CTS off (port 1024)\
+3. Multi-hop Concurrent Flows\
+	Upload\
+		TCP Traffic - RTS/CTS on (port 1085)\
+		TCP Traffic - RTS/CTS off (port 1085)\
+		UDP Traffic - RTS/CTS off (port 1037)\
+	Download\
+		TCP Traffic - RTS/CTS on (port 1086)\
+		TCP Traffic - RTS/CTS off (port 1086)\
+		UDP Traffic - RTS/CTS off (port 1037)\
+	Bidirectional\
+		TCP Traffic - RTS/CTS on (port 1085, 1086)\
+		TCP Traffic - RTS/CTS off (port 1085, 1086)\
+		UDP Traffic - RTS/CTS off (port 1024, 1037)\
+4. Httperf (Concurrent Download Sessions on Port 80)\
+	10 users, 20 users, 30 users, ..., 100 users\
+\
+Port Configuration:\
+We need to keep track of the ports within the scripts.  If we had A being the gateway...\
+\
+A -- B -- C -- D -- E\
+\
+Each node would have ports assigned to the nearest neighbors (2), an incoming port (1), and a port going to A (1).\
+\
+Thus, D for example would have ports for traffic to C (DC), to E (DE), and to A (DA).  It would also have a port assigned to incoming traffic (D?).  For a total of 4 ports used.\
+\
+It looks like from the log files that the outgoing ports available are 1024 and 1037 for UDP, and 1085 and 1086 for TCP.\
+\
+The incoming port was always 5001.\
+}

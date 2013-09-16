@@ -15,7 +15,7 @@
     
   
     
- function out=distance_cal(Node,Gateways,C_th,CI_th)
+ function out=capacity_cal(Node,Gateways,C_th,CI_th)
 
 % clear all
 % close all
@@ -117,7 +117,8 @@ while(m<=m_g)
     m=m+1;
 end
 
-out=place_cap;
+[c_g,c_g_m]=size(Gateways);
+out=place_cap+c_g;
 
 
 

@@ -1,0 +1,1271 @@
+From httperf-owner@napali.hpl.hp.com  Wed Nov  1 22:24:23 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id WAA24667
+	for httperf-outgoing; Wed, 1 Nov 2000 22:24:23 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+From: "John Mendonca" <john_mendonca@hp.com>
+To: <httperf@napali.hpl.hp.com>
+Cc: <trong_nygen@hp.com>
+Subject: [httperf] Httperf and WebQoS Session Thruput Testing
+Date: Wed, 1 Nov 2000 22:25:30 -0800
+Message-ID: <FNEJJPOACHAEHAMPALKJEEAHCAAA.john_mendonca@hp.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2911.0)
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Importance: Normal
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+
+
+-----Original Message-----
+From: John Mendonca [mailto:john_mendonca@hp.com]
+Sent: Wednesday, November 01, 2000 10:19 PM
+To: httperf@napali.hpl.hp.com
+Cc: trong_nygen@hp.com
+Subject: Httperf and Multiple Cookies
+
+
+David,
+
+I was real happy to see your message about the version 0.8 of httperf which
+includes ssl. I feel that you continued interest in the software will help
+ensure its viability.
+
+In the WebQoS lab we've been using httperf extensively for testing session
+thruput.   I've run into several problems for which I've hacked minimally
+satisfactory solutions.
+
+1) WebQoS uses a browser cookie to keep track of web sessions. Many
+applications, particulary those using ".asp" pages also set browser cookies.
+Httperf only remembers one cookie per "web session" with --session-cookie,
+and this messes up our webqos tests since our qoscookie gets overwriten by
+the application or asp cookie.  I've hacked a solution to this problem by
+adding the parameter
+	--no-asp-cookies
+
+but httperf still only supports a single cookie per session. Have you or
+anyone else implemented a more elegant solution that keeps track of multiple
+cookies.
+
+2) When using webqos in session mode (--wsesslog) one may specify a session
+idle timeout (--timeout) and/or a error code (--failure-status) which will
+terminate httperf test sessions.  WebQoS uses one error code to terminate a
+session, sadly IIS generates another error code when it determines it is
+overloaded. The problem is that httperf will only use one error code to
+terminate a session. To fix this problem I've added a --fail-on-error
+parameter which will end a test session on any http 5xx error code.  I would
+like to give this code back to you or have you implement a better
+alternative.
+
+3) any thoughts on a windows 2k implementation.  Yes I realize that it would
+be a rewrite to implement winsock overlapped i/o. we've toyed with the
+idea...
+
+What do you think?  Do you interested in these updates or in implementing
+something more elegant.
+
+John Mendonca
+447-2924
+
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Thu Nov  2 05:35:05 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id FAA28054
+	for httperf-outgoing; Thu, 2 Nov 2000 05:35:05 -0800
+From: Craig Wills <cew@sequoia.WPI.EDU>
+Message-Id: <200011021331.eA2DVGv14387@sequoia.WPI.EDU>
+X-Authentication-Warning: sequoia.WPI.EDU: localhost [127.0.0.1] didn't use HELO protocol
+To: httperf@napali.hpl.hp.com
+cc: <trong_nygen@hp.com>
+Subject: Re: [httperf] Httperf and WebQoS Session Thruput Testing 
+In-reply-to: Your message of "Wed, 01 Nov 2000 22:25:30 PST."
+             <FNEJJPOACHAEHAMPALKJEEAHCAAA.john_mendonca@hp.com> 
+Date: Thu, 02 Nov 2000 08:31:15 -0500
+X-Mts: smtp
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+John -
+     At one point I hacked the gen/sess_cookie.c code of httperf to handle
+more than one cookie header being returned by the server.  The code handles
+multiple "Set-Cookie" headers in the same response for inclusion in a
+subsequent request.   The code also replaces the current value of a cookie
+with a new one if the cookie name is already present.  The entire module
+with my changes marked by "#ifndef CEW" (which should not be defined) is
+below.  It is based on previous release of httperf before latest changes
+announced by Martin.
+				- Craig Wills
+				  Associate Professor
+				  Computer Science Department
+				  Worcester Polytechnic Institute
+				  100 Institute Road
+				  Worcester, MA 01609
+				  office (508)831-5622
+				  fax (508)831-5776
+				  cew@cs.wpi.edu
+				  http://www.cs.wpi.edu/~cew
+
+
+> 
+> 
+> -----Original Message-----
+> From: John Mendonca [mailto:john_mendonca@hp.com]
+> Sent: Wednesday, November 01, 2000 10:19 PM
+> To: httperf@napali.hpl.hp.com
+> Cc: trong_nygen@hp.com
+> Subject: Httperf and Multiple Cookies
+> 
+> 
+> David,
+> 
+> I was real happy to see your message about the version 0.8 of httperf which
+> includes ssl. I feel that you continued interest in the software will help
+> ensure its viability.
+> 
+> In the WebQoS lab we've been using httperf extensively for testing session
+> thruput.   I've run into several problems for which I've hacked minimally
+> satisfactory solutions.
+> 
+> 1) WebQoS uses a browser cookie to keep track of web sessions. Many
+> applications, particulary those using ".asp" pages also set browser cookies.
+> Httperf only remembers one cookie per "web session" with --session-cookie,
+> and this messes up our webqos tests since our qoscookie gets overwriten by
+> the application or asp cookie.  I've hacked a solution to this problem by
+> adding the parameter
+> 	--no-asp-cookies
+> 
+> but httperf still only supports a single cookie per session. Have you or
+> anyone else implemented a more elegant solution that keeps track of multiple
+> cookies.
+> 
+> 2) When using webqos in session mode (--wsesslog) one may specify a session
+> idle timeout (--timeout) and/or a error code (--failure-status) which will
+> terminate httperf test sessions.  WebQoS uses one error code to terminate a
+> session, sadly IIS generates another error code when it determines it is
+> overloaded. The problem is that httperf will only use one error code to
+> terminate a session. To fix this problem I've added a --fail-on-error
+> parameter which will end a test session on any http 5xx error code.  I would
+> like to give this code back to you or have you implement a better
+> alternative.
+> 
+> 3) any thoughts on a windows 2k implementation.  Yes I realize that it would
+> be a rewrite to implement winsock overlapped i/o. we've toyed with the
+> idea...
+> 
+> What do you think?  Do you interested in these updates or in implementing
+> something more elegant.
+> 
+> John Mendonca
+> 447-2924
+> 
+> 
+> --
+> To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+
+/*
+ 
+              Copyright (C) 1998 Hewlett-Packard Company
+                         ALL RIGHTS RESERVED.
+ 
+  The enclosed software and documentation includes copyrighted works
+  of Hewlett-Packard Co. For as long as you comply with the following
+  limitations, you are hereby authorized to (i) use, reproduce, and
+  modify the software and documentation, and to (ii) distribute the
+  software and documentation, including modifications, for
+  non-commercial purposes only.
+      
+  1.  The enclosed software and documentation is made available at no
+      charge in order to advance the general development of
+      high-performance networking and computing products.
+ 
+  2.  You may not delete any copyright notices contained in the
+      software or documentation. All hard copies, and copies in
+      source code or object code form, of the software or
+      documentation (including modifications) must contain at least
+      one of the copyright notices.
+ 
+  3.  The enclosed software and documentation has not been subjected
+      to testing and quality control and is not a Hewlett-Packard Co.
+      product. At a future time, Hewlett-Packard Co. may or may not
+      offer a version of the software and documentation as a product.
+  
+  4.  THE SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS".
+      HEWLETT-PACKARD COMPANY DOES NOT WARRANT THAT THE USE,
+      REPRODUCTION, MODIFICATION OR DISTRIBUTION OF THE SOFTWARE OR
+      DOCUMENTATION WILL NOT INFRINGE A THIRD PARTY'S INTELLECTUAL
+      PROPERTY RIGHTS. HP DOES NOT WARRANT THAT THE SOFTWARE OR
+      DOCUMENTATION IS ERROR FREE. HP DISCLAIMS ALL WARRANTIES,
+      EXPRESS AND IMPLIED, WITH REGARD TO THE SOFTWARE AND THE
+      DOCUMENTATION. HP SPECIFICALLY DISCLAIMS ALL WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  
+  5.  HEWLETT-PACKARD COMPANY WILL NOT IN ANY EVENT BE LIABLE FOR ANY
+      DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+      (INCLUDING LOST PROFITS) RELATED TO ANY USE, REPRODUCTION,
+      MODIFICATION, OR DISTRIBUTION OF THE SOFTWARE OR DOCUMENTATION.
+ 
+*/
+/* This module intercepts `Set-Cookie:' headers on a per-session basis
+   and includes set cookies in future calls of the session.
+
+   Missing features:
+	- intercepted cookies are always sent, independent of any constraints
+	   that may be present in the set-cookie header
+*/
+
+#include <assert.h>
+#include <ctype.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <httperf.h>
+#include <call.h>
+#include <conn.h>
+#include <core.h>
+#include <event.h>
+#include <session.h>
+
+#define MAX_COOKIE_LEN	256
+
+#define SESS_PRIVATE_DATA(c) \
+  ((Sess_Private_Data *) ((char *)(c) + sess_private_data_offset))
+
+#define CALL_PRIVATE_DATA(c) \
+  ((Call_Private_Data *) ((char *)(c) + call_private_data_offset))
+
+typedef struct Sess_Private_Data
+  {
+    /* For now, we support just one cookie per session.  If we get
+       more than one cookie, we'll print a warning message when
+       --debug is turned on.  */
+    size_t cookie_len;
+    /* We can't malloc the cookie string because we may get a
+       ``Set-Cookie:'' while there are calls pending that refer to an
+       existing cookie.  So if we were to malloc & free cookies, we
+       would have to use reference counting to avoid the risk of
+       dangling pointers.  */
+    char cookie[MAX_COOKIE_LEN];
+  }
+Sess_Private_Data;
+
+/* We need the call private data to ensure that the cookie gets set
+   only once.  EV_CALL_ISSUE gets signalled each time a call is sent
+   on a connection.  Since a connection may fail, the same call may be
+   issued multiple times, hence we need to make sure that the cookie
+   gets set only once per call.  */
+typedef struct Call_Private_Data
+  {
+    u_int cookie_present;	/* non-zero if cookie has been set already */
+    char cookie[MAX_COOKIE_LEN];
+  }
+Call_Private_Data;
+
+static size_t sess_private_data_offset = -1;
+static size_t call_private_data_offset = -1;
+
+/* A simple module that collects cookies from the server responses and
+   includes them in future calls to the server.  */
+
+static void
+call_issue (Event_Type et, Object *obj, Any_Type regarg, Any_Type callarg)
+{
+  Call_Private_Data *cpriv;
+  Sess_Private_Data *priv;
+  Sess *sess;
+  Call *call;
+
+  assert (et == EV_CALL_ISSUE && object_is_call (obj));
+  call = (Call *) obj;
+  cpriv = CALL_PRIVATE_DATA (call);
+
+  if (cpriv->cookie_present)
+    /* don't do anything if cookie has been set already */
+    return;
+
+  sess = session_get_sess_from_call (call);
+  priv = SESS_PRIVATE_DATA (sess);
+
+  if (priv->cookie_len > 0)
+    {
+      if (DBG > 1)
+	fprintf (stderr, "call_issue.%ld: inserting `%s'\n",
+		 call->id, priv->cookie);
+      cpriv->cookie_present = 1;
+      memcpy (cpriv->cookie, priv->cookie, priv->cookie_len + 1);
+      call_append_request_header (call, cpriv->cookie, priv->cookie_len);
+    }
+}
+
+static void
+call_recv_hdr (Event_Type et, Object *obj, Any_Type regarg, Any_Type callarg)
+{
+  char *hdr, *start, *end;
+  Sess_Private_Data *priv;
+  size_t len;
+  struct iovec *line;
+  Sess *sess;
+  Call *call;
+
+  assert (et == EV_CALL_RECV_HDR && object_is_call (obj));
+  call = (Call *) obj;
+  sess = session_get_sess_from_call (call);
+  priv = SESS_PRIVATE_DATA (sess);
+
+  line = callarg.vp;
+  hdr = line->iov_base;
+  if (tolower (hdr[0]) == 's' && line->iov_len > 12
+      && strncasecmp (hdr + 1, "et-cookie: ", 11) == 0)
+    {
+#ifndef CEW
+	char sbCookie[4*MAX_COOKIE_LEN]; /* temporary work space */
+	char *pch, *pchOldName, *pchOldNameEnd;
+	int bMatch, newlen, lenNewName;
+#endif
+      /* munch time! */
+      start = hdr + 12;
+      end = strchr (start, ';');
+      if (!end)
+	end = hdr + line->iov_len;
+      len = end - start;
+#ifndef CEW
+      if (priv->cookie_len > 0) {
+	  /* ok, we got a cookie and already have one.  Could be new or old */
+	  /* note we are not breaking apart the new cookie to see if more 
+	     than one */
+	  pch = strchr(start, '=');
+	  lenNewName = pch - start + 1;	/* include equal sign */
+	  pchOldName = &priv->cookie[8];
+	  newlen = 0;		/* length of new cookie string */
+	  bMatch = 0;
+	  while (1) {
+	      if ((pchOldNameEnd = strchr(pchOldName, ';')) != NULL)
+		  ;
+	      else if ((pchOldNameEnd = strchr(pchOldName, '\r')) != NULL)
+		  ;
+	      else
+		  break;
+	      if (newlen > 0) {
+		  sbCookie[newlen] = ';'; /* add separator */
+		  newlen++;
+	      }
+	      if (strncmp(pchOldName, start, lenNewName) == 0) {
+		  /* match of old cookie value, replace */
+		  if (DBG > 0)
+		      fprintf (stderr, "%s: replacing existing cookie value\n", prog_name);
+		  memcpy(&sbCookie[newlen], start, len);
+		  newlen += len;
+		  bMatch = 1;
+	      }
+	      else {
+		  /* old cookie value not matched, just copy as is */
+		  memcpy(&sbCookie[newlen], pchOldName, 
+			 pchOldNameEnd-pchOldName);
+		  newlen += pchOldNameEnd - pchOldName;
+	      }
+	      if (*pchOldNameEnd != ';')
+		  break;
+	      else 
+		  pchOldName = pchOldNameEnd + 1;
+	  }
+	  if (!bMatch) {
+	      /* got a new cookie, add in */
+	      if (newlen > 0) {
+		  sbCookie[newlen] = ';'; /* add separator */
+		  newlen++;
+	      }
+	      if (DBG > 0)
+		  fprintf (stderr, "%s: appending new cookie value\n", prog_name);
+	      memcpy(&sbCookie[newlen], start, len);
+	      newlen += len;
+	  }
+	  /* ok, now put it back where httperf wants it */
+	  if (newlen + 10 >= MAX_COOKIE_LEN)
+	      {
+		  fprintf (stderr, "%s.sess_cookie: truncating cookie list to %d bytes\n",
+			   prog_name, MAX_COOKIE_LEN - 11);
+		  newlen = MAX_COOKIE_LEN - 11;
+	      }
+	  memcpy (priv->cookie, "Cookie: ", 8);
+	  memcpy (priv->cookie + 8, sbCookie, newlen);
+	  memcpy (priv->cookie + 8 + newlen, "\r\n", 2);
+	  priv->cookie[10 + newlen] = '\0';
+	  priv->cookie_len = newlen + 10;
+	  if (DBG > 0) {
+	      fprintf (stderr, "%s: got cookie `%s'\n", prog_name, start);
+	      fprintf (stderr, "%s: cookie string: %s", prog_name, 
+		       priv->cookie);
+	  }
+      }
+      else {
+	  if (len + 10 >= MAX_COOKIE_LEN)
+	      {
+		  fprintf (stderr, "%s.sess_cookie: truncating cookie to %d bytes\n",
+			   prog_name, MAX_COOKIE_LEN - 11);
+		  len = MAX_COOKIE_LEN - 11;
+	      }
+	  memcpy (priv->cookie, "Cookie: ", 8);
+	  memcpy (priv->cookie + 8, start, len);
+	  memcpy (priv->cookie + 8 + len, "\r\n", 2);
+	  priv->cookie[10 + len] = '\0';
+	  priv->cookie_len = len + 10;
+	  if (DBG > 0) {
+	      fprintf (stderr, "%s: got cookie `%s'\n", prog_name, start);
+	      fprintf (stderr, "%s: cookie string: %s", prog_name, 
+		       priv->cookie);
+	  }
+      }
+#else
+      if (DBG > 0 && priv->cookie_len > 0)
+	fprintf (stderr, "%s: can't handle more than one "
+		 "cookie at a time, replacing existing one\n", prog_name);
+      if (len + 10 >= MAX_COOKIE_LEN)
+	{
+	  fprintf (stderr, "%s.sess_cookie: truncating cookie to %d bytes\n",
+		   prog_name, MAX_COOKIE_LEN - 11);
+	  len = MAX_COOKIE_LEN - 11;
+	}
+      memcpy (priv->cookie, "Cookie: ", 8);
+      memcpy (priv->cookie + 8, start, len);
+      memcpy (priv->cookie + 8 + len, "\r\n", 2);
+      priv->cookie[10 + len] = '\0';
+      priv->cookie_len = len + 10;
+      if (DBG > 0)
+	fprintf (stderr, "%s: got cookie `%s'\n", prog_name, start);
+#endif
+    }
+}
+
+static void
+init (void)
+{
+  Any_Type arg;
+
+  sess_private_data_offset = object_expand (OBJ_SESS,
+					    sizeof (Sess_Private_Data));
+  call_private_data_offset = object_expand (OBJ_CALL,
+					    sizeof (Call_Private_Data));
+  arg.l = 0;
+  event_register_handler (EV_CALL_ISSUE, call_issue, arg);
+  event_register_handler (EV_CALL_RECV_HDR, call_recv_hdr, arg);
+}
+
+Load_Generator sess_cookie =
+  {
+    "per-session cookie manager",
+    init,
+    no_op,
+    no_op
+  };
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Tue Nov  7 15:57:13 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id PAA24537
+	for httperf-outgoing; Tue, 7 Nov 2000 15:57:13 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Date: Tue, 7 Nov 2000 21:47:37 -0200
+From: Durval Menezes <durval@tmp.com.br>
+To: httperf@napali.hpl.hp.com
+Subject: [httperf] patch-httperf-0.8-configure_fixed
+Message-ID: <20001107214737.B8075@tmp.com.br>
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="OgqxwSJOaUobr8KG"
+X-Mailer: Mutt 1.0i
+X-URL: http://www.tmp.com.br
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+
+--OgqxwSJOaUobr8KG
+Content-Type: text/plain; charset=us-ascii
+
+Hello,
+
+Here's a patch for a minor bug in configure.
+
+Best Regards,
+-- 
+   Durval Menezes (durval@tmp.com.br, http://www.amcham.com.br/~durval)
+
+--OgqxwSJOaUobr8KG
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: attachment; filename="patch-httperf-0.8-configure_fixed"
+
+# patch-httperf-0.8-configure_fixed
+# 2000/11/05 Durval Menezes <durval@tmp.com.br>
+#
+# Fixes a problem with the "configure" setup where the "--prefix="
+# option wasn't being obeyed for the binary files
+# 
+# Apply with
+#	tar xzf httperf-0.8.tar.gz
+#	cd httperf-0.8
+#  	patch -p1 <../patch-httperf-0.8-configure_fixed
+#
+
+diff -ru httperf-0.8/Makefile.in httperf-0.8-configure_fixed/Makefile.in
+--- httperf-0.8/Makefile.in	Thu Oct 19 05:38:59 2000
++++ httperf-0.8-configure_fixed/Makefile.in	Sun Nov  5 01:09:18 2000
+@@ -6,6 +6,7 @@
+ top_builddir = .
+ 
+ prefix = @prefix@
++exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ mandir = @mandir@
+ 
+#eof patch-httperf-0.8-configure_fixed
+
+--OgqxwSJOaUobr8KG--
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Tue Nov  7 16:18:56 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id QAA24824
+	for httperf-outgoing; Tue, 7 Nov 2000 16:18:56 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Date: Tue, 7 Nov 2000 22:11:00 -0200
+From: Durval Menezes <durval@tmp.com.br>
+To: httperf@napali.hpl.hp.com
+Subject: [httperf] Patch to add HTTP Basic Authentication
+Message-ID: <20001107221100.C8075@tmp.com.br>
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="jho1yZJdad60DJr+"
+X-Mailer: Mutt 1.0i
+X-URL: http://www.tmp.com.br
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+
+--jho1yZJdad60DJr+
+Content-Type: text/plain; charset=us-ascii
+
+Hello,
+
+Here it goes a patch to add HTTP Basic Authentication functionality
+to httperf-0.8.
+
+This is preliminary code, and actually it was made quite easy in
+httperf-0.8 (when compared to 0.6) since it was patterned mostly 
+on the new "--add-header" functionality.
+
+It's working OK in my test setup, and has enabled me to benchmark
+servers where the pages were under Basic Authentication without
+disabling the authentication in the server configuration.
+
+I'm not 100% comfortable with this code because:
+
+1) It uses code from the old CERN HTTPD (the uuencode function),
+   and even if the code itself is pretty well written and efficient,
+   we had to include MIT/INRIA's copyright in it. The ideal solution
+   would be to write a uuencode from scratch (but it's a PITA, and I 
+   was coding it on a weekend and could'nt be bothered :-)) or pluck 
+   one ready-made from some GPL'd code (like, er, GNU uuencode :-)).
+
+2) It does not simulate *exactly* the interaction a normal user with a 
+   browser has when retrieving a page protected by Basic Auth. A normal 
+   user first tries to load the page, its browser gets a 404 code from 
+   the server, and then prompts the user for a username/password. 
+   The browser then tries again to load the page, this time including an 
+   authentication header with the information passed by the user; 
+   if this is sucessful, the browser renders the page and continues to 
+   include this header in all future requests to the same server. 
+   My code simply includes the authentication header on all the requests,
+   without the first fail/ask_the_user/retry behaviour. 
+   This is not important for my test setup (I'm fundamentally interested 
+   in measuring the response from the server under stress conditions, 
+   with tens or hundreds of thousands, of requests, so just one request 
+   handled one way or the other does no difference), but it could be 
+   important on some other application.
+
+Anyway, I hope it is useful. Please enjoy it and give me feedback on
+any problems/errors/sugestions.
+
+Best Regards,
+-- 
+   Durval Menezes (durval@tmp.com.br, http://www.amcham.com.br/~durval)
+
+--jho1yZJdad60DJr+
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: attachment; filename="patch-httperf-0.8-basic_auth"
+
+# patch-httperf-0.8-basic_auth
+# 2000/11/05 Durval Menezes <durval@tmp.com.br>
+#
+# This patch adds HTTP Basic Authentication command-line option to httperf-0.8
+#
+# Apply with
+#	tar xzf httperf-0.8.tar.gz
+#	cd httperf-0.8
+#  	patch -p1 <../patch-httperf-0.8-basic_auth
+#
+
+diff -ru httperf-0.8/gen/misc.c httperf-0.8-basic_auth/gen/misc.c
+--- httperf-0.8/gen/misc.c	Wed Oct 11 21:37:05 2000
++++ httperf-0.8-basic_auth/gen/misc.c	Sun Nov  5 01:46:04 2000
+@@ -28,6 +28,16 @@
+ 	--add-header	Adds one or more command-line specified header(s)
+ 			to each call request.
+ 
++	--basic-auth	Adds a Basic Authentication header to each call 
++			request.
++ 			
++			Note that a browser would first send the  request  
++                        without  the Authentication  Header,  get  a  401 
++                        error from the server, prompt the user for his/her
++			username  and password  and ONLY THEN send a new 
++                        request with the Authentication Header in it; this 
++                        isn't what we  do here.
++
+ 	--method	Sets the method to be used when performing a
+ 			call.  */
+ 
+@@ -45,6 +55,9 @@
+ static const char *extra;
+ static size_t extra_len;
+ 
++static const char *basic_auth;
++static size_t basic_auth_len;
++
+ static size_t method_len;
+ 
+ /* A simple module that collects cookies from the server responses and
+@@ -100,6 +113,132 @@
+   return dst;
+ }
+ 
++/* ---------------------------------------------------------------------- */
++/* the following code was extracted from the classic CERN HTTPD code in	  */
++/* w3c-httpd-3.0A/Library/Implementation/HTUU.c                           */
++
++/* As requested in the original COPYRIGH (sic) file:
++
++                                                               Copyright NOTICE
++                                    NOTICE
++                                       
++COPYRIGHT 1995 BY: MASSACHUSETTS INSTITUTE OF TECHNOLOGY (MIT), INRIA
++
++   This W3C software is being provided by the copyright holders under the
++   following license. By obtaining, using and/or copying this software, you
++   agree that you have read, understood, and will comply with the following
++   terms and conditions:
++   
++   Permission to use, copy, modify, and distribute this software and its
++   documentation for any purpose and without fee or royalty is hereby granted,
++   provided that the full text of this _NOTICE_ appears on ALLcopies of the
++   software and documentation or portions thereof, including modifications,
++   that you make.
++   
++   _THIS SOFTWARE IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO
++   REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT
++   NOT LIMITATION, COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES OF
++   MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE
++   SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS,
++   COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. COPYRIGHT HOLDERS WILL BEAR NO
++   LIABILITY FOR ANY USE OF THIS SOFTWARE OR DOCUMENTATION._
++   
++   The name and trademarks of copyright holders may NOTbe used in advertising
++   or publicity pertaining to the software without specific, written prior
++   permission. Title to copyright in this software and any associated
++   documentation will at all times remain with copyright holders.
++   
++   
++   ___________________________________
++*/   
++
++static char six2pr[64] = {
++    'A','B','C','D','E','F','G','H','I','J','K','L','M',
++    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
++    'a','b','c','d','e','f','g','h','i','j','k','l','m',
++    'n','o','p','q','r','s','t','u','v','w','x','y','z',
++    '0','1','2','3','4','5','6','7','8','9','+','/'
++};
++
++/*--- function HTUU_encode -----------------------------------------------
++ *
++ *   Encode a single line of binary data to a standard format that
++ *   uses only printing ASCII characters (but takes up 33% more bytes).
++ *
++ *    Entry    bufin    points to a buffer of bytes.  If nbytes is not
++ *                      a multiple of three, then the byte just beyond
++ *                      the last byte in the buffer must be 0.
++ *             nbytes   is the number of bytes in that buffer.
++ *                      This cannot be more than 48.
++ *             bufcoded points to an output buffer.  Be sure that this
++ *                      can hold at least 1 + (4*nbytes)/3 characters.
++ *
++ *    Exit     bufcoded contains the coded line.  The first 4*nbytes/3 bytes
++ *                      contain printing ASCII characters representing
++ *                      those binary bytes. This may include one or
++ *                      two '=' characters used as padding at the end.
++ *                      The last byte is a zero byte.
++ *             Returns the number of ASCII characters in "bufcoded".
++ */
++static int HTUU_encode (const unsigned char *bufin, unsigned int nbytes, char *bufcoded)
++{
++/* ENC is the basic 1 character encoding function to make a char printing */
++#define ENC(c) six2pr[c]
++
++   register char *outptr = bufcoded;
++   unsigned int i;
++
++   for (i=0; i<nbytes; i += 3) {
++      *(outptr++) = ENC(*bufin >> 2);            /* c1 */
++      *(outptr++) = ENC(((*bufin << 4) & 060) | ((bufin[1] >> 4) & 017)); /*c2*/
++      *(outptr++) = ENC(((bufin[1] << 2) & 074) | ((bufin[2] >> 6) & 03));/*c3*/
++      *(outptr++) = ENC(bufin[2] & 077);         /* c4 */
++
++      bufin += 3;
++   }
++
++   /* If nbytes was not a multiple of 3, then we have encoded too
++    * many characters.  Adjust appropriately.
++    */
++   if(i == nbytes+1) {
++      /* There were only 2 bytes in that last group */
++      outptr[-1] = '=';
++   } else if(i == nbytes+2) {
++      /* There was only 1 byte in that last group */
++      outptr[-1] = '=';
++      outptr[-2] = '=';
++   }
++   *outptr = '\0';
++   return(outptr - bufcoded);
++}
++
++/* end of code extracted from the classic CERN HTTPD source               */
++/* ---------------------------------------------------------------------- */
++
++static const char *
++basic_auth_encode (const char *str, size_t *len)
++{
++  static char *prefix = "Authorization: basic ";
++  int maxuulen=((strlen(str) + 2) / 3 * 4) + 1; /* when uuencoding, every 3 chars generate 4 */
++  char *uu = malloc(maxuulen+1);
++  int maxdstlen=strlen(prefix)+maxuulen+3; 
++  char *dst = malloc(maxdstlen+1);
++
++  if (!uu || !dst)
++    panic ("%s: malloc() failed: %s\n", prog_name, strerror (errno));
++
++  HTUU_encode(str, strlen(str), uu);
++
++  strncat(dst, prefix, maxdstlen);
++  strncat(dst, uu, maxdstlen);
++  strncat(dst, "\r\n", maxdstlen);
++
++  free(uu);
++
++  *len = strlen(dst);
++  return dst;
++}
++
+ static void
+ call_created (Event_Type et, Object *obj, Any_Type reg_arg, Any_Type arg)
+ {
+@@ -112,6 +251,9 @@
+ 
+   if (extra_len > 0)
+     call_append_request_header (c, extra, extra_len);
++
++  if (basic_auth_len > 0)
++    call_append_request_header (c, basic_auth, basic_auth_len);
+ }
+ 
+ 
+@@ -122,6 +264,9 @@
+ 
+   if (param.additional_header)
+     extra = unescape (param.additional_header, &extra_len);
++
++  if (param.basic_auth_string)
++    basic_auth = basic_auth_encode (param.basic_auth_string, &basic_auth_len);
+ 
+   if (param.method)
+     method_len = strlen (param.method);
+diff -ru httperf-0.8/httperf.c httperf-0.8-basic_auth/httperf.c
+--- httperf-0.8/httperf.c	Tue Oct 31 18:20:00 2000
++++ httperf-0.8-basic_auth/httperf.c	Sun Nov  5 02:13:28 2000
+@@ -96,6 +96,7 @@
+ static struct option longopts[] =
+   {
+     {"add-header",   required_argument, (int *) &param.additional_header, 0},
++    {"basic-auth",   required_argument, (int *) &param.basic_auth_string, 0},
+     {"burst-length", required_argument, &param.burst_len,		0},
+     {"client",	     required_argument, (int *) &param.client,		0},
+     {"close-with-reset", no_argument,	&param.close_with_reset,	1},
+@@ -144,6 +145,7 @@
+ {
+   printf ("Usage: %s "
+ 	  "[-hdvV] [--add-header S] [--burst-length N] [--client N/N]\n"
++	  "\t[--basic-auth \"username:password\"]\n"
+ 	  "\t[--close-with-reset] [--debug N] [--failure-status N]\n"
+ 	  "\t[--help] [--hog] [--http-version S] [--max-connections N]\n"
+ 	  "\t[--max-piped-calls N] [--method S] [--no-host-hdr]\n"
+@@ -267,6 +269,19 @@
+ 	    param.method = optarg;
+ 	  else if (flag == &param.additional_header)
+ 	    param.additional_header = optarg;
++	  else if (flag == &param.basic_auth_string)
++	    {
++	      char *p;
++	      if ((p=strchr(optarg,':')) == NULL ||
++		  (p-optarg) == 0		 ||
++		  (p-optarg) == strlen(optarg)-1)
++	      {
++		  fprintf(stderr, "%s: invalid string for --basic-auth '%s'\n", prog_name, optarg);
++		  exit(-1);
++	      }
++	      else
++		param.basic_auth_string = optarg;
++            }
+ 	  else if (flag == &param.num_calls)
+ 	    {
+ 	      errno = 0;
+@@ -826,7 +841,7 @@
+       gen[num_gen++] = &sess_cookie;
+     }
+ 
+-  if (param.additional_header || param.method)
++  if (param.additional_header || param.basic_auth_string || param.method)
+     gen[num_gen++] = &misc;
+ 
+   /* echo command invocation for logging purposes: */
+@@ -900,6 +915,8 @@
+ #endif
+   if (param.additional_header)
+     printf (" --add-header='%s'", param.additional_header);
++  if (param.basic_auth_string)
++    printf (" --basic-auth='%s'", param.basic_auth_string);
+   if (param.method) printf (" --method=%s", param.method);
+   if (param.wsesslog.num_sessions)
+     {
+diff -ru httperf-0.8/httperf.h httperf-0.8-basic_auth/httperf.h
+--- httperf-0.8/httperf.h	Tue Oct 31 18:32:09 2000
++++ httperf-0.8-basic_auth/httperf.h	Sun Nov  5 01:29:49 2000
+@@ -127,6 +127,7 @@
+     const char *ssl_cipher_list; /* client's list of SSL cipher suites */
+ #endif
+     const char *additional_header;	/* additional request header(s) */
++    const char *basic_auth_string;	/* Basic Authentication string (username:password) */
+     const char *method;	/* default call method */
+     struct
+       {
+diff -ru httperf-0.8/httperf.man httperf-0.8-basic_auth/httperf.man
+--- httperf-0.8/httperf.man	Tue Oct 31 18:17:15 2000
++++ httperf-0.8-basic_auth/httperf.man	Sun Nov  5 01:54:40 2000
+@@ -6,6 +6,8 @@
+ .B httperf
+ .RB [ --add-header
+ .IR S ]
++.RB [ --basic-auth
++.IR username : password ]
+ .RB [ --burst-length
+ .IR N ]
+ .RB [ --client
+@@ -151,6 +153,17 @@
+ sequences are ``\\r'' (carriage-return), ``\\a'' (line-feed), ``\\\\''
+ (backslash), and ``\\N'' where N is the code the character to be
+ inserted (in octal).
++.TP
++.BI --basic-auth= "username:password"
++Specifies to include an HTTP Basic Authentication header in every
++request, with the 
++.I username 
++and 
++.I password 
++as given (separated by ``:''). Note that a browser would first send the request
++without the Authentication Header, get a 401 error from the server, prompt the
++user for his/her username and password and ONLY THEN send a new request with
++the Authentication Header in it; this isn't what we do here.
+ .TP
+ .BI --burst-length= N
+ Specifies the length of bursts.  Each burst consists of
+
+#Eof patch-httperf-0.8-basic_auth
+
+--jho1yZJdad60DJr+--
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Tue Nov  7 18:27:39 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id SAA26975
+	for httperf-outgoing; Tue, 7 Nov 2000 18:27:39 -0800
+X-Authentication-Warning: napali.hpl.hp.com: davidm set sender to davidm@hpl.hp.com using -f
+From: David Mosberger <davidm@hpl.hp.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14856.47643.640047.856355@napali.hpl.hp.com>
+Date: Tue, 7 Nov 2000 18:27:39 -0800
+To: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] Patch to add HTTP Basic Authentication
+In-Reply-To: <20001107221100.C8075@tmp.com.br>
+References: <20001107221100.C8075@tmp.com.br>
+X-Mailer: VM 6.76 under Emacs 20.4.1
+X-URL: http://www.hpl.hp.com/personal/David_Mosberger/
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+
+  Durval> 1) It uses code from the old CERN HTTPD (the uuencode
+  Durval> function), and even if the code itself is pretty well
+  Durval> written and efficient, we had to include MIT/INRIA's
+  Durval> copyright in it. The ideal solution would be to write a
+  Durval> uuencode from scratch (but it's a PITA, and I was coding it
+  Durval> on a weekend and could'nt be bothered :-)) or pluck one
+  Durval> ready-made from some GPL'd code (like, er, GNU uuencode
+  Durval> :-)).
+
+That's unfortunately a problem, since the advertising clause is
+incompatible with GPL.  Can you replace it with some other code?
+
+Thanks,
+
+	--david
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Wed Nov  8 01:54:51 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id BAA29798
+	for httperf-outgoing; Wed, 8 Nov 2000 01:54:51 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Date: Wed, 8 Nov 2000 07:45:09 -0200
+From: Durval Menezes <durval@tmp.com.br>
+To: David Mosberger <davidm@hpl.hp.com>
+Cc: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] Patch to add HTTP Basic Authentication
+Message-ID: <20001108074509.D8075@tmp.com.br>
+References: <20001107221100.C8075@tmp.com.br> <14856.47643.640047.856355@napali.hpl.hp.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Mailer: Mutt 1.0i
+In-Reply-To: <14856.47643.640047.856355@napali.hpl.hp.com>; from davidm@hpl.hp.com on Tue, Nov 07, 2000 at 06:27:39PM -0800
+X-URL: http://www.tmp.com.br
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+Hello,
+
+On Tue, Nov 07, 2000 at 06:27:39PM -0800, David Mosberger wrote:
+> That's unfortunately a problem, since the advertising clause is
+> incompatible with GPL.  Can you replace it with some other code?
+
+Sure. Will do, probably with code from GNU sharutils. 
+Expect it done around next monday (I usually hack code in the weekends).
+
+Best Regards,
+-- 
+   Durval Menezes (durval@tmp.com.br, http://www.amcham.com.br/~durval)
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+
+From httperf-owner@napali.hpl.hp.com  Mon Nov 13 14:49:50 2000
+Received: (from majordomo@localhost)
+	by napali.hpl.hp.com (8.9.3/8.9.3) id OAA02960
+	for httperf-outgoing; Mon, 13 Nov 2000 14:49:50 -0800
+X-Authentication-Warning: napali.hpl.hp.com: majordomo set sender to owner-httperf@napali.hpl.hp.com using -f
+Date: Mon, 13 Nov 2000 20:42:43 -0200
+From: Durval Menezes <durval@tmp.com.br>
+To: David Mosberger <davidm@hpl.hp.com>
+Cc: httperf@napali.hpl.hp.com
+Subject: Re: [httperf] Patch to add HTTP Basic Authentication
+Message-ID: <20001113204243.T15572@tmp.com.br>
+References: <20001107221100.C8075@tmp.com.br> <14856.47643.640047.856355@napali.hpl.hp.com> <20001108074509.D8075@tmp.com.br>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Mailer: Mutt 1.0i
+In-Reply-To: <20001108074509.D8075@tmp.com.br>; from durval@tmp.com.br on Wed, Nov 08, 2000 at 07:45:09AM -0200
+X-URL: http://www.tmp.com.br
+Sender: owner-httperf@napali.hpl.hp.com
+Precedence: bulk
+Reply-To: httperf@napali.hpl.hp.com
+
+On Wed, Nov 08, 2000 at 07:45:09AM -0200, Durval Menezes wrote:
+> Hello,
+> 
+> On Tue, Nov 07, 2000 at 06:27:39PM -0800, David Mosberger wrote:
+> > That's unfortunately a problem, since the advertising clause is
+> > incompatible with GPL.  Can you replace it with some other code?
+> 
+> Sure. Will do, probably with code from GNU sharutils. 
+> Expect it done around next monday (I usually hack code in the weekends).
+
+Here it goes. In fact, I used code from GNU's wget (it's *much* better 
+written). The resulting httperf has been tested and is working in my 
+setup.
+
+Best Regards,
+-- 
+   Durval Menezes (durval@tmp.com.br, http://www.amcham.com.br/~durval)
+
+# patch-httperf-0.8-basic_auth
+# 2000/11/12 Durval Menezes <durval@tmp.com.br>
+#
+# This patch adds HTTP Basic Authentication command-line option to httperf-0.8
+#
+# Apply with
+#	tar xzf httperf-0.8.tar.gz
+#	cd httperf-0.8
+#  	patch -p1 <../patch-httperf-0.8-basic_auth
+#
+
+diff -ru httperf-0.8/gen/misc.c httperf-0.8-basic-auth/gen/misc.c
+--- httperf-0.8/gen/misc.c	Wed Oct 11 21:37:05 2000
++++ httperf-0.8-basic-auth/gen/misc.c	Sun Nov 12 16:16:07 2000
+@@ -28,6 +28,16 @@
+ 	--add-header	Adds one or more command-line specified header(s)
+ 			to each call request.
+ 
++	--basic-auth	Adds a Basic Authentication header to each call 
++			request.
++ 			
++			Note that a browser would first send the  request  
++                        without  the Authentication  Header,  get  a  401 
++                        error from the server, prompt the user for his/her
++			username  and password  and ONLY THEN send a new 
++                        request with the Authentication Header in it; this 
++                        isn't what we  do here.
++
+ 	--method	Sets the method to be used when performing a
+ 			call.  */
+ 
+@@ -45,6 +55,9 @@
+ static const char *extra;
+ static size_t extra_len;
+ 
++static const char *basic_auth;
++static size_t basic_auth_len;
++
+ static size_t method_len;
+ 
+ /* A simple module that collects cookies from the server responses and
+@@ -100,6 +113,79 @@
+   return dst;
+ }
+ 
++/* ----------------------------------------------------------------------------- */
++/* the following code was extracted from GNU wget version 1.5.3, file src/http.c */
++/* ----------------------------------------------------------------------------- */
++
++/* How many bytes it will take to store LEN bytes in base64.  */
++#define BASE64_LENGTH(len) (4 * (((len) + 2) / 3))
++
++/* Encode the string S of length LENGTH to base64 format and place it
++   to STORE.  STORE will be 0-terminated, and must point to a writable
++   buffer of at least 1+BASE64_LENGTH(length) bytes.  */
++static void
++base64_encode (const char *s, char *store, int length)
++{
++  /* Conversion table.  */
++  static char tbl[64] = {
++    'A','B','C','D','E','F','G','H',
++    'I','J','K','L','M','N','O','P',
++    'Q','R','S','T','U','V','W','X',
++    'Y','Z','a','b','c','d','e','f',
++    'g','h','i','j','k','l','m','n',
++    'o','p','q','r','s','t','u','v',
++    'w','x','y','z','0','1','2','3',
++    '4','5','6','7','8','9','+','/'
++  };
++  int i;
++  unsigned char *p = (unsigned char *)store;
++
++  /* Transform the 3x8 bits to 4x6 bits, as required by base64.  */
++  for (i = 0; i < length; i += 3)
++    {
++      *p++ = tbl[s[0] >> 2];
++      *p++ = tbl[((s[0] & 3) << 4) + (s[1] >> 4)];
++      *p++ = tbl[((s[1] & 0xf) << 2) + (s[2] >> 6)];
++      *p++ = tbl[s[2] & 0x3f];
++      s += 3;
++    }
++  /* Pad the result if necessary...  */
++  if (i == length + 1)
++    *(p - 1) = '=';
++  else if (i == length + 2)
++    *(p - 1) = *(p - 2) = '=';
++  /* ...and zero-terminate it.  */
++  *p = '\0';
++}
++
++/* ----------------------------------------------------------------------------- */
++/* end of code extracted from GNU wget 1.5.3, file src/http.c                    */
++/* ----------------------------------------------------------------------------- */
++
++static const char *
++basic_auth_encode (const char *str, size_t *len)
++{
++  static char *prefix = "Authorization: basic ";
++  int maxuulen=BASE64_LENGTH(strlen(str));
++  char *uu = malloc(maxuulen+1);
++  int maxdstlen=strlen(prefix)+maxuulen+3;
++  char *dst = malloc(maxdstlen+1);
++
++  if (!uu || !dst)
++    panic ("%s: malloc() failed: %s\n", prog_name, strerror (errno));
++
++  base64_encode(str, uu, strlen(str));
++
++  strncat(dst, prefix, maxdstlen);
++  strncat(dst, uu, maxdstlen);
++  strncat(dst, "\r\n", maxdstlen);
++
++  free(uu);
++
++  *len = strlen(dst);
++  return dst;
++}
++
+ static void
+ call_created (Event_Type et, Object *obj, Any_Type reg_arg, Any_Type arg)
+ {
+@@ -112,6 +198,9 @@
+ 
+   if (extra_len > 0)
+     call_append_request_header (c, extra, extra_len);
++
++  if (basic_auth_len > 0)
++    call_append_request_header (c, basic_auth, basic_auth_len);
+ }
+ 
+ 
+@@ -122,6 +211,9 @@
+ 
+   if (param.additional_header)
+     extra = unescape (param.additional_header, &extra_len);
++
++  if (param.basic_auth_string)
++    basic_auth = basic_auth_encode (param.basic_auth_string, &basic_auth_len);
+ 
+   if (param.method)
+     method_len = strlen (param.method);
+diff -ru httperf-0.8/httperf.c httperf-0.8-basic-auth/httperf.c
+--- httperf-0.8/httperf.c	Tue Oct 31 18:20:00 2000
++++ httperf-0.8-basic-auth/httperf.c	Sun Nov 12 16:08:59 2000
+@@ -96,6 +96,7 @@
+ static struct option longopts[] =
+   {
+     {"add-header",   required_argument, (int *) &param.additional_header, 0},
++    {"basic-auth",   required_argument, (int *) &param.basic_auth_string, 0},
+     {"burst-length", required_argument, &param.burst_len,		0},
+     {"client",	     required_argument, (int *) &param.client,		0},
+     {"close-with-reset", no_argument,	&param.close_with_reset,	1},
+@@ -144,6 +145,7 @@
+ {
+   printf ("Usage: %s "
+ 	  "[-hdvV] [--add-header S] [--burst-length N] [--client N/N]\n"
++	  "\t[--basic-auth \"username:password\"]\n"
+ 	  "\t[--close-with-reset] [--debug N] [--failure-status N]\n"
+ 	  "\t[--help] [--hog] [--http-version S] [--max-connections N]\n"
+ 	  "\t[--max-piped-calls N] [--method S] [--no-host-hdr]\n"
+@@ -267,6 +269,19 @@
+ 	    param.method = optarg;
+ 	  else if (flag == &param.additional_header)
+ 	    param.additional_header = optarg;
++	  else if (flag == &param.basic_auth_string)
++	    {
++	      char *p;
++	      if ((p=strchr(optarg,':')) == NULL ||
++		  (p-optarg) == 0		 ||
++		  (p-optarg) == strlen(optarg)-1)
++	      {
++		  fprintf(stderr, "%s: invalid string for --basic-auth '%s'\n", prog_name, optarg);
++		  exit(-1);
++	      }
++	      else
++		param.basic_auth_string = optarg;
++            }
+ 	  else if (flag == &param.num_calls)
+ 	    {
+ 	      errno = 0;
+@@ -826,7 +841,7 @@
+       gen[num_gen++] = &sess_cookie;
+     }
+ 
+-  if (param.additional_header || param.method)
++  if (param.additional_header || param.basic_auth_string || param.method)
+     gen[num_gen++] = &misc;
+ 
+   /* echo command invocation for logging purposes: */
+@@ -900,6 +915,8 @@
+ #endif
+   if (param.additional_header)
+     printf (" --add-header='%s'", param.additional_header);
++  if (param.basic_auth_string)
++    printf (" --basic-auth='%s'", param.basic_auth_string);
+   if (param.method) printf (" --method=%s", param.method);
+   if (param.wsesslog.num_sessions)
+     {
+diff -ru httperf-0.8/httperf.h httperf-0.8-basic-auth/httperf.h
+--- httperf-0.8/httperf.h	Tue Oct 31 18:32:09 2000
++++ httperf-0.8-basic-auth/httperf.h	Sun Nov 12 16:08:59 2000
+@@ -127,6 +127,7 @@
+     const char *ssl_cipher_list; /* client's list of SSL cipher suites */
+ #endif
+     const char *additional_header;	/* additional request header(s) */
++    const char *basic_auth_string;	/* Basic Authentication string (username:password) */
+     const char *method;	/* default call method */
+     struct
+       {
+diff -ru httperf-0.8/httperf.man httperf-0.8-basic-auth/httperf.man
+--- httperf-0.8/httperf.man	Tue Oct 31 18:17:15 2000
++++ httperf-0.8-basic-auth/httperf.man	Sun Nov 12 16:08:59 2000
+@@ -6,6 +6,8 @@
+ .B httperf
+ .RB [ --add-header
+ .IR S ]
++.RB [ --basic-auth
++.IR username : password ]
+ .RB [ --burst-length
+ .IR N ]
+ .RB [ --client
+@@ -151,6 +153,17 @@
+ sequences are ``\\r'' (carriage-return), ``\\a'' (line-feed), ``\\\\''
+ (backslash), and ``\\N'' where N is the code the character to be
+ inserted (in octal).
++.TP
++.BI --basic-auth= "username:password"
++Specifies to include an HTTP Basic Authentication header in every
++request, with the 
++.I username 
++and 
++.I password 
++as given (separated by ``:''). Note that a browser would first send the request
++without the Authentication Header, get a 401 error from the server, prompt the
++user for his/her username and password and ONLY THEN send a new request with
++the Authentication Header in it; this isn't what we do here.
+ .TP
+ .BI --burst-length= N
+ Specifies the length of bursts.  Each burst consists of
+
+--
+To unsubscribe: echo unsubscribe httperf | mail majordomo@linux.hpl.hp.com
+

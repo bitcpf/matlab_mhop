@@ -1,0 +1,2731 @@
+Last login: Thu Nov 17 11:13:19 on ttyp3
+Welcome to Darwin!
+camp:~ camp$ 
+camp:~ camp$ killlall ssh
+-bash: killlall: command not found
+camp:~ camp$ killall ssh
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Thu Nov 17 13:42:52 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# ssh 1.188.212.31
+root@1.188.212.31's password: 
+Last login: Thu Nov 17 13:43:07 2005 from 1.248.64.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# exit
+logout
+Connection to 1.188.212.31 closed.
+1.248.64.31@meshbox:~# exit
+logout
+Connection to 192.168.232.1 closed.
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Thu Nov 17 14:14:42 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A8:BB  
+          inet addr:1.248.64.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.248.64.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A8:BB  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:182  Invalid misc:1151   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.232.2  P-t-P:172.16.232.1  Mask:255.255.255.255
+0.0.0.0         172.16.232.1    0.0.0.0         UG    0      0        0 tun0
+==>       1  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 109 (100% @ 0)
+1.241.56.218 1.241.56.218 1 115 (100% @ 0)
+1.70.18.140 1.188.212.31 2 255
+1.248.64.31@meshbox:~# ssh 1.188.212.31
+root@1.188.212.31's password: 
+Last login: Thu Nov 17 14:15:13 2005 from 1.248.64.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1086  Invalid misc:2353   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.248.64.31 1.248.64.31 1 116 (100% @ 0)
+10.8.144.206 1.248.64.31 1 116 (100% @ 0)
+1.70.18.140 1.248.64.31 2 255
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1121  Invalid misc:2533   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.248.64.31 1.248.64.31 1 118 (100% @ 0)
+10.8.144.206 1.248.64.31 1 118 (100% @ 0)
+1.70.18.140 1.248.64.31 2 255
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# unblocknode 1.70.18.140
+1.188.212.31@meshbox:~# ssh 1.70.18.140
+
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1125  Invalid misc:2830   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 113 (0% @ 0)
+1.248.64.31 1.248.64.31 1 120 (100% @ 0)
+10.8.144.206 1.248.64.31 1 120 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# ssh 1.70.18.140
+root@1.70.18.140's password: 
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.70.18.140@meshbox:~# blocknode 1.248.64.31; exit
+logout
+Connection to 1.70.18.140 closed.
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1133  Invalid misc:3397   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 113 (100% @ 110)
+1.248.64.31 1.248.64.31 1 103 (100% @ 0)
+10.8.144.206 1.248.64.31 1 103 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# blocknode 1.70.18.140
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1133  Invalid misc:3532   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.248.64.31 1.248.64.31 1 104 (100% @ 0)
+10.8.144.206 1.248.64.31 1 104 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1133  Invalid misc:3532   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.248.64.31 1.248.64.31 1 120 (100% @ 0)
+10.8.144.206 1.248.64.31 1 120 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# watch reporter
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1135  Invalid misc:3826   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.241.56.218 1.241.56.218 1 105 (100% @ 0)
+1.248.64.31 1.248.64.31 1 120 (100% @ 0)
+10.8.144.206 1.248.64.31 1 120 (100% @ 0)
+1.70.18.140 1.241.56.218 3 255
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# ssh 1.70.18.140
+[1]+  Interrupt               ( /bin/sleep 5; /bin/rm -f /tmp/gztmp$$ "/tmp/$prog" ) 2>/dev/null
+
+1.188.212.31@meshbox:~# unblocknode 1.70.18.140
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1143  Invalid misc:4296   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 115 (0% @ 0)
+1.241.56.218 1.241.56.218 1 103 (100% @ 0)
+1.248.64.31 1.248.64.31 1 103 (100% @ 0)
+10.8.144.206 1.248.64.31 1 103 (100% @ 0)
+1.188.212.31@meshbox:~# ssh 1.70.18.140
+root@1.70.18.140's password: 
+sLast login: Thu Nov 17 14:22:59 2005 from 1.188.212.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2302  Invalid misc:8888   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+10.8.144.206 1.248.64.31 1 255 (0% @ 20)
+1.188.212.31 1.188.212.31 1 112 (100% @ 70)
+1.248.64.31 1.188.212.31 2 255
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2326  Invalid misc:8992   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+10.8.144.206 1.248.64.31 1 103 (0% @ 20)
+1.248.64.31 1.248.64.31 1 102 (0% @ 20)
+1.188.212.31 1.188.212.31 1 111 (100% @ 60)
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2326  Invalid misc:8992   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.248.64.31 1.248.64.31 1 102 (0% @ 20)
+1.188.212.31 1.188.212.31 1 113 (100% @ 60)
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2348  Invalid misc:9178   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 112 (100% @ 60)
+10.8.144.206 1.188.212.31 2 255
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# sigspy
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2386  Invalid misc:9420   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 112 (100% @ 60)
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:EF  
+          inet addr:1.70.18.140  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.70.18.140"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:EF  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:2386  Invalid misc:9420   Missed beacon:0
+
+Searching for a gateway to use...
+
+
+1.188.212.31 1.188.212.31 1 113 (100% @ 60)
+1.241.56.218 1.188.212.31 2 255
+1.70.18.140@meshbox:~# sigspy  
+1.70.18.140@meshbox:~# sigspy
+1.70.18.140@meshbox:~# exit
+logout
+Connection to 1.70.18.140 closed.
+1.188.212.31@meshbox:~# 
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1315  Invalid misc:6149   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 106 (100% @ 80)
+1.248.64.31 1.248.64.31 1 116 (100% @ 0)
+10.8.144.206 1.248.64.31 1 116 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1352  Invalid misc:6189   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 104 (100% @ 80)
+1.248.64.31 1.248.64.31 1 116 (100% @ 0)
+10.8.144.206 1.248.64.31 1 116 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1352  Invalid misc:6189   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 102 (0% @ 90)
+1.248.64.31 1.248.64.31 1 116 (100% @ 0)
+10.8.144.206 1.248.64.31 1 116 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:E2  
+          inet addr:1.188.212.31  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.188.212.31"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:E2  
+          Bit Rate:11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr=250 B   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:7  Rx invalid frag:0
+          Tx excessive retries:1382  Invalid misc:6240   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.233.2  P-t-P:172.16.233.1  Mask:255.255.255.255
+0.0.0.0         172.16.233.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.70.18.140 1.70.18.140 1 103 (0% @ 90)
+1.248.64.31 1.248.64.31 1 115 (100% @ 0)
+10.8.144.206 1.248.64.31 1 115 (100% @ 0)
+1.241.56.218 1.248.64.31 2 255
+1.188.212.31@meshbox:~# sigspy
+1.188.212.31@meshbox:~# exit
+logout
+Connection to 1.188.212.31 closed.
+1.248.64.31@meshbox:~# sigspy
+
+wrote concurrentFlow_tcp_rtsOff_upload.sh, 15 lines, 533 chars
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8027: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8026: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8025: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8024: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8023: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8022: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8021: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 13 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8021: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8022: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8023: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8024: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8025: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8026: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8027: prio 0 quantum 11520 rate 900Kbit ceil 900Kbit burst 2751b/8 mpu 0b cburst 2751b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 802e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8029: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8028: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8028: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8029: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 802a: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 802b: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 802c: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 802d: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 802e: prio 0 quantum 10240 rate 800Kbit ceil 800Kbit burst 2623b/8 mpu 0b cburst 2623b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8035: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8034: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8033: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8032: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8031: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8030: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 13 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 802f: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8030: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8031: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8032: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8033: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8034: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8035: prio 0 quantum 8960 rate 700Kbit ceil 700Kbit burst 2495b/8 mpu 0b cburst 2495b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 803c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8039: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8038: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8037: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8036: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8036: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8037: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8038: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8039: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 803a: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 803b: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 803c: prio 0 quantum 7680 rate 600Kbit ceil 600Kbit burst 2367b/8 mpu 0b cburst 2367b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8043: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8042: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8041: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8040: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 803d: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 803e: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 803f: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8040: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8041: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8042: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8043: prio 0 quantum 6400 rate 500Kbit ceil 500Kbit burst 2239b/8 mpu 0b cburst 2239b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 804a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8049: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8048: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8047: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8046: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8045: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8044: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8020: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801b: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8044: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8045: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8046: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8047: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8048: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8049: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 804a: prio 0 quantum 5120 rate 400Kbit ceil 400Kbit burst 2111b/8 mpu 0b cburst 2111b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh
+1.93.105.236@meshbox:~/finalTest# Killed by signal 15.
+camp:~ camp$ ssh root@192.168.232.1
+root@192.168.232.1's password: 
+Last login: Sun Nov 20 16:33:24 2005 from 192.168.232.210
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.248.64.31@meshbox:~# ssh 1.93.105.236
+root@1.93.105.236's password: 
+Last login: Sun Nov 20 16:28:34 2005 from 1.188.212.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.93.105.236@meshbox:~# cd finalTest/
+1.93.105.236@meshbox:~/finalTest# ls
+concurrent.tar.gz                             httperfTest4.sh*
+concurrentFlow_tcp_rtsOff_bidir.sh*           httperfTest5.sh*
+concurrentFlow_tcp_rtsOff_upload.sh*          httperfTest6.sh*
+concurrentFlow_tcp_rtsOff_upload_log          httperfTest7.sh*
+concurrentFlow_tcp_rtsOn_bidir.sh*            httperfTest8.sh*
+concurrentFlow_tcp_rtsOn_upload.sh*           httperfTest9.sh*
+concurrentFlow_tcp_rtsOn_upload_log           initTCP_rtsOff.sh*
+concurrentFlow_udp_rtsOff_download.sh*        initTCP_rtsOn.sh*
+concurrentFlow_udp_rtsOff_download_bidir.sh*  initUDP.sh*
+concurrentFlow_udp_rtsOff_upload.sh*          initialize.fw@
+concurrentFlow_udp_rtsOn_download.sh*         linkCapacity_udp_rtsOff.sh*
+concurrentFlow_udp_rtsOn_download_bidir.sh*   linkCapacity_udp_rtsOff_log
+concurrentFlow_udp_rtsOn_upload.sh*           scripts.tar
+experiment.settings                           singleFlow_tcp_rtsOff.sh*
+ft_93_622                                     singleFlow_udp_rtsOff.sh*
+httperf.tar.gz                                temp
+httperfTest.sh*                               temp_file
+httperfTest10.sh*                             tests_93_625.tar.gz
+httperfTest2.sh*                              udp_flows.tar.gz
+httperfTest3.sh*
+1.93.105.236@meshbox:~/finalTest# ./initTCP_rtsOff.sh 
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32814
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   697 KBytes   285 Kbits/sec
+[  6] 20.0-40.0 sec   789 KBytes   323 Kbits/sec
+[  6]  0.0-40.5 sec  1.48 MBytes   305 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32818
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   684 KBytes   280 Kbits/sec
+[  6] 20.0-40.0 sec   659 KBytes   270 Kbits/sec
+[  6]  0.0-40.9 sec  1.34 MBytes   276 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32822
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   622 KBytes   255 Kbits/sec
+[  6] 20.0-40.0 sec   368 KBytes   151 Kbits/sec
+[  6]  0.0-41.7 sec  1008 KBytes   198 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32827
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   353 KBytes   145 Kbits/sec
+[  6] 20.0-40.0 sec   503 KBytes   206 Kbits/sec
+[  6]  0.0-41.4 sec   928 KBytes   183 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32831
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   383 KBytes   157 Kbits/sec
+[  6] 20.0-40.0 sec   296 KBytes   121 Kbits/sec
+[  6]  0.0-40.9 sec   712 KBytes   143 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32836
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec  79.2 KBytes  32.5 Kbits/sec
+[  6] 20.0-40.0 sec  61.6 KBytes  25.2 Kbits/sec
+[  6]  0.0-47.9 sec   168 KBytes  28.7 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32840
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   236 KBytes  96.9 Kbits/sec
+[  6] 20.0-40.0 sec   179 KBytes  73.2 Kbits/sec
+[  6]  0.0-40.1 sec   424 KBytes  86.5 Kbits/sec
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 801b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8019: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8018: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8017: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8016: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8015: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8015: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8016: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8017: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8018: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8019: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 801a: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 801b: prio 0 quantum 5120 rate 400Kbit ceil 400Kbit burst 2111b/8 mpu 0b cburst 2111b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:F0  
+          inet addr:1.93.105.236  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.93.105.236"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:F0  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:1876  Invalid misc:47753   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.129.2  P-t-P:172.16.129.1  Mask:255.255.255.255
+0.0.0.0         172.16.129.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 114 (100% @ 0)
+1.70.18.140 1.70.18.140 1 110 (100% @ 0)
+1.248.64.31 1.188.212.31 2 255
+1.241.56.218 1.188.212.31 3 255
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# vi experiment.settings 
+reading experiment.settings
+
+wrote experiment.settings, 3 lines, 36 chars
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8022: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8021: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8020: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 801c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 801c: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 801d: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 801e: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 801f: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8020: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8021: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8022: prio 0 quantum 3840 rate 300Kbit ceil 300Kbit burst 1983b/8 mpu 0b cburst 1983b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8029: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8028: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8027: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8026: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8025: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8024: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8023: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8023: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8024: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8025: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8026: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8027: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8028: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8029: prio 0 quantum 4480 rate 350Kbit ceil 350Kbit burst 2Kb/8 mpu 0b cburst 2Kb/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8030: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 802a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 13 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 802a: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 802b: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 802c: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 802d: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 802e: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 802f: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8030: prio 0 quantum 5760 rate 450Kbit ceil 450Kbit burst 2175b/8 mpu 0b cburst 2175b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8037: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8036: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8035: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8034: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8033: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8032: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8031: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8031: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8032: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8033: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8034: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8035: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8036: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8037: prio 0 quantum 4480 rate 350Kbit ceil 350Kbit burst 2Kb/8 mpu 0b cburst 2Kb/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# reporter
+br0       Link encap:Ethernet  HWaddr 00:04:E2:81:A5:F0  
+          inet addr:1.93.105.236  Bcast:1.255.255.255  Mask:255.0.0.0
+wlan0     IEEE 802.11b  ESSID:"TFA-Wireless_test"  Nickname:"1.93.105.236"
+          Mode:Master  Frequency:2.412GHz  Access Point: 00:04:E2:81:A5:F0  
+          Bit Rate=11Mb/s   Tx-Power=24 dBm   Sensitivity=1/3  
+          Retry min limit:8   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:3319  Invalid misc:61365   Missed beacon:0
+
+Connected to the network
+          inet addr:172.16.129.2  P-t-P:172.16.129.1  Mask:255.255.255.255
+0.0.0.0         172.16.129.1    0.0.0.0         UG    0      0        0 tun0
+==>       0  DHCP clients
+Mesh nodes detected
+
+1.188.212.31 1.188.212.31 1 117 (100% @ 0)
+1.70.18.140 1.70.18.140 1 118 (100% @ 0)
+1.248.64.31 1.188.212.31 2 255
+1.241.56.218 1.188.212.31 3 255
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 803e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8039: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8038: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8038: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8039: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 803a: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 803b: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 803c: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 803d: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 803e: prio 0 quantum 5760 rate 450Kbit ceil 450Kbit burst 2175b/8 mpu 0b cburst 2175b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8045: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8044: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8043: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8042: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8041: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8040: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 803f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 803f: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8040: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8041: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8042: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8043: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8044: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 8045: prio 0 quantum 5120 rate 400Kbit ceil 400Kbit burst 2111b/8 mpu 0b cburst 2111b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initTCP_rtsOff.sh 
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32852
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   674 KBytes   276 Kbits/sec
+[  6] 20.0-40.0 sec   602 KBytes   247 Kbits/sec
+[  6]  0.0-42.0 sec  1.33 MBytes   266 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32856
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   689 KBytes   282 Kbits/sec
+[  6] 20.0-40.0 sec   780 KBytes   319 Kbits/sec
+[  6]  0.0-40.5 sec  1.45 MBytes   301 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32861
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   605 KBytes   248 Kbits/sec
+[  6] 20.0-40.0 sec   736 KBytes   302 Kbits/sec
+[  6]  0.0-40.4 sec  1.33 MBytes   276 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32865
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   758 KBytes   311 Kbits/sec
+[  6] 20.0-40.0 sec   765 KBytes   313 Kbits/sec
+[  6]  0.0-40.7 sec  1.52 MBytes   312 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32869
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   787 KBytes   322 Kbits/sec
+[  6] 20.0-40.0 sec   765 KBytes   313 Kbits/sec
+[  6]  0.0-40.3 sec  1.53 MBytes   319 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32873
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   745 KBytes   305 Kbits/sec
+[  6] 20.0-40.0 sec   703 KBytes   288 Kbits/sec
+[  6]  0.0-40.5 sec  1.44 MBytes   298 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32877
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   508 KBytes   208 Kbits/sec
+[  6] 20.0-40.0 sec   543 KBytes   223 Kbits/sec
+[  6]  0.0-42.3 sec  1.11 MBytes   220 Kbits/sec
+[  6] local 1.93.105.236 port 5001 connected with 1.241.56.218 port 32881
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-20.0 sec   582 KBytes   239 Kbits/sec
+[  6] 20.0-40.0 sec   576 KBytes   236 Kbits/sec
+[  6]  0.0-41.9 sec  1.19 MBytes   238 Kbits/sec
+^[[A^[[A^[[A1.93.105.236@meshbox:~/finalTest# ./initialize.fw 3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 804c: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 804b: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 804a: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8049: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8048: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8047: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8046: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 12 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 8046: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 8047: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 8048: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8049: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 804a: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 804b: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:800 parent 1:1 leaf 804c: prio 0 quantum 3200 rate 250Kbit ceil 250Kbit burst 1919b/8 mpu 0b cburst 1919b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./concurrentFlow_tcp_rtsOff_upload.sh 
+1.93.105.236@meshbox:~/finalTest# ./initialize.fw 
+3mbit ceil 3mbit :  UP
+Stage 1
+Stage 2
+Cannot find device "br1"
+Cannot find device "root"
+Stage 3
+Cannot find device "br1"
+Error: Qdisc "2:" is classless.
+Stage 3.5
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+What is "mbit"?
+Usage: ... qdisc add ... htb [default N] [r2q N]
+ default  minor id of class to which unclassified packets are sent {0}
+ r2q      DRR quantums are computed as rate in Bps/r2q {10}
+ debug    string of 16 numbers each 0-3 {0}
+
+... class add ... htb rate R1 burst B1 [prio P] [slot S] [pslot PS]
+                      [ceil R2] [cburst B2] [mtu MTU] [quantum Q]
+ rate     rate allocated to this class (class can still borrow)
+ burst    max bytes burst which can be accumulated during idle period {computed}
+ ceil     definite upper class rate (no borrows) {rate}
+ cburst   burst but for ceil {computed}
+ mtu      max packet size we create rate map for {1600}
+ prio     priority of leaf; lower are served first {0}
+ quantum  how much bytes to serve from leaf at once {use r2q}
+
+TC HTB version 3.3
+What is "mbit"?
+Usage: ... qdisc add ... htb [default N] [r2q N]
+ default  minor id of class to which unclassified packets are sent {0}
+ r2q      DRR quantums are computed as rate in Bps/r2q {10}
+ debug    string of 16 numbers each 0-3 {0}
+
+... class add ... htb rate R1 burst B1 [prio P] [slot S] [pslot PS]
+                      [ceil R2] [cburst B2] [mtu MTU] [quantum Q]
+ rate     rate allocated to this class (class can still borrow)
+ burst    max bytes burst which can be accumulated during idle period {computed}
+ ceil     definite upper class rate (no borrows) {rate}
+ cburst   burst but for ceil {computed}
+ mtu      max packet size we create rate map for {1600}
+ prio     priority of leaf; lower are served first {0}
+ quantum  how much bytes to serve from leaf at once {use r2q}
+
+TC HTB version 3.3
+Cannot find device "br1"
+Error: Qdisc "2:1" is classless.
+Stage 4
+RTNETLINK answers: Invalid argument
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Cannot find device "br1"
+Unknown qdisc "2:100", hence option "sfq" is unparsable
+Unknown qdisc "2:200", hence option "sfq" is unparsable
+Unknown qdisc "2:300", hence option "sfq" is unparsable
+Unknown qdisc "2:400", hence option "sfq" is unparsable
+Unknown qdisc "2:500", hence option "sfq" is unparsable
+Unknown qdisc "2:600", hence option "sfq" is unparsable
+Unknown qdisc "2:800", hence option "sfq" is unparsable
+Stage 5
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Cannot find device "br1"
+Unknown filter "ip", hence option "parent" is unparsable
+Stage 6
+Shaping ready
+qdisc sfq 800d: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800c: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800b: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800a: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8009: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8008: dev eth0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev eth0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+qdisc sfq 8052: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8051: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8050: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 804f: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 804e: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 804d: dev br0 quantum 1514b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 1: dev br0 r2q 10 default 400 direct_packets_stat 15 ver 3.10
+qdisc sfq 8014: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8013: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8012: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8011: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 8010: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc sfq 800f: dev tun0 quantum 1450b limit 128p flows 128/1024 perturb 10sec 
+qdisc htb 2: dev tun0 r2q 10 default 500 direct_packets_stat 0 ver 3.10
+filter parent 1: protocol ip pref 1 fw 
+filter parent 1: protocol ip pref 1 fw handle 0x1 classid 1:100 
+filter parent 1: protocol ip pref 2 fw 
+filter parent 1: protocol ip pref 2 fw handle 0x2 classid 1:200 
+filter parent 1: protocol ip pref 3 fw 
+filter parent 1: protocol ip pref 3 fw handle 0x3 classid 1:300 
+filter parent 1: protocol ip pref 4 fw 
+filter parent 1: protocol ip pref 4 fw handle 0x4 classid 1:400 
+filter parent 1: protocol ip pref 5 fw 
+filter parent 1: protocol ip pref 5 fw handle 0x5 classid 1:500 
+filter parent 1: protocol ip pref 6 fw 
+filter parent 1: protocol ip pref 6 fw handle 0x6 classid 1:600 
+filter parent 1: protocol ip pref 8 fw 
+filter parent 1: protocol ip pref 8 fw handle 0x8 classid 1:800 
+class htb 1:1 root rate 8Mbit ceil 8Mbit burst 25Kb/8 mpu 0b cburst 12083b/8 mpu 0b level 7 
+class htb 1:100 parent 1:1 leaf 804d: prio 0 quantum 39321 rate 3Mbit ceil 3Mbit burst 5531b/8 mpu 0b cburst 5531b/8 mpu 0b level 0 
+class htb 1:200 parent 1:1 leaf 804e: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:300 parent 1:1 leaf 804f: prio 0 quantum 3276 rate 256Kbit ceil 512Kbit burst 1926b/8 mpu 0b cburst 2254b/8 mpu 0b level 0 
+class htb 1:400 parent 1:1 leaf 8050: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:500 parent 1:1 leaf 8051: prio 0 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+class htb 1:600 parent 1:1 leaf 8052: prio 7 quantum 104857 rate 8Mbit ceil 8Mbit burst 12083b/8 mpu 0b cburst 12083b/8 mpu 0b level 0 
+1.93.105.236@meshbox:~/finalTest# cd /mnt/hd2
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 5
+Length of test (seconds): 120 Number of users: 5
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+curl: no process killed
+Total Bytes: 1934415 Average Bandwidth: 125815
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 10
+Length of test (seconds): 120 Number of users: 10
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+curl: no process killed
+Total Bytes: 4457565 Average Bandwidth: 294715
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 15
+Length of test (seconds): 120 Number of users: 15
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+curl: no process killed
+Total Bytes: 6924645 Average Bandwidth: 457827
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 20
+Length of test (seconds): 120 Number of users: 20
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 8606745 Average Bandwidth: 573783
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 25
+Length of test (seconds): 120 Number of users: 25
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 11354175 Average Bandwidth: 756945
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 30
+Length of test (seconds): 120 Number of users: 30
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 13316625 Average Bandwidth: 887775
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 35
+Length of test (seconds): 120 Number of users: 35
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 15110865 Average Bandwidth: 1007391
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 40
+Length of test (seconds): 120 Number of users: 40
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 16877070 Average Bandwidth: 1125138
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 45
+Length of test (seconds): 120 Number of users: 45
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 17577945 Average Bandwidth: 1171863
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 50
+Length of test (seconds): 120 Number of users: 50
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 16849035 Average Bandwidth: 1123269
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 55
+Length of test (seconds): 120 Number of users: 55
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 17297595 Average Bandwidth: 1153173
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 60
+Length of test (seconds): 120 Number of users: 60
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 15251040 Average Bandwidth: 1016736
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 65
+Length of test (seconds): 120 Number of users: 65
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 15054795 Average Bandwidth: 1003653
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 70
+Length of test (seconds): 120 Number of users: 70
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 9055305 Average Bandwidth: 603687
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 75
+Length of test (seconds): 120 Number of users: 75
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 13653045 Average Bandwidth: 902680
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 80
+Length of test (seconds): 120 Number of users: 80
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 11157930 Average Bandwidth: 743862
+                                                                               
+Broadcast Message from root@meshbox                                            
+        (somewhere) at 18:08 ...                                               
+                                                                               
+ERROR: Restarted splash                                                        
+
+                                                                                                                                                          85
+Length of test (seconds): 120 Number of users: 85
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 9896355 Average Bandwidth: 659757
+1.93.105.236@meshbox:/mnt/hd2# rm -rf temp         
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 85
+Length of test (seconds): 120 Number of users: 85
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Connection to 1.93.105.236 closed by remote host.
+Connection to 1.93.105.236 closed.
+1.248.64.31@meshbox:~# ssh 1.93.105.236
+root@1.93.105.236's password: 
+Last login: Sun Nov 20 16:33:40 2005 from 1.248.64.31
+LocustWorld Mesh: v10 b25.1303 Linux 2.4.20.
+1.93.105.236@meshbox:~# cd /mnt/hd2
+1.93.105.236@meshbox:/mnt/hd2# ls
+alltests/            httperf20_4  httperf60_3                 temp
+backup_webemulator*  httperf40_1  lib/                        temp_file
+gcc-2.95.3.tar.gz    httperf40_2  lost+found/                 webemulator*
+httperf20_1          httperf40_3  multihop_pack.tar.gz
+httperf20_2          httperf60_1  singleFlow_udp_rtsOff1_log
+httperf20_3          httperf60_2  singleFlow_udp_rtsOff2_log
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 85
+Length of test (seconds): 120 Number of users: 85
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 13961430 Average Bandwidth: 930762
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 90
+Length of test (seconds): 120 Number of users: 90
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+                                                                               
+Broadcast Message from root@meshbox                                            
+        (somewhere) at 18:16 ...                                               
+                                                                               
+ERROR: Restarted splash                                                        
+
+                                                                               
+30
+40
+50
+60
+70
+80
+100
+110
+120
+Total Bytes: 9335655 Average Bandwidth: 622377
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 95
+Length of test (seconds): 120 Number of users: 95
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 12195225 Average Bandwidth: 806295
+1.93.105.236@meshbox:/mnt/hd2# time ./webemulator 120 100
+Length of test (seconds): 120 Number of users: 100
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 13064310 Average Bandwidth: 870954
+
+real    2m0.126s
+user    0m0.230s
+sys     0m9.310s
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 100
+Length of test (seconds): 120 Number of users: 100
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+120
+Total Bytes: 14774445 Average Bandwidth: 984963
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 100
+Length of test (seconds): 120 Number of users: 100
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 11101860 Average Bandwidth: 734007
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 90 
+Length of test (seconds): 120 Number of users: 90
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 10288845 Average Bandwidth: 680254
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 80
+Length of test (seconds): 120 Number of users: 80
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 10709370 Average Bandwidth: 713958
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 150
+Length of test (seconds): 120 Number of users: 150
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 10429020 Average Bandwidth: 683870
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 150
+Length of test (seconds): 120 Number of users: 150
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 8074080 Average Bandwidth: 529447
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 140
+Length of test (seconds): 120 Number of users: 140
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 11634525 Average Bandwidth: 775635
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 130
+Length of test (seconds): 120 Number of users: 130
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 9279585 Average Bandwidth: 613526
+                                                                               
+Broadcast Message from root@meshbox                                            
+        (somewhere) at 18:48 ...                                               
+                                                                               
+ERROR: Restarted splash                                                        
+
+                                                                                                                                                           20
+Length of test (seconds): 120 Number of users: 120
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 9111375 Average Bandwidth: 607425
+1.93.105.236@meshbox:/mnt/hd2# ./webemulator 120 110
+Length of test (seconds): 120 Number of users: 110
+Prints status in increments of 10s of seconds (approximate)...
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+Total Bytes: 12279330 Average Bandwidth: 818622
+1.93.105.236@meshbox:/mnt/hd2# Read from remote host 192.168.232.1: Operation timed out
+Connection to 192.168.232.1 closed.
+camp:~ camp$ 

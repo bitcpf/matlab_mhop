@@ -1,0 +1,21 @@
+% To validate the problem of multiband mesh network
+
+
+
+
+%%Input file format: 
+% GPS time, Board Time, RX velocity, TX Velocity, RX Latitude, RX
+% Longitude, TX latitude, TX longtitude, 4 RSSI(2.4,5.2,450,900), 4 Tpt, 4
+% Delay, 4 Activity Level
+% 
+
+% Input data should be named as vncdata;
+
+% Output data is tpt accuracy and delay accuracy
+% Each metric has 5 value, means input 1 band RSSI for 4 bands, then input
+% all four band rssi
+
+clear all
+close all
+
+load park_sa; %%Measured data
