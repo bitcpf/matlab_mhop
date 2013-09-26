@@ -32,7 +32,7 @@ MN=1:(N_x*N_y);
 
 % Define single link capacity and threshold
 l_cap=6;
-d_thre=550;
+d_thre=500;
 
 for i=1:length(MN_loc(:,1))
     for j=1:length(MN_loc(:,1))
@@ -48,25 +48,34 @@ for i=1:length(MN_loc(:,1))
     
 end
 
-Rlink=[MN(:) R_link];
-node_cap=ones
 
+excu=ones(MN,MN);
+for i=1:length(MN)
+    excu(i,i)=0;
+end
+
+ex
+
+Rlink=[MN(:) R_link];
+node_cap=ones(1,N_x*N_y)*11;
+node_cap=[MN(:) node_cap(:)];
 
 demand=[MN(:) demand(:)]
 
 dlmwrite('Demand',demand,' ');
 dlmwrite('mn',MN,' ');
 dlmwrite('Rlink',Rlink,' ');
+dlmwrite('nodecap',node_cap,' ');
+dlmwrite('Excu',excu,' ');
 
-
-!ampl transship.mod
-delete orig
-delete dest
-delete supply
-delete demand
-delete cost
-
-!python ampl_matlab.py
-
-load trans.txt
-trans
+% !ampl transship.mod
+% delete orig
+% delete dest
+% delete supply
+% delete demand
+% delete cost
+% 
+% !python ampl_matlab.py
+% 
+% load trans.txt
+% trans

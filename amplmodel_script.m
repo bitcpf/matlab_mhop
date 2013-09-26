@@ -6,15 +6,16 @@
 clear all
 close all
 
-N_x=5;
-N_y=5;
+N_x=7;
+N_y=7;
 
 % Load Demand
 
-demand=ones(1,N_x*N_y);
+demandu=ones(1,N_x*N_y);
 %save 'D_rj.mat' demand;
 %load D_rj;
-demand=demand*2;
+demandd=demandu*2;
+demandu=demandu*1.5;
 
 % Generate grid and capacity according to distance
 [X,Y]=meshgrid(1:500:500*N_x,1:500:500*N_y);
@@ -32,7 +33,7 @@ MN=1:(N_x*N_y);
 
 % Define single link capacity and threshold
 l_cap=6;
-d_thre=550;
+d_thre=500;
 
 for i=1:length(MN_loc(:,1))
     for j=1:length(MN_loc(:,1))
@@ -48,25 +49,36 @@ for i=1:length(MN_loc(:,1))
     
 end
 
+
+excu=ones(length(MN),length(MN));
+for i=1:length(MN)
+    excu(i,i)=0;
+end
+
+
+excu=[MN(:) excu];
 Rlink=[MN(:) R_link];
-node_cap=ones(1,N_x*N_y)*9;
+node_cap=ones(1,N_x*N_y)*11;
 node_cap=[MN(:) node_cap(:)];
 
-demand=[MN(:) demand(:)]
+demandu=[MN(:) demandu(:)];
+demandd=[MN(:) demandd(:)];
 
-dlmwrite('Demand',demand,' ');
+dlmwrite('demandu',demandu,' ');
+dlmwrite('demandd',demandd,' ');
 dlmwrite('mn',MN,' ');
 dlmwrite('Rlink',Rlink,' ');
 dlmwrite('nodecap',node_cap,' ');
+dlmwrite('Excu',excu,' ');
 
-!ampl transship.mod
-delete orig
-delete dest
-delete supply
-delete demand
-delete cost
-
-!python ampl_matlab.py
-
-load trans.txt
-trans
+% !ampl transship.mod
+% delete orig
+% delete dest
+% delete supply
+% delete demand
+% delete cost
+% 
+% !python ampl_matlab.py
+% 
+% load trans.txt
+% trans
