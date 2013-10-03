@@ -6,10 +6,17 @@
 clear all
 close all
 
-N_x=7;
-N_y=7;
-
+% N_x=4;
+% N_y=4;
+for N_x=1:7
+    for N_y=1:10
 % Load Demand
+
+clear MN_loc;
+clear R_link;
+clear demandu;
+clear demandd;
+clear excu;
 
 demandu=ones(1,N_x*N_y);
 %save 'D_rj.mat' demand;
@@ -19,6 +26,8 @@ demandu=demandu*1.5;
 
 % Generate grid and capacity according to distance
 [X,Y]=meshgrid(1:500:500*N_x,1:500:500*N_y);
+
+
 
 f_c=1;
 for i=1:N_x
@@ -71,14 +80,13 @@ dlmwrite('Rlink',Rlink,' ');
 dlmwrite('nodecap',node_cap,' ');
 dlmwrite('Excu',excu,' ');
 
-% !ampl transship.mod
-% delete orig
-% delete dest
-% delete supply
-% delete demand
-% delete cost
-% 
-% !python ampl_matlab.py
-% 
-% load trans.txt
-% trans
+!ampl singleband.mod
+
+pth=[num2str(N_x) '_' num2str(N_y)];
+mkcmd=['mkdir ar_loop/single' pth];
+system(mkcmd);
+mvcmd=['mv *.rt ' 'ar_loop/single' pth '/']
+system(mvcmd);
+
+    end
+end
