@@ -1,0 +1,127 @@
+################################################################################
+##
+## COPYRIGHT:    (c) 2012 Rohde & Schwarz, Munich Germany
+##
+## MODULE:       FSH
+##
+## LANGUAGE:     SCPI using PyVISA
+##
+## AUTHOR:       Tyler Tricker, RSA Beaverton, OR, USA
+##
+## RESPONSIBLE:  Tyler Tricker, RSA Beaverton, OR, USA
+##
+## REQUIREMENTS: FSH with python environment setup to support the py-visa
+##               module.
+##
+## REMARKS:      This file shows basic communication and scripting with the FSH
+##               using py-visa. The script will get the instrument up in spectrum
+##               for sampling several frequencies overtime by using markers.
+##
+## HISTORY       Created Semptember, 2012
+##
+################################################################################
+import types
+import pyvisa
+import visa
+import csv
+import datetime
+
+from pyvisa.vpp43 import visa_library
+from visa import instrument
+
+# Please note this line can be left out if the visa32.dll is in the
+# C:\Windows\System32 folder.
+#visa_library.load_library(r"C:\Windows\SysWOW64\visa32.dll")
+
+
+##################### Hot Patch for the intrument object ##################
+def read_stb(self):
+    """Reads the STB status Register from an intrument. Using the STB status
+       Register It's possible to tell if the instrument has thrown an error,
+       or produced output ready for reading."""
+    self.stb = pyvisa.vpp43.read_stb(self.vi)
+    return self.stb
+    
+def execute(self, message):
+    """ This function is similar to the ask command except it handles status
+       changes and Errors gracefully without blocks. """
+    self.write(message) #send command
+    self.read_stb()     #get device status
+    output = ""         #make a response variable
+    if self.stb&16: # A response is availiable
+        output = self.read()
+    if self.stb&4:  # An error occured
+        while self.stb&4:
+            print("Error in " + message)
+            self.write('SYSTEM:ERROR?')
+            output += self.read()
+            self.read_stb()
+    return output
+
+def patch(thing):
+    """ This function adds read_stb and execute method calls to an
+        intrument object """
+    thing.read_stb = types.MethodType(read_stb, thing)
+    thing.execute  = types.MethodType(execute, thing)
+    return thing
+################### End Hot Patch for the intrument object ################
+
+############################### Utility Functions ##############################
+def executeCommandList(instrument, cmdlst):
+    """ This function is useful for executing a bunch of commands sequentialy
+    """
+    output = [] # Local Variable
+    for cmd in cmdlst:
+        output.append(instrument.execute(cmd))
+    return output
+
+############################# End Utility Functions ############################
+
+############################### Script Body ####################################
+def setupfsh():
+    """ sets up the fsh instrument mode, sets the frequency span and
+        adds markers.
+    """
+    print('setting up fsh')
+    executeCommandList(
+        fsh,         # instrument to execute commands over
+        ['INST SAN', # set the fsh into this instrument mode
+        '*RST',      # set mode into default (reset)
+        'CALC:MARK1:X 2GHZ', # add a marker at 2GHZ 
+        'CALC:MARK2:X 4GHZ', # add a marker at 4GHZ
+        'CALC:MARK3:X 6GHZ']
+        ) # add a marker at 6GHZ
+
+def getMarkerPowerLevels():
+    """  """
+    output = executeCommandList(
+        fsh,         # instrument to execute commands over
+        ['CALC:MARK1:Y?',
+         'CALC:MARK2:Y?',
+         'CALC:MARK3:Y?']
+        ) # add a marker at 6GHZ
+    return output
+
+def collectData():
+    """ Main Collection routine outputs the result into a csv file
+    """
+    ofile = file('.\powerdata.csv', 'wb')
+    csvOutStream = csv.writer(ofile, dialect='excel')
+    csvOutStream.writerow(['Marker1 at 2GHZ','Marker2 at 4GHZ',
+                           'Marker3 at 6 GHZ'])
+    for i in range(0, 10):
+        print('Progress :' + str(i) + ' of ' + '10')
+	print(datetime.datetime.now())
+        csvOutStream.writerow( getMarkerPowerLevels())
+    ofile.close()
+
+    
+# Main Script Entry Point
+if __name__ == '__main__':
+    print('Connecting to FSH')
+    fsh = patch(instrument('TCPIP::172.17.75.1::INSTR'))
+    
+    setupfsh()    # Setup the FSH
+    collectData() # Collect data from the fsh and save it to a csv file
+    fsh.close()   #Terminate Connection with the FSH
+############################# End Script Body ##################################

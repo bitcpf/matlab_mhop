@@ -1,0 +1,13 @@
+
+dis_f=[1.8,3.8,13.5,24,44];
+
+f_rssi=1;
+for i=1:5
+    for j=(i+1):5
+        alpha2_f(f_rssi)=(rssi2_f(i)-rssi2_f(j))/10/log10(dis_f(j)/dis_f(i));
+        f_rssi=f_rssi+1;
+        
+    end
+end
+
+alpha2_f

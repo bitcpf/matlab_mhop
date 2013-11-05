@@ -1,0 +1,6 @@
+solve_message =
+'CPLEX 10.0.0: out of memory, no tree; solution may exist; objective 19\
+466793998 MIP simplex iterations\
+1214921 branch-and-bound nodes\
+absmipgap = 5.56182, relmipgap = 0.292727'
+

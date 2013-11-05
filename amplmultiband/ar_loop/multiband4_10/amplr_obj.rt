@@ -1,0 +1,6 @@
+solve_message =
+'CPLEX 10.0.0: unrecoverable failure with integer solution; objective 134\
+112296679 MIP simplex iterations\
+784517 branch-and-bound nodes\
+absmipgap = 33.1827, relmipgap = 0.247632'
+

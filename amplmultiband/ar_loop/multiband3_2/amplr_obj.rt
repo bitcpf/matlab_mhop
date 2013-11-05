@@ -1,0 +1,4 @@
+solve_message = 'CPLEX 10.0.0: optimal integer solution; objective 20\
+1858 MIP simplex iterations\
+58 branch-and-bound nodes'
+
