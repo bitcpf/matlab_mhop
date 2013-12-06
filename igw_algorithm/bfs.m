@@ -1,0 +1,45 @@
+% A should be a Adjancy matrix for one band
+% BFS return re as Adjacency Matrix, can be expanded to incidence matrix by
+% function compresstable2matrix(re) 
+% Return BFS result with degree
+
+
+function re=bfs(A,start_point)
+
+head=1;             % Queue head
+tail=1;             % Queue end, at begining queue is empty
+
+% These two parameter need to be modified in a function
+queue(head)=start_point;      % first node in queue
+flag=start_point;             % Mark which one has been visited
+
+head=head+1;        % expand queue
+re=[];              % Store the result
+f_degree=1;
+m=numel(A(:,1));
+
+while tail~=head    % if the queue is empty
+    i=queue(tail);  % the end of the queue
+    if numel(re)>0
+    f_degree=max(re(find(re(:,2)==queue(tail)),3))+1;
+    end
+    for j=1:m
+        
+        if A(i,j)==1 && isempty(find(flag==j,1))    % if the node has not been visited and 
+            queue(head)=j;                          % New node in the queue
+            head=head+1;                            
+            flag=[flag j];                          % Mark node
+            re=[re;i j f_degree];                          % Store the new node
+            
+            
+            
+        end
+    end
+    tail=tail+1;       
+    %f_degree=max(re(find(re(:,2)==queue(tail)),3))+1;
+end
+
+% A=compresstable2matrix(re);
+% figure;
+% netplot(A,1)
+ 

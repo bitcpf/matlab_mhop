@@ -9,8 +9,8 @@ close all
 
 
 % Arbitrary grid for debugging
-  N_x=2;
-  N_y=2;
+  N_x=10;
+  N_y=10;
   ga_fl=1;
 % Define bands used in algorithm, high freq first
   bands=[2.4*10^9];
@@ -90,40 +90,40 @@ Ad_d1(Ad_d1>0)=1;
 % means no interference. Only count the inter node interference, intra node
 % interference is not counted
 
-
+d=numel(MN_loc(:,1));
+R_i=zeros(d,d,d,d,numel(bands));
+clear d
 for i=1:length(MN_loc(:,1))
-    for j=1:length(MN_loc(:,1))
-        for k=1:length(MN_loc(:,1))
-            for l=1:length(MN_loc(:,1))
-                for b=1:length(bands)
-                    % Exclude intra node interference
-                    if(Ad_d1(i,j)==1 && i ~=k && j~=k && i~=l && j~=l && k~=l)
-                        dis_temp1=sqrt((MN_loc(i,1)-MN_loc(k,1))^2+(MN_loc(i,2)-MN_loc(k,2))^2);
-                        dis_temp2=sqrt((MN_loc(j,1)-MN_loc(k,1))^2+(MN_loc(j,2)-MN_loc(k,2))^2);
-                        dis_temp3=sqrt((MN_loc(i,1)-MN_loc(l,1))^2+(MN_loc(i,2)-MN_loc(l,2))^2);
-                        dis_temp4=sqrt((MN_loc(j,1)-MN_loc(l,1))^2+(MN_loc(j,2)-MN_loc(l,2))^2);
-                         if(dis_temp1<inter_thre(b) || dis_temp2<inter_thre(b) || dis_temp3<inter_thre(b) || dis_temp4 < inter_thre(b))
-                             R_i(i,j,k,l,b)=1;
-                         else
-                            R_i(i,j,k,l,b)=0;
-                         end
-                    else
-                        R_i(i,j,k,l,b)=0;
-                    end
-                end
-            end
+    delta_x=MN_loc(i,1)-MN_loc(:,1);
+    delta_y=MN_loc(i,2)-MN_loc(:,2);
+    dist=sqrt(delta_x.^2+delta_y.^2);
+    for b=1:length(bands)
+        Ni_interference=find(dist<=inter_thre(b));
+        Ni_link=find(Ad_multi(i,:,b)==1);
+        for j=1:length(Ni_interference)
+            Nj_link=find(Ad_multi(Ni_interference(j),:,b)==1);
+        R_i(i,Ni_link,Ni_interference(j),Nj_link,b)=1;        
+        R_i(i,Ni_link,Nj_link,Ni_interference(j),b)=1;
+        R_i(Ni_link,i,Ni_interference(j),Nj_link,b)=1;
+        R_i(Ni_link,i,Nj_link,Ni_interference(j),b)=1;
         end
     end
-    
 end
-
-
-
+% Delete intra node interference which could be taken by time share
+for i=1:length(MN_loc(:,1))
+        R_i(i,i,:,:,:)=0;
+        R_i(i,:,i,:,:)=0;
+        R_i(i,:,:,i,:)=0;
+        R_i(:,:,i,i,:)=0;
+        R_i(:,i,i,:,:)=0;
+        R_i(:,i,:,i,:)=0;
+   
+end
 
 
 % Above are input
 
-
+R_i;
 % rs_demand is the demand that has not been satisfied by the assignment
 rs_demand_d=demandd;
 rs_demand_u=demandu;
@@ -164,6 +164,12 @@ traf_u=R_link.*0;
 % Calculate the GA capacity and set the initial value of percent a GA can
 % be used to generate a sub tree
 ga_cap=sum(l_cap);
+
+
+
+% Define initial serve rate 75%
+serve_rate=0.75;
+
 
 
 

@@ -1,36 +1,37 @@
-% Function generate subtree 
+% Function generate subtree
 
 
 
-function [subtree_out,out_ga,serve_nodes]=subtree_gen(a_degree,serve_rate,ga_cap,bands,start_point,demandd,demandu,serve_nodes,igw_degree,Ad_multi)
-    
+function [subtree_out,out_ga]=subtree_gen(a_degree,serve_rate,ga_cap,bands,start_point,demandd,demandu,serve_nodes,igw_degree,Ad_multi)
+
 subtree_serve_node=start_point;
 temp_ga=start_point;
 
-    subtree_igw_degree=igw_degree;
-    
-    subtree_igw_degree(serve_nodes)=0;
-    
-    sub_tree_Ad_multi=Ad_multi;
-    sub_tree_Ad_multi(:,serve_nodes,:)=0
-    
-    if find(serve_nodes==start_point)
-            error('Start Point already in served nodes')
-    elseif sum(sub_tree_Ad_multi(start_point,:,:))==0
-        serve_nodes=[serve_nodes start_point];
-        out_ga=start_point;
-        subtree_out=start_point;
-    else
-        serve_nodes=[serve_nodes start_point]; 
-    end
-        
-    % 1 hop degree 
-    Ad_d1=sum(Ad_multi,3);
-    Ad_d1(Ad_d1>0)=1;
-            
-        
+subtree_igw_degree=igw_degree;
+
+subtree_igw_degree(serve_nodes)=0;
+
+sub_tree_Ad_multi=Ad_multi;
+sub_tree_Ad_multi(:,serve_nodes,:)=0;
+
+if find(serve_nodes==start_point)
+    error('Start Point already in served nodes')
+elseif sum(sub_tree_Ad_multi(start_point,:,:))==0
+    serve_nodes=[serve_nodes start_point];
+    out_ga=start_point;
+    subtree_out=start_point;
+else
+    serve_nodes=[serve_nodes start_point];
+end
+
+% 1 hop degree
+Ad_d1=sum(Ad_multi,3);
+Ad_d1(Ad_d1>0)=1;
+
+
 for i=1:numel(bands)
     while (sum(demandd(subtree_serve_node))+sum(demandu(subtree_serve_node))-demandd(temp_ga)-demandu(temp_ga)) < serve_rate*ga_cap
+    
         if numel(serve_nodes)<numel(igw_degree)
             if sum(sub_tree_Ad_multi(start_point,:,i))>0
                 
@@ -44,38 +45,42 @@ for i=1:numel(bands)
                 subtree_serve_node=[subtree_serve_node next_node];
                 serve_nodes=[serve_nodes next_node];
                 
-                % Update IGW degree by removing served nodes
+                % Update IGW degree by removing served nodes, get the IGW
+                % degree of the subtree
                 
                 clear temp
-                temp=Ad_d1(subtree_serve_node,:)
-                temp=temp(:,subtree_serve_node)
+                temp=Ad_d1(subtree_serve_node,:);
+                temp=temp(:,subtree_serve_node);
                 [m,n]=size(temp);
-Ad_nhop=temp;
-
-for tk=1:a_degree
-
-
-for ti=1:m
-    for tj=1:n
-        if(temp(ti,tj)==1)
-            Ad_nhop(ti,:)=Ad_nhop(ti,:)+temp(tj,:);
-        end        
-    end
-    Ad_nhop(ti,ti)=0;
-end
- 
-end
-
-Ad_nhop(Ad_nhop>0)=1;
+                Ad_nhop=temp;
+                
+                for tk=1:a_degree
+                    
+                    
+                    for ti=1:m
+                        for tj=1:n
+                            if(temp(ti,tj)==1)
+                                Ad_nhop(ti,:)=Ad_nhop(ti,:)+temp(tj,:);
+                            end
+                        end
+                        Ad_nhop(ti,ti)=0;
+                    end
+                    
+                end
+                
+                Ad_nhop(Ad_nhop>0)=1;
+                
+                % temp_degree is the degree of the subtree, take care of the index
                 temp_degree=sum(Ad_nhop);
                 
-                tempga_index=find(temp_degree(subtree_serve_node)==max(temp_degree(subtree_serve_node)));
+                
+                tempga_index=find(temp_degree==max(temp_degree));
                 % temp_ga is the node in the subtree with most adjancy
                 % connection.
                 temp_ga=subtree_serve_node(tempga_index(1));
                 % Update igw_degree matrix and Ad_multi matrix
                 subtree_igw_degree(next_node)=0;
-                sub_tree_Ad_multi(start_point,next_node,i)=0
+                sub_tree_Ad_multi(start_point,next_node,i)=0;
                 
                 % need to think about the stop rule when all the demand are
                 % served

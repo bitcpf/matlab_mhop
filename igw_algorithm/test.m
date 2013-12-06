@@ -39,8 +39,8 @@ demandu=ones(1,N_x*N_y);
 
 
 % Define input variables
-demandd=demandu*2;
-demandu=demandu*1.5;
+demandd=demandu*0.5;
+demandu=demandu*0.1;
 
 
 
@@ -123,7 +123,7 @@ end
 
 % Above are input
 
-R_i;
+
 % rs_demand is the demand that has not been satisfied by the assignment
 rs_demand_d=demandd;
 rs_demand_u=demandu;
@@ -184,19 +184,16 @@ igw_degree=sum(Ad_nhop);
     start_point=find(MN_loc(start_x,2)==min(MN_loc(start_x,2)));
     start_point_loc=MN_loc(start_point,:);
     
-    subtree_serve_node=start_point;
-    temp_ga=start_point;
+%    subtree_serve_node=start_point;
+tshar=zeros(numel(MN));
 
 % 2. BFS search find the sub tree according to the capacity of a GA node 
-    sub_tree_Ad_multi=Ad_multi;
-    subtree_igw_degree=igw_degree;
-    
-    subtree_igw_degree(subtree_serve_node)=0;
-    
     % Function needed
-    serve_nodes=[]%=subtree_serve_node;
-    [subtree,sub_ga,serve_nodes]=subtree_gen(a_degree,serve_rate,ga_cap,bands,start_point,demandd,demandu,serve_nodes,igw_degree,Ad_multi)
-    subtree=[]
-     [subtree,sub_ga,serve_nodes]=subtree_gen(a_degree,serve_rate,ga_cap,bands,4,demandd,demandu,serve_nodes,igw_degree,Ad_multi)
+    serve_nodes=[];%=subtree_serve_node;
+    [subtree,sub_ga]=subtree_gen(a_degree,serve_rate,ga_cap,bands,start_point,demandd,demandu,serve_nodes,igw_degree,Ad_multi)
+
     
+    % Assign GA capacity to the subtree nodes
+[tst1,tst2]=subtree_assign(subtree,sub_ga,bands,serve_nodes,Ad_multi,a_degree,rs_demand_d,rs_demand_u,l_cap,tshar)
+
     
