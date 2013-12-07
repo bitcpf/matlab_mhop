@@ -1,6 +1,23 @@
 % BFS CA
+clear all
+close all
+
+load test
 
 
+% Inilize
+s_current=ga;
+n_served=[];
+n_unserved=MN;
+n_unserved(ga)=[];
+act_link=R_link*0;
+back_Ad_multi=Ad_multi;
+
+% Delete ga in nodes
+
+layer=[ga; zeros(1,numel(ga));ga];
+
+% First initial loop,BSF initialize
 for s=1:length(MN)
     
     clear s_next
@@ -18,29 +35,64 @@ for s=1:length(MN)
   %      end
     end
     
+    
     s_next=s_next(:,s_next(2,:)>0);
     s_next=sortrows(s_next',3)';
     
     for l=1:length(s_next(1,:))
-        next=s_next(1,l)
-        channel=Ad_multi(g_current,next,:);
-        index_channel=find(channel==1);
-        % Calculate PEN of each channel
-        clear pen
+        
+        next=s_next(1,l);
+        clear pen_can
+        can_i=s;
+            can_ga=s_current(can_i);
+            channel=Ad_multi(can_ga,next,:);
+            index_channel=find(channel==1);        
+            % Calculate PEN of each channel
+            if numel(index_channel)==0
+                pen=[];
+            else
+            clear pen
+            end
+            
         for i=1:length(index_channel)
             % Pick up the channel
-            temp=index_channel(i);
-            dector=reshape(R_i(g_current,next,:,:,temp),size(Ad_d1)).*act_link(:,:,temp);
-            
+            temp=index_channel(i)
+            dector=reshape(R_i(can_ga,next,:,:,temp),size(Ad_d1)).*act_link(:,:,temp);
+            sum(dector(:))
             pen(i,:)=[temp;sum(dector(:))];
         end
-        pen=sortrows(pen,2);
-        act_link(g_current,next,pen(1))=1;
-        s_current=[s_current, next]
+
+     pen
+     next
+     can_ga
         
+        % Assign channel to node
+        
+if numel(pen)>0
+         act_link(can_ga,next,pen(1,1))=1;
+         act_link(next,can_ga,pen(1,1))=1;
+         % Remove the radio
+         Ad_multi(next,:,pen(1,1))=0;
+         Ad_multi(:,next,pen(1,1))=0;
+         Ad_multi(can_ga,:,pen(1,1))=0;
+         Ad_multi(:,can_ga,pen(1,1))=0;
+else
+    break
+
+end         
+         s_current=[s_current, next];
+
         
         
     end
     
     
 end
+
+
+
+available_multi=Ad_multi;
+Ad_multi=back_Ad_multi;
+act_d1=sum(act_link,3);
+Pbfs=biograph(act_d1)
+view(Pbfs)

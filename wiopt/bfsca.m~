@@ -1,9 +1,8 @@
-% HOP BY HOP Algorithm
+% BFS CA
+clear all
+close all
 
-% Following implement the hoho algorithm
- clear all
- close all
- load test
+load test
 
 
 % Inilize
@@ -36,6 +35,7 @@ for s=1:length(MN)
   %      end
     end
     
+    
     s_next=s_next(:,s_next(2,:)>0);
     s_next=sortrows(s_next',3)';
     
@@ -43,7 +43,7 @@ for s=1:length(MN)
         
         next=s_next(1,l);
         clear pen_can
-        for can_i=1:numel(s_current)
+        can_i=s;
             can_ga=s_current(can_i);
             channel=Ad_multi(can_ga,next,:);
             index_channel=find(channel==1);        
@@ -61,15 +61,7 @@ for s=1:length(MN)
             
             pen(i,:)=[temp;sum(dector(:))];
         end
-        if numel(pen)>0
-        pen=sortrows(pen,2);
-        
-        pen_can(can_i,:)=[can_ga,pen(1,1),pen(1,2)];
-        end
-        end
-        % Delete node with no connection
-        pen_can(pen_can(:,1)==0,:)=[];
-        
+
         
         % Pen_can_next:node, channel, PEN value
         pen_can=sortrows(pen_can,3);
@@ -93,83 +85,17 @@ for s=1:length(MN)
          %layer=[layer, [next;layer(2,s)+1;pen_can_next(1,1)]]
         layer=[layer, [next;layer(2,lay_index)+1;pen_can_next(1,1)]]
         
- 
+        
         
     end
     
     
 end
+
+
 
 available_multi=Ad_multi;
 Ad_multi=back_Ad_multi;
 act_d1=sum(act_link,3);
-
-
-
-% Phase 2, Adjust the channel assignment
-weight=[];
-
-for top=1:numel(layer(2,:))  
-%top=1;
-leaf_index=find(layer(2,:)>layer(2,top));
-top_node=layer(1,top);
-leaf=layer(1,leaf_index);
-stack(top)=top_node;
-flag=1;
-re=[];
-
-A=act_d1([top_node,leaf],[top_node,leaf]);
-
-if numel(A)>1
-top_cnt=1;
-stack_cnt(top_cnt)=1;
-while top_cnt~=0
-    prelen=length(stack_cnt);
-    i=stack_cnt(top_cnt);
-    for j=1:numel(leaf)+1
-        
-        if A(i,j)==1 && isempty(find(flag==j,1))
-            top_cnt=top_cnt+1;
-            stack_cnt(top_cnt)=j;
-            flag=[flag j];
-            re=[re;i j];
-            break;
-        end
-    end
-    if length(stack_cnt)==prelen
-        stack_cnt(top_cnt)=[];
-        top_cnt=top_cnt-1;
-    end
-end
-if numel(re)>0
-weight=[weight;top_node numel(re(:,1))];
-else
-    
-weight=[weight;top_node 0];
-end
-
-else
-    weight=[weight;top_node 0];
-
-end
-
-end
-fs2_weight=sortrows(weight,1)
-
-% Layer contents: rows: node no., layer, gate connected
-
-%layer=sortrows(layer',1)
-
-
-% Load balance process
-% 
-P=biograph(act_d1)
-view(P)
-
-
-
-
-
-
-
-
+Pbfs=biograph(act_d1)
+view(Pbfs)
