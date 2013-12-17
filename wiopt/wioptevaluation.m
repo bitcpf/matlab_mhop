@@ -1,0 +1,41 @@
+% Function output network capacity through different topology
+% Input link_capacity, channel assignment, gateway nodes, mesh nodes
+% 
+
+function net_cap=wioptevaluation(link_cap,act_link,ga,mesh_nodes,mesh_demand)
+link_cap=6;
+mesh_nodes
+%mesh_nodes=n_unserved;
+act_dtst=sum(act_link,3);
+% Generate Traffic for each mesh node randomly
+
+%mesh_demand=6*rand(size(mesh_nodes));
+act_sparse=sparse(act_dtst);
+
+used_cap=zeros(size(act_dtst));
+
+for i=1:numel(ga)
+    for j=1:numel(mesh_nodes)
+        
+        [Dist,Path]=graphshortestpath(act_sparse,ga(i),mesh_nodes(j),'Method','Dijkstra');
+        if numel(Path)>1
+            for pi=2:numel(Path)
+                temp=used_cap(Path(pi-1),Path(pi))+mesh_demand(j);
+                if temp<=link_cap
+                    used_cap(Path(pi-1),Path(pi))=temp;
+                else
+                    %link_limit=link_cap-used_cap(Path(pi-1),Path(pi));
+                    used_cap(Path(pi-1),Path(pi))=link_cap;
+                    
+                end
+                
+            end
+            
+        end
+    end
+    
+    
+end
+
+
+net_cap=sum(sum(used_cap(ga,:)))
