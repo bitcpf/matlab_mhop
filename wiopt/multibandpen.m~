@@ -34,6 +34,8 @@ mesh_nodes=[18     5    28    20    16    27    12    11    13     3     4    17
 
 for j=1:numel(mesh_nodes)
     path_cnt=1;
+    result_store=[];
+    clear path_store;
     for i=1:numel(ga)
         % Loop 1, how many bands
         for nchannel=1:numel(bands)
@@ -50,7 +52,11 @@ for j=1:numel(mesh_nodes)
                 
                 
                 % Generate adjancy matrix for shortest path calculation
+                
+                
                 comb_adj=R_link(:,:,band_combination(combn,:));
+                
+                
                 comb_adj=sum(comb_adj,3);
                 comb_adj(comb_adj>0)=1;
                 comb_adj(comb_adj==0)=1000000;
@@ -108,7 +114,9 @@ for j=1:numel(mesh_nodes)
     
     
     
-    
+    if(mesh_nodes(j)==29)
+        1+1
+    end
     
     
     
@@ -130,6 +138,7 @@ for j=1:numel(mesh_nodes)
         
         no_qua_path=[];
         path_pen_comb=[];
+        band_store=[];
         % Calculate all path efficiency
         for pen_i=1:numel(p_index)
             
@@ -137,7 +146,7 @@ for j=1:numel(mesh_nodes)
             temp_channel=temp_channel(temp_channel>0);
 
             
-            
+            path_index(pen_i);
      
             temp_path=path_store{path_index(pen_i)};
             
@@ -154,7 +163,12 @@ for j=1:numel(mesh_nodes)
                 temp_link=temp_path(pen_j-1:pen_j);
                 
                 %temp_path_node=path_store{(path_index(pen_i))};
-                temp_path_node=temp_path
+                temp_path_node=temp_path;
+                
+    
+                
+                
+                
                 
                 link_pen_comb=[];
                 % Calculate efficiency for a link in different band, the link
@@ -189,7 +203,7 @@ for j=1:numel(mesh_nodes)
                 
                 
                 % Pick up the first one
-                link_pen_result=link_pen_min(1,:)
+                link_pen_result=link_pen_min(1,:);
                 path_pen=path_pen+(pen_j-1)*link_pen_result(1);
                 path_band=[path_band link_pen_result(2)];
                 
@@ -205,6 +219,8 @@ for j=1:numel(mesh_nodes)
             end
             
             
+
+            
             if(p_b_flag==0)
                 path_flag=0;
                 no_qua_path=[no_qua_path path_index(pen_i)];
@@ -216,20 +232,19 @@ for j=1:numel(mesh_nodes)
             path_pen_comb=[path_pen_comb path_pen];
             % path_store{path_cnt}=path{(path_i)};
             
-            band_store{pen_i}=path_band(:);
-            
+            band_store{numel(path_pen_comb)}=path_band(:);          
             end
             
             % End all the paths and stored in path_pen_comb
         end
         
-        no_qua_path
+    
         
         if(numel(no_qua_path)>0)
             %path_store(no_qua_path)=[];
             
             for rest_i=1:numel(no_qua_path)
-                rest_index=find(result_store(:,4)==no_qua_path(rest_i))
+                rest_index=find(result_store(:,4)==no_qua_path(rest_i));
                 result_store(rest_index,:)=[];
             end
 
@@ -239,7 +254,7 @@ for j=1:numel(mesh_nodes)
         % the size of candidates
         p_index=find(result_store(:,3)==min(result_store(:,3)));
         % Path number
-        path_index=result_store(p_index,4);
+        path_index=result_store(p_index,4); % map to path_store content
         temp_band=result_store(p_index,5:4+numel(bands));
         
         
@@ -255,9 +270,13 @@ for j=1:numel(mesh_nodes)
     %path_flag=0;
     % while(path_flag>0)
     c_path_index=find(path_pen_comb==min(path_pen_comb));
-    path_chosen_index=c_path_index(1);
-    path_chosen=path_store{path_index(path_chosen_index)}
-    bands_chosen=band_store{(path_chosen_index)}
+    path_chosen_index=path_index(c_path_index(1))
+    
+    
+    
+    
+    path_chosen=path_store{path_chosen_index}
+    bands_chosen=band_store{(c_path_index)}
     
     
     
@@ -282,9 +301,22 @@ for j=1:numel(mesh_nodes)
         weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))+1;
         weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))+1;
         
+%         R_link(path_chosen(chosen_i-1),:,bands_chosen(chosen_i-1))=0;
+%         R_link(:,path_chosen(chosen_i-1),bands_chosen(chosen_i-1))=0;
+%         R_link(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=0;
+%         R_link(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=0;
+        
+        for upda_i=1:size(R_link)
+        
+        
+        
+        
+        
+        
+        
 %         act_dtst=sum(act_link,3);
 % Pa=biograph(act_dtst);
-% view(Pa)
+% tmp=view(Pa);
     end
     
     
