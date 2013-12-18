@@ -126,7 +126,7 @@ for j=1:numel(mesh_nodes)
         
         
 
-            mesh_nodes(j)
+        
         
         no_qua_path=[];
         path_pen_comb=[];
@@ -151,7 +151,7 @@ for j=1:numel(mesh_nodes)
             for pen_j=2:numel(path_store{(path_index(pen_i))})
                 
                 
-                temp_link=temp_path(pen_j-1:pen_j)
+                temp_link=temp_path(pen_j-1:pen_j);
                 
                 %temp_path_node=path_store{(path_index(pen_i))};
                 temp_path_node=temp_path
@@ -165,16 +165,14 @@ for j=1:numel(mesh_nodes)
                     % Channel combination need to tell which band works for
                     % this
  
-                     temp_channel 
-                     temp_flag=[];
+                                        
                     if(sum(act_link(temp_link(1),:,temp_channel(band_i)))==1 && act_link(temp_link(1),temp_link(2),temp_channel(band_i))==0)
                         
-                        temp_flag=[temp_flag 0]
+                        p_b_flag=0;
                         temp_pen_value=1000000;
                     else
                         temp_pen_band=reshape(R_i(temp_link(1),temp_link(2),:,:,temp_channel(band_i)),size(Ad_d1)).*temp_act(:,:,temp_channel(band_i)).*weight(:,:,temp_channel(band_i));
                         temp_pen_value=sum(sum(temp_pen_band));
-                        temp_flag=[temp_flag 1]
                         % Data construction: pen_value, band
                     end
                     
@@ -186,8 +184,6 @@ for j=1:numel(mesh_nodes)
                     
                     
                 end
-                
-                link_pen_comb()
                 
                 link_pen_min=link_pen_comb(link_pen_comb(:,1)==min(link_pen_comb(:,1)),:);
                 
@@ -203,10 +199,11 @@ for j=1:numel(mesh_nodes)
                 
                 
                 %temp_act=
-                p_b_flag=sum(temp_flag);
+                
                 
                 % End a path pen calculation
             end
+            
             
             if(p_b_flag==0)
                 path_flag=0;
@@ -214,23 +211,25 @@ for j=1:numel(mesh_nodes)
             else
                 path_flag=1;
                 
-            end
+            
             
             path_pen_comb=[path_pen_comb path_pen];
             % path_store{path_cnt}=path{(path_i)};
             
             band_store{pen_i}=path_band(:);
             
-            
+            end
             
             % End all the paths and stored in path_pen_comb
         end
         
-        if(path_flag==0)
+        no_qua_path
+        
+        if(numel(no_qua_path)>0)
             %path_store(no_qua_path)=[];
             
             for rest_i=1:numel(no_qua_path)
-                rest_index=find(result_store(:,4)==no_qua_path(rest_i));
+                rest_index=find(result_store(:,4)==no_qua_path(rest_i))
                 result_store(rest_index,:)=[];
             end
 
@@ -259,6 +258,7 @@ for j=1:numel(mesh_nodes)
     path_chosen_index=c_path_index(1);
     path_chosen=path_store{path_index(path_chosen_index)}
     bands_chosen=band_store{(path_chosen_index)}
+    
     
     
     

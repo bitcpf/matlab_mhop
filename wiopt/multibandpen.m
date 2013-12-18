@@ -204,29 +204,32 @@ for j=1:numel(mesh_nodes)
                 % End a path pen calculation
             end
             
+            
             if(p_b_flag==0)
                 path_flag=0;
                 no_qua_path=[no_qua_path path_index(pen_i)];
             else
                 path_flag=1;
                 
-            end
+            
             
             path_pen_comb=[path_pen_comb path_pen];
             % path_store{path_cnt}=path{(path_i)};
             
             band_store{pen_i}=path_band(:);
             
-            
+            end
             
             % End all the paths and stored in path_pen_comb
         end
         
-        if(path_flag==0)
+        no_qua_path
+        
+        if(numel(no_qua_path)>0)
             %path_store(no_qua_path)=[];
             
             for rest_i=1:numel(no_qua_path)
-                rest_index=find(result_store(:,4)==no_qua_path(rest_i));
+                rest_index=find(result_store(:,4)==no_qua_path(rest_i))
                 result_store(rest_index,:)=[];
             end
 
@@ -263,6 +266,7 @@ for j=1:numel(mesh_nodes)
     
     
     
+    
     % Update active links and remove radios
     for chosen_i=2:numel(path_chosen)
         act_link(path_chosen(chosen_i-1),path_chosen(chosen_i),bands_chosen(chosen_i-1))=1;
@@ -278,9 +282,9 @@ for j=1:numel(mesh_nodes)
         weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))+1;
         weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))+1;
         
-%         act_dtst=sum(act_link,3);
-% Pa=biograph(act_dtst);
-% view(Pa)
+        act_dtst=sum(act_link,3);
+Pa=biograph(act_dtst);
+tmp=view(Pa);
     end
     
     
