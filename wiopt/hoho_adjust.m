@@ -230,8 +230,8 @@ index=find(trees(:,2)>0);
 
 
 % 
-act_dtst=sum(act_link,3);
-Pa=biograph(act_dtst);
-view(Pa)
-
+% act_dtst=sum(act_link,3);
+% Pa=biograph(act_dtst);
+% view(Pa)
+% 
 

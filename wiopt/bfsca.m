@@ -10,6 +10,7 @@ s_current=ga;
 n_served=[];
 n_unserved=MN;
 n_unserved(ga)=[];
+mesh_nodes=n_unserved;
 act_link=R_link*0;
 back_Ad_multi=Ad_multi;
 
@@ -94,5 +95,5 @@ end
 available_multi=Ad_multi;
 Ad_multi=back_Ad_multi;
 act_d1=sum(act_link,3);
-Pbfs=biograph(act_d1)
-view(Pbfs)
+% Pbfs=biograph(act_d1)
+% view(Pbfs)

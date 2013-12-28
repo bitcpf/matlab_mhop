@@ -59,6 +59,8 @@ for j=1:numel(mesh_nodes)
                 
                 comb_adj=sum(comb_adj,3);
                 comb_adj(comb_adj>0)=1;
+                
+                comb_adj=comb_adj+sum(act_link(:,:,band_combination(combn,:)),3);
                 comb_adj(comb_adj==0)=1000000;
                 
                 
@@ -113,10 +115,10 @@ for j=1:numel(mesh_nodes)
     
     
     
-    
-    if(mesh_nodes(j)==29)
-        1+1
-    end
+%     
+%     if(mesh_nodes(j)==29)
+%         1+1
+%     end
     
     
     
@@ -178,6 +180,7 @@ for j=1:numel(mesh_nodes)
                 for band_i=1:numel(temp_channel)
                     % Channel combination need to tell which band works for
                     % this
+                    p_b_flag=1;
  
                                         
                     if(sum(act_link(temp_link(1),:,temp_channel(band_i)))==1 && act_link(temp_link(1),temp_link(2),temp_channel(band_i))==0)
@@ -301,13 +304,13 @@ for j=1:numel(mesh_nodes)
         weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=weight(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))+1;
         weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=weight(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))+1;
         
-%         R_link(path_chosen(chosen_i-1),:,bands_chosen(chosen_i-1))=0;
-%         R_link(:,path_chosen(chosen_i-1),bands_chosen(chosen_i-1))=0;
-%         R_link(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=0;
-%         R_link(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=0;
+        R_link(path_chosen(chosen_i-1),:,bands_chosen(chosen_i-1))=0;
+        R_link(:,path_chosen(chosen_i-1),bands_chosen(chosen_i-1))=0;
+        R_link(path_chosen(chosen_i),:,bands_chosen(chosen_i-1))=0;
+        R_link(:,path_chosen(chosen_i),bands_chosen(chosen_i-1))=0;
         
-        for upda_i=1:size(R_link)
-        
+        R_link=R_link+act_link;
+
         
         
         

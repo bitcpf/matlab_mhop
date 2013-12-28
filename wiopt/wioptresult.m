@@ -1,10 +1,11 @@
 
 
 
-load demand_mul
-mesh_nodes=n_unserved;
+load demand_current
 
-for demand_valu=1:6
+%mesh_nodes=n_unserved;
+mesh_demand_mul(:,ga)=[]
+for demand_valu=1:10
 
 for i=1:10
     %mesh_demand=demand_valu*rand(size(mesh_nodes));

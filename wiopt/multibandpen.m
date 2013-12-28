@@ -29,7 +29,7 @@ end
 
 %mesh_nodes=tmp;
 
-mesh_nodes=[18     5    28    20    16    27    12    11    13     3     4    17     7 2    26     6    21    14    30     8    29    10    22    23    25];
+%mesh_nodes=[18     5    28    20    16    27    12    11    13     3     4    17     7 2    26     6    21    14    30     8    29    10    22    23    25];
 
 
 for j=1:numel(mesh_nodes)
@@ -59,6 +59,8 @@ for j=1:numel(mesh_nodes)
                 
                 comb_adj=sum(comb_adj,3);
                 comb_adj(comb_adj>0)=1;
+                
+                comb_adj=comb_adj+sum(act_link(:,:,band_combination(combn,:)),3);
                 comb_adj(comb_adj==0)=1000000;
                 
                 
@@ -113,10 +115,10 @@ for j=1:numel(mesh_nodes)
     
     
     
-    
-    if(mesh_nodes(j)==29)
-        1+1
-    end
+%     
+%     if(mesh_nodes(j)==29)
+%         1+1
+%     end
     
     
     

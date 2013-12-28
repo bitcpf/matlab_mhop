@@ -11,6 +11,7 @@ s_current=ga;
 n_served=[];
 n_unserved=MN;
 n_unserved(ga)=[];
+mesh_nodes=n_unserved;
 act_link=R_link*0;
 back_Ad_multi=Ad_multi;
 
@@ -163,8 +164,8 @@ fs2_weight=sortrows(weight,1)
 
 % Load balance process
 % 
-P=biograph(act_d1)
-view(P)
+% P=biograph(act_d1)
+% view(P)
 
 
 
