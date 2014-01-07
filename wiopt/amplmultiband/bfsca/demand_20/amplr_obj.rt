@@ -1,0 +1,3 @@
+solve_message = 'CPLEX 10.0.0: optimal solution; objective 55.5145\
+72 dual simplex iterations (27 in phase I)'
+

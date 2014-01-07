@@ -1,10 +1,9 @@
 % Implement 2nd algorithm
 
 
-clear all
-close all
+%close all
 
-load test
+%load test
 
 % Inilize
 
@@ -329,5 +328,5 @@ for j=1:numel(mesh_nodes)
 end
         
 act_dtst=sum(act_link,3);
-Pa=biograph(act_dtst);
-view(Pa)
+% Pa=biograph(act_dtst);
+% view(Pa)

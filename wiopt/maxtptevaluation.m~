@@ -12,8 +12,11 @@ link_matrix=zeros(4,(numel(ga)+numel(mesh_nodes)));
 link_matrix(:,1:numel(ga))=[ga;zeros(size(ga));zeros(size(ga));zeros(size(ga))];
 cnt=numel(ga);
 all_nodes=[ga mesh_nodes];
-%mesh_demand_mul=rand(2,numel(all_nodes))
-load test
+mesh_demand_mul=rand(2,numel(all_nodes))
+%load test
+
+used_cap=zeros(size(sum(act_link,3)));
+
 
 for bfs_current=1:numel(all_nodes)
     current_node=all_nodes(bfs_current);
@@ -98,7 +101,7 @@ for tpt_i=1:max(link_matrix(2,:))+1
                if numel(Path)>1
                    temp_min=act_cap(1,2,current_band);
                    for pi=2:numel(Path)
-                       temp=used_cap(Path(pi-1),Path(pi))+mesh_demand(j);
+                       temp=used_cap(Path(pi-1),Path(pi))+current_demand(current_node);
                        
                        if (act_cap(Path(pi-1),Path(pi),current_band)>current_demand(current_node))
                            used_cap(Path(pi-1),Path(pi))=temp;
@@ -128,9 +131,14 @@ for tpt_i=1:max(link_matrix(2,:))+1
            act_cap(upper_node,current_node,current_band)=act_cap(upper_node,current_node,current_band)-current_demand(current_node);
            % Update interference nodes
            tmp_idx=find(R_i(current_node,upper_node,:,:,current_band)==1);
-           act_cap(tmp_idx,current_band)=act_cap(tmp_idx,current_band)-current_demand(current_node);
+           act1d=floor(tmp_idx/size(act_cap,1));
+           act2d=mod(tmp_idx,size(act_cap,1));
+           
+           act_cap(act1d,act2d,current_band)=act_cap(act1d,act2d,current_band)-current_demand(current_node);
            tmp_idx=find(R_i(upper_node,current_node,:,:,current_band)==1);
-           act_cap(tmp_idx,current_band)=act_cap(tmp_idx,current_band)-current_demand(current_node);
+           act1d=floor(tmp_idx/size(act_cap,1));
+           act2d=mod(tmp_idx,size(act_cap,1));
+           act_cap(act1d,act2d,current_band)=act_cap(act1d,act2d,current_band)-current_demand(current_node);
            % Update routing link
            routing_link(current_node,upper_node,current_band)=1;
            routing_link(upper_node,current_node,current_band)=1;
@@ -149,9 +157,11 @@ for tpt_i=1:max(link_matrix(2,:))+1
            act_cap(upper_node,current_node,current_band)=0;
            % Update interference nodes
            tmp_idx=find(R_i(current_node,upper_node,:,:,current_band)==1);
-           act_cap(tmp_idx)=act_cap(tmp_idx)-act_cap(current_node,upper_node,current_band);
+           act1d=floor(tmp_idx/size(act_cap,1));
+           act2d=mod(tmp_idx,size(act_cap,1));
+           act_cap(act1d,act2d,current_band)=act_cap(act1d,act2d,current_band)-act_cap(current_node,upper_node,current_band);
            tmp_idx=find(R_i(upper_node,current_node,:,:,current_band)==1);
-           act_cap(tmp_idx)=act_cap(tmp_idx)-act_cap(current_node,upper_node,current_band);
+           act_cap(floor(tmp_idx/size(act_cap,1)),mod(tmp_idx,size(act_cap,1)),current_band)=act_cap(floor(tmp_idx/size(act_cap,1)),mod(tmp_idx,size(act_cap,1)),current_band)-act_cap(current_node,upper_node,current_band);
            % Update routing link
            routing_link(current_node,upper_node,current_band)=1;
            routing_link(upper_node,current_node,current_band)=1;

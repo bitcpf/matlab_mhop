@@ -1,0 +1,17 @@
+./demand_60/amplr_obj.rt
+./demand_50/amplr_obj.rt
+./demand_48/amplr_obj.rt
+./demand_44/amplr_obj.rt
+./demand_40/amplr_obj.rt
+./demand_18/amplr_obj.rt
+./demand_45/amplr_obj.rt
+./demand_55/amplr_obj.rt
+./demand_20/amplr_obj.rt
+./demand_24/amplr_obj.rt
+./demand_30/amplr_obj.rt
+./demand_22/amplr_obj.rt
+./demand_36/amplr_obj.rt
+./demand_32/amplr_obj.rt
+./demand_16/amplr_obj.rt
+./demand_33/amplr_obj.rt
+./demand_27/amplr_obj.rt

@@ -1,10 +1,16 @@
-load demand_current
-clear link_matrix
+
+
+
+
+% load demand_current
+%clear link_matrix
+
 link_matrix=zeros(4,(numel(ga)+numel(mesh_nodes)));
 link_matrix(:,1:numel(ga))=[ga;zeros(size(ga));zeros(size(ga));zeros(size(ga))];
 cnt=numel(ga);
 all_nodes=[ga mesh_nodes];
 link_cap=6;
+mesh_demand_mul=rand(1,numel(all_nodes))*5
 
 for dd=1:size(mesh_demand_mul,1)
 mesh_demand_mul(dd,:)=mesh_demand_mul(dd,:)*dd;
@@ -92,7 +98,7 @@ for prank_i=1:numel(ga)
     end
 end
            
-           
+           if(numel(process_temp)>0)
            process_temp=sortrows(process_temp',2)'
  
            
@@ -113,7 +119,7 @@ end
                 if(numel(dup_flag)>1)
                     for dup_i=1:numel(dup_flag)
                         
-                        conflic_temp=R_i(Path(dup_flag(dup_i)-1),Path(dup_flag(dup_i)),Path(dup_flag-1),Path(dup_flag),current_band)
+                        conflic_temp=R_i(Path(dup_flag(dup_i)),Path(dup_flag(dup_i)+1),Path(dup_flag),Path(dup_flag+1),current_band)
                         conflic(dup_i)=sum(conflic_temp(:))
                     end
                     tt_cap=min(link_cap_path(dup_flag)./conflic);
@@ -128,7 +134,9 @@ end
                 end
            
             end
-           
+           else
+               path_cap=0;
+           end
            
            path_cap
            

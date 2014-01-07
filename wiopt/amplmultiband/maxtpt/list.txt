@@ -1,0 +1,106 @@
+./parsedata.py
+  ./demand_60
+  ./demand_50
+  ./demand_48
+  ./demand_44
+  ./demand_40
+  ./demand_18
+  ./demand_45
+  ./demand_55
+  ./demand_20
+  ./demand_24
+  ./demand_30
+  ./demand_22
+  ./demand_36
+  ./demand_32
+  ./demand_16
+  ./demand_33
+  ./demand_27
+./dataout.txt
+  ./demand_60
+  ./demand_50
+  ./demand_48
+  ./demand_44
+  ./demand_40
+  ./demand_18
+  ./demand_45
+  ./demand_55
+  ./demand_20
+  ./demand_24
+  ./demand_30
+  ./demand_22
+  ./demand_36
+  ./demand_32
+  ./demand_16
+  ./demand_33
+  ./demand_27
+./dataf.txt
+  ./demand_60
+  ./demand_50
+  ./demand_48
+  ./demand_44
+  ./demand_40
+  ./demand_18
+  ./demand_45
+  ./demand_55
+  ./demand_20
+  ./demand_24
+  ./demand_30
+  ./demand_22
+  ./demand_36
+  ./demand_32
+  ./demand_16
+  ./demand_33
+  ./demand_27
+./list.txt
+  ./demand_60
+  ./demand_50
+  ./demand_48
+  ./demand_44
+  ./demand_40
+  ./demand_18
+  ./demand_45
+  ./demand_55
+  ./demand_20
+  ./demand_24
+  ./demand_30
+  ./demand_22
+  ./demand_36
+  ./demand_32
+  ./demand_16
+  ./demand_33
+  ./demand_27
+./demand_60/amplr_obj.rt
+./demand_60/amplr_ts.rt
+./demand_50/amplr_obj.rt
+./demand_50/amplr_ts.rt
+./demand_48/amplr_obj.rt
+./demand_48/amplr_ts.rt
+./demand_44/amplr_obj.rt
+./demand_44/amplr_ts.rt
+./demand_40/amplr_obj.rt
+./demand_40/amplr_ts.rt
+./demand_18/amplr_obj.rt
+./demand_18/amplr_ts.rt
+./demand_45/amplr_obj.rt
+./demand_45/amplr_ts.rt
+./demand_55/amplr_obj.rt
+./demand_55/amplr_ts.rt
+./demand_20/amplr_obj.rt
+./demand_20/amplr_ts.rt
+./demand_24/amplr_obj.rt
+./demand_24/amplr_ts.rt
+./demand_30/amplr_obj.rt
+./demand_30/amplr_ts.rt
+./demand_22/amplr_obj.rt
+./demand_22/amplr_ts.rt
+./demand_36/amplr_obj.rt
+./demand_36/amplr_ts.rt
+./demand_32/amplr_obj.rt
+./demand_32/amplr_ts.rt
+./demand_16/amplr_obj.rt
+./demand_16/amplr_ts.rt
+./demand_33/amplr_obj.rt
+./demand_33/amplr_ts.rt
+./demand_27/amplr_obj.rt
+./demand_27/amplr_ts.rt

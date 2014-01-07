@@ -1,7 +1,7 @@
-# WhiteMesh AMPL code: Build a transship model to do the band assignment and routing
+# WhiteMesh AMPL code: Build a transship model to validate the throughput calculation
 # Version: Multiband
 # Author: Pengfei Cui
-# Date: Sep. 29 2013
+# Date: Jan. 6 2014
 # Version: 1.1
  
 
@@ -12,18 +12,18 @@ set B;   # Bands
 param demandu {MN} >=0; # Uplink demand of mesh nodes
 param demandd {MN} >=0; # Downlink demand of mesh nodes
 param r {MN,MN,B} >=0; # Link capacity between nodes
-param Pt {MN} >=0; # Unit Price of each tower
-param Pc {B} >=0; # Unit price of radio card of a band
+#param Pt {MN} >=0; # Unit Price of each tower
+#param Pc {B} >=0; # Unit price of radio card of a band
 param excu {MN,MN} >=0; # Exculde some constraints
 
-var ga {MN} binary; # Selected
+param ga {MN} binary; # Selected
 var uy{MN,MN,MN,B} >=0 ; # i,j,k Uplink Data flow on each link(j,k) for node i 
 var dy{MN,MN,MN,B} >=0 ; # i,j,k Downlink Data flow on each link(j,k) for node i 
 var tshar{MN,MN,B} >=0;  # Time share of each link on band 
 var RCard{MN,B} binary; # Radio card for each mesh node
 
-minimize Total_GA:
-	sum {i in MN} (ga[i]*Pt[i]) + sum{i in MN, j in B} (Pc[j] * RCard[i,j]);
+maximize throughput:
+	sum {i in MN} ga[i]*sum {j in B, k in MN,l in MN} uy[k,l,i,j]+sum {i in MN} ga[i]* sum {j in B, k in MN, l in MN} dy[k,i,l,j];
 
 # Constraints:
 
@@ -39,8 +39,8 @@ subject to Timesharesumoutcoming {j in MN, k in B}:
 subject to Rlink {j in MN,k in MN, l in B}: # j is not GA, y[j,k] < r[j,k]; j is GA, y[j,k]=0, link j,k on band l
 	sum {i in MN} uy[i,j,k,l] + sum {i in MN} dy[i,j,k,l] <= r[j,k,l]*tshar[j,k,l];
 
-subject to Dnodes {i in MN}: # i is GA, then output =0; i is MN, output >= demand
-	sum {k in MN, l in B} uy[i,i,k,l] >= demandu[i]-1000000*ga[i];
+#subject to Dnodes {i in MN}: # i is GA, then output =0; i is MN, output >= demand
+#	sum {k in MN, l in B} uy[i,i,k,l] >= demandu[i]-1000000*ga[i];
 
 subject to Nodesga {i in MN,j in MN,k in MN, l in B}:
 	uy[i,j,k,l] <= 1000000*(1-ga[j]);
@@ -69,8 +69,8 @@ subject to downlink_inout {i in MN, k in MN}:
 subject to downlink_outin {i in MN, k in MN}:
 	(sum {j in MN, l in B} dy[i,j,k,l])*excu[i,k] - sum {m in MN, l in B} dy[i,k,m,l] >= -ga[k]*1000000;
 
-subject to demanddowlink {i in MN}:
-	sum {j in MN, l in B} dy[i,j,i,l] >=demandd[i]-ga[i]*1000000;
+#subject to demanddowlink {i in MN}:
+#	sum {j in MN, l in B} dy[i,j,i,l] >=demandd[i]-ga[i]*1000000;
 
 subject to Nodesgadown {i in MN,j in MN,k in MN, l in B}:
 	dy[i,j,k,l] <= 1000000*(1-ga[k]);
@@ -82,13 +82,13 @@ set B:= include band;
 param demandu:= include demandu;
 param demandd:= include demandd;
 param r := include Rlink;
-param Pt := include Pt;
-param Pc := include Pc;
+#param Pt := include Pt;
+#param Pc := include Pc;
 param excu : include mn := include Excu;
 solve;
 
 display solve_message > amplr_obj.rt;
-display ga > amplr_ga.rt;
+#display ga > amplr_ga.rt;
 display uy > amplr_uy.rt;
 display dy > amplr_dy.rt;
 display tshar > amplr_ts.rt;

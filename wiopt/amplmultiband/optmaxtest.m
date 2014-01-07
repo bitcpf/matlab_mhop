@@ -1,0 +1,242 @@
+% Matlab scritp to test Model from Dr. Rajan
+% Use a 5x5 regular grid, 25 mesh nodes
+% Use Arbitrary Demand generated randomly
+% Use Arbitrary link capacity randomly
+
+clear all
+close all
+
+% N_x=2;
+% N_y=2;
+Band=1:4;
+for demandin=5
+for N_x=2:5
+    for N_y=5:7
+% Load Demand
+
+clear MN_loc;
+clear R_link;
+clear demandu;
+clear demandd;
+clear excu;
+clear price_t;
+clear price_c;
+
+demandu=ones(1,N_x*N_y);
+%save 'D_rj.mat' demand;
+%load D_rj;
+%demandd=demandu*2;
+% demandu=demandu*1.5;
+
+
+% Test for varying downlink demand
+%demandd(4)=demandd(3)+demandin-1;
+
+% Generate grid and capacity according to distance
+[X,Y]=meshgrid(1:500:500*N_x,1:500:500*N_y);
+
+
+
+f_c=1;
+for i=1:N_x
+    for j=1:N_y
+        MN_loc(f_c,1)=X(1,i);
+        MN_loc(f_c,2)=Y(j,1);
+        f_c=f_c+1;
+    end
+end
+
+MN=1:(N_x*N_y);
+
+
+  ga_fl=1;
+  p_th=-160;
+% Define single link capacity and threshold
+ bands=[5.8*10^9,2.4*10^9,900*10^6,450*10^6];
+l_cap=6*ones(1,numel(bands));
+   c_range=1/4/pi/10^(p_th/20)./bands*300000;
+   c_range(bands<10^9)=c_range(bands<10^9)/2;
+  c_range(bands<5*10^8)=c_range(bands<5*10^8)/1.5
+   i_range=c_range*2;
+
+% Generate 1 hop capacity between every mesh node, R_link(node, node, band)
+for b=1:length(bands)
+for i=1:length(MN_loc(:,1))
+    for j=1:length(MN_loc(:,1))
+        dis_temp(i,j)=sqrt((MN_loc(i,1)-MN_loc(j,1))^2+(MN_loc(i,2)-MN_loc(j,2))^2);
+        if(i==j)
+            R_link(i,j,b)=0;
+        elseif(dis_temp(i,j)<=c_range(b))
+            R_link(i,j,b)=l_cap(b);
+        else
+            R_link(i,j,b)=0;
+        end
+    end
+    
+end
+end
+
+
+excu=ones(length(MN),length(MN));
+for i=1:length(MN)
+    excu(i,i)=0;
+end
+
+% Generate Tower Price
+for i=1:length(MN)
+    price_t(i)=10;
+end
+
+% Generate Radio Card Price
+for i=1:length(Band)
+    price_c(i)=1;
+end
+
+excu=[MN(:) excu];
+% Rlink=[MN(:) R_link];
+
+
+
+
+
+
+
+
+
+
+ 
+ga=round(rand(1,numel(MN)/numel(bands)/1.2)*numel(MN));
+ga=unique(ga);
+if ga==0
+    ga=round(numel(MN)/2);
+end
+
+
+
+demandu=rand(1,numel(MN))*5;
+
+clear g_out
+
+ga_out=zeros(size(MN));
+ga_out(ga)=1;
+
+
+
+Ad_multi=R_link;
+Ad_multi(Ad_multi>0)=1;
+Ad_d1=sum(R_link,3);
+Ad_d1(Ad_d1>0)=1;
+
+
+d=numel(MN_loc(:,1));
+R_i=zeros(d,d,d,d,numel(bands));
+clear d
+for i=1:length(MN_loc(:,1))
+    delta_x=MN_loc(i,1)-MN_loc(:,1);
+    delta_y=MN_loc(i,2)-MN_loc(:,2);
+    dist=sqrt(delta_x.^2+delta_y.^2);
+    for b=1:length(bands)
+        Ni_interference=find(dist<=i_range(b));
+        Ni_link=find(Ad_multi(i,:,b)==1);
+        for j=1:length(Ni_interference)
+            Nj_link=find(Ad_multi(Ni_interference(j),:,b)==1);
+        R_i(i,Ni_link,Ni_interference(j),Nj_link,b)=1;        
+        R_i(i,Ni_link,Nj_link,Ni_interference(j),b)=1;
+        R_i(Ni_link,i,Ni_interference(j),Nj_link,b)=1;
+        R_i(Ni_link,i,Nj_link,Ni_interference(j),b)=1;
+        end
+    end
+end
+
+% Generate Adjacency matrix degree a_degree
+[m,n]=size(Ad_d1);
+Ad_nhop=Ad_d1;
+a_degree=2;
+for k=1:a_degree
+
+
+for i=1:m
+    for j=1:n
+        if(Ad_d1(i,j)==1)
+            Ad_nhop(i,:)=Ad_nhop(i,:)+Ad_d1(j,:);
+        end        
+    end
+    Ad_nhop(i,i)=0;
+end
+ 
+end
+
+
+%act_link=R_link
+
+%throughputevaluate
+
+% Generate Rlink file for ampl
+!rm Rlink
+%clear R_link
+%R_link=act_link
+
+for i=1:length(Band)
+    R_temp=R_link(:,:,i);
+    R_temp=[MN(:) R_temp];
+    dlmwrite('R_temp',R_temp,' ');
+    fstline=['[*,*,' num2str(i),']: ' num2str(MN) ':='];
+    rlink_cmd=['sed ''1 i' fstline ''' -i R_temp'];
+    system(rlink_cmd);
+    !cat R_temp >> Rlink
+    
+end
+
+
+!rm ri
+for i=1:length(Band)
+    for j=1:numel(MN)
+        for k=1:numel(MN)
+    Ri_temp=R_i(:,:,j,k,i);
+    Ri_temp=[MN(:) Ri_temp];
+    dlmwrite('Ri_temp',Ri_temp,' ');
+    fstline=['[*,*,' num2str(j),',',num2str(k),',',num2str(i),']: ' num2str(MN) ':='];
+    rlink_cmd=['sed ''1 i' fstline ''' -i Ri_temp'];
+    system(rlink_cmd);
+    !cat Ri_temp >> ri
+    
+        end
+    end
+    
+end
+
+
+
+
+
+
+
+
+clear ga
+ga=[MN(:) ga_out'];
+demandu=[MN(:) demandu(:)];
+%demandd=[MN(:) demandd(:)];
+price_t=[MN(:) price_t(:)];
+price_c=[Band(:) price_c(:)];
+
+
+dlmwrite('ga',ga,' ');
+dlmwrite('Pt',price_t,' ');
+dlmwrite('Pc',price_c,' ');
+dlmwrite('demandu',demandu,' ');
+%dlmwrite('demandd',demandd,' ');
+dlmwrite('mn',MN,' ');
+
+dlmwrite('Excu',excu,' ');
+
+!ampl thptmax.mod
+
+pth=['_' num2str(numel(MN))];
+mkcmd=['mkdir bfsca/demand' pth];
+system(mkcmd);
+mvcmd=['mv *.rt ' 'bfsca/demand' pth '/']
+system(mvcmd);
+
+    end
+end
+end

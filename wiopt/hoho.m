@@ -1,9 +1,9 @@
 % HOP BY HOP Algorithm
 
 % Following implement the hoho algorithm
- clear all
- close all
- load test
+%  clear all
+%  close all
+%  load test
 
 
 % Inilize
