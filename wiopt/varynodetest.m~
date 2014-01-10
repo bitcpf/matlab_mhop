@@ -11,6 +11,8 @@ testout=[]
 % Arbitrary grid for debugging
 %  N_x=3;
 %  N_y=10;
+for 
+
 for N_x=5:5
     for N_y=6:6
 
@@ -160,12 +162,11 @@ end
 
 %save test -v7.3
 
-hoho
-hoho_adjust
-
-hoho_adjust
-hoho_adjust
-
+% hoho
+% hoho_adjust
+% hoho_adjust
+%multibandpen
+bfsca
 
 
 throughputevaluate

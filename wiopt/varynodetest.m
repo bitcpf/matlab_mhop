@@ -11,6 +11,8 @@ testout=[]
 % Arbitrary grid for debugging
 %  N_x=3;
 %  N_y=10;
+for naverage=1:10
+
 for N_x=5:5
     for N_y=6:6
 
@@ -18,7 +20,7 @@ for N_x=5:5
   p_th=-160;
 % Define bands used in algorithm, high freq first
 
-  bands=[5.8*10^9]%,2.4*10^9,900*10^6]%,450*10^6];
+  bands=[5.8*10^9,900*10^6,450*10^6];
    %bands=[5.8*10^9,2.4*10^9]%,900*10^6,450*10^6];
   %bands=[5.8*10^9,2.4*10^9,900*10^6]%,450*10^6];
   %bands=[2.4*10^9,900*10^6];
@@ -160,10 +162,11 @@ end
 
 %save test -v7.3
 
-hoho
-hoho_adjust
-hoho_adjust
-
+ %hoho
+%  hoho_adjust
+%  hoho_adjust
+multibandpen
+% bfsca
 
 
 throughputevaluate
@@ -173,3 +176,5 @@ testout=[testout out_sum]
 
     end
 end
+end
+mean(testout)

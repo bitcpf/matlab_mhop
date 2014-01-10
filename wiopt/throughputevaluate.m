@@ -10,7 +10,7 @@ link_matrix(:,1:numel(ga))=[ga;zeros(size(ga));zeros(size(ga));zeros(size(ga))];
 cnt=numel(ga);
 all_nodes=[ga mesh_nodes];
 link_cap=6;
-mesh_demand_mul=rand(1,numel(all_nodes))*5
+mesh_demand_mul=rand(1,numel(all_nodes))*4
 
 for dd=1:size(mesh_demand_mul,1)
 mesh_demand_mul(dd,:)=mesh_demand_mul(dd,:)*dd;
